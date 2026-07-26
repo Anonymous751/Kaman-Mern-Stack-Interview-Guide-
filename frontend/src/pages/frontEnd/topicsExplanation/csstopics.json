@@ -1,0 +1,796 @@
+[
+  {
+  "topic": { "$oid": "69426686067372ab33ffa18d" },
+  "path": "/frontend/html-tables",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "HTML Tables are used to display data in rows and columns. They are made of several elements that help organize and present data clearly and accessibly."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ Table Structure"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<table>: The main container for table data.",
+        "<thead>: Groups the header row(s) of a table.",
+        "<tbody>: Groups the main body rows.",
+        "<tfoot>: Groups footer rows, often used for totals or summary.",
+        "<tr>: Table row.",
+        "<th>: Table header cell, usually bold and centered.",
+        "<td>: Table data cell, contains the actual data."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ Semantic and Accessibility Best Practices"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use <th> for headers, not <td>, so screen readers can identify columns.",
+        "Use scope=\"col\" or scope=\"row\" for headers to indicate which cells they apply to.",
+        "Group rows with <thead>, <tbody>, and <tfoot> for semantic clarity.",
+        "Always provide a caption using <caption> to describe table content.",
+        "Avoid using tables for layout purposes; they are only for tabular data."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example – HTML Table"
+    },
+    {
+      "type": "code",
+      "code": "<table>\n  <caption>Student Scores</caption>\n  <thead>\n    <tr>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Math</th>\n      <th scope=\"col\">Science</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Ali</td>\n      <td>90</td>\n      <td>85</td>\n    </tr>\n    <tr>\n      <td>Sara</td>\n      <td>95</td>\n      <td>80</td>\n    </tr>\n  </tbody>\n  <tfoot>\n    <tr>\n      <td>Total</td>\n      <td>185</td>\n      <td>165</td>\n    </tr>\n  </tfoot>\n</table>"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between <thead>, <tbody>, and <tfoot>?",
+      "answer": "<thead> is for header rows, <tbody> is for main data rows, and <tfoot> is for footer/summary rows."
+    },
+    {
+      "type": "qa",
+      "question": "How do you make tables accessible?",
+      "answer": "Use <th> for headers, provide scope attributes, use captions, and avoid tables for layout."
+    },
+    {
+      "type": "qa",
+      "question": "What is the purpose of <caption>?",
+      "answer": "It provides a description of the table’s content, helping screen readers and improving semantics."
+    },
+    {
+      "type": "qa",
+      "question": "When should you not use tables in HTML?",
+      "answer": "Tables should not be used for page layout; they are only for displaying tabular data."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between <td> and <th>?",
+      "answer": "<td> holds regular data cells, <th> holds header cells which are semantically important for accessibility."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Tables organize data into rows and columns using <table>, <tr>, <th>, <td>.",
+        "Use semantic tags like <thead>, <tbody>, <tfoot>, and <caption> for clarity and accessibility.",
+        "Always follow accessibility best practices for headers and captions.",
+        "Avoid using tables for layout; they are meant for tabular data only."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa18d" },
+  "path": "/frontend/css-typography",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Typography controls how text looks on a web page. It helps improve readability, visual hierarchy, and overall design."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ Key Typography Properties"
+    },
+    {
+      "type": "list",
+      "items": [
+        "font-family: Sets the typeface (e.g., Arial, Times New Roman, sans-serif).",
+        "font-size: Controls text size (px, em, rem, %).",
+        "line-height: Space between lines of text for readability.",
+        "letter-spacing: Space between characters.",
+        "word-spacing: Space between words.",
+        "text-align: Align text (left, right, center, justify).",
+        "text-transform: Change text case (uppercase, lowercase, capitalize).",
+        "font-weight: Thickness of text (normal, bold, 100–900)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example"
+    },
+    {
+      "type": "code",
+      "code": "p {\n  font-family: 'Arial', sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n  word-spacing: 2px;\n  text-align: justify;\n  text-transform: capitalize;\n  font-weight: 500;\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What does the line-height property do?",
+      "answer": "It sets the space between lines of text to improve readability."
+    },
+    {
+      "type": "qa",
+      "question": "How can you make all text uppercase using CSS?",
+      "answer": "Use text-transform: uppercase;"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between letter-spacing and word-spacing?",
+      "answer": "Letter-spacing adjusts space between characters; word-spacing adjusts space between words."
+    },
+    {
+      "type": "qa",
+      "question": "How do you set a fallback font in CSS?",
+      "answer": "List multiple fonts in font-family, e.g., font-family: 'Roboto', Arial, sans-serif;"
+    },
+    {
+      "type": "qa",
+      "question": "What does font-weight: 700 mean?",
+      "answer": "It sets the text to bold (700 is the numeric value for bold)."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "CSS typography controls the appearance and spacing of text.",
+        "Key properties include font-family, font-size, line-height, spacing, alignment, and weight.",
+        "Proper typography improves readability, design consistency, and user experience.",
+        "Combine different properties to create visually appealing text layouts."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa18e" },
+  "path": "/frontend/css-colors-backgrounds",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Colors & Backgrounds help make your web pages visually appealing by controlling text colors, element backgrounds, gradients, and images."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Color Formats: hex (#ff0000), rgb(255,0,0), rgba(255,0,0,0.5), hsl(0, 100%, 50%), named colors (red, blue).",
+        "Background Color: Sets the background color of an element using background-color.",
+        "Background Image: Adds an image using background-image: url('image.jpg');",
+        "Background Repeat: Controls repetition: repeat, no-repeat, repeat-x, repeat-y.",
+        "Background Position: Sets position of the background image: top, center, bottom, 50% 50%.",
+        "Background Size: Adjust image size: cover, contain, or exact dimensions like 100px 200px.",
+        "Gradients: Smooth color transitions: linear-gradient() or radial-gradient()."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example"
+    },
+    {
+      "type": "code",
+      "code": "div {\n  background-color: #f0f0f0;\n  background-image: linear-gradient(to right, red, yellow);\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between cover and contain in background-size?",
+      "answer": "cover scales the image to fill the element, possibly cropping it. contain scales to fit inside without cropping, possibly leaving empty space."
+    },
+    {
+      "type": "qa",
+      "question": "How do you make a background image not repeat?",
+      "answer": "Use background-repeat: no-repeat;"
+    },
+    {
+      "type": "qa",
+      "question": "Name 3 ways to define colors in CSS.",
+      "answer": "Hex, RGB(A), HSL, and named colors."
+    },
+    {
+      "type": "qa",
+      "question": "What is a linear gradient?",
+      "answer": "A smooth transition between two or more colors along a straight line."
+    },
+    {
+      "type": "qa",
+      "question": "How do you position a background image in the center?",
+      "answer": "Use background-position: center;"
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "CSS colors and backgrounds make pages visually appealing.",
+        "Use various color formats, gradients, and background images.",
+        "Control image repetition, position, and size for best results.",
+        "Combining these properties improves UI design and user experience."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa18f" },
+  "path": "/frontend/css-pseudo",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Pseudo-classes & Pseudo-elements let you style elements based on their state or create extra content without adding HTML elements."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Pseudo-classes: Style elements based on state or position:\n- :hover → when the user hovers over an element\n- :focus → when an element (like input) is focused\n- :active → when an element is being clicked\n- :nth-child(n) → select elements based on their position\n- :first-child, :last-child → select first or last element",
+        "Pseudo-elements: Create or style parts of elements:\n- ::before → insert content before an element\n- ::after → insert content after an element\n- ::first-letter, ::first-line → style first letter or line"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example"
+    },
+    {
+      "type": "code",
+      "code": "button:hover {\n  background-color: blue;\n  color: white;\n}\n\np::before {\n  content: \"★ \";\n  color: gold;\n}\n\nli:nth-child(odd) {\n  background-color: #f0f0f0;\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between a pseudo-class and a pseudo-element?",
+      "answer": "Pseudo-classes style elements based on state or position (like :hover, :nth-child), while pseudo-elements style part of an element or insert extra content (::before, ::after)."
+    },
+    {
+      "type": "qa",
+      "question": "How do you insert content before an element without modifying HTML?",
+      "answer": "Use ::before with the content property in CSS."
+    },
+    {
+      "type": "qa",
+      "question": "How can you style every even or odd element in a list?",
+      "answer": "Use :nth-child(even) or :nth-child(odd)."
+    },
+    {
+      "type": "qa",
+      "question": "When would you use :focus?",
+      "answer": "To style an element when it is active or selected, like input fields or links for accessibility."
+    },
+    {
+      "type": "qa",
+      "question": "Can pseudo-elements accept normal CSS properties like color, font, margin?",
+      "answer": "Yes, they accept most visual CSS properties to style the generated content or element parts."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Pseudo-classes style elements based on state or position.",
+        "Pseudo-elements allow you to style parts of elements or insert content without HTML changes.",
+        "They help reduce extra HTML and make styling more flexible.",
+        "Common examples include :hover, :focus, ::before, ::after, and :nth-child."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa190" },
+  "path": "/frontend/css-specificity-inheritance",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Specificity & Inheritance help decide which styles are applied when multiple rules target the same element. Specificity gives weight to selectors, while inheritance allows child elements to get certain styles from their parents."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Specificity: Determines which CSS rule wins when multiple rules apply:\n- Inline styles (style=\"\") → highest priority\n- ID selectors (#id) → higher than class\n- Class, attribute, pseudo-class selectors (.class, [attr], :hover) → medium priority\n- Element and pseudo-element selectors (div, p, ::before) → lowest priority",
+        "Inheritance: Certain CSS properties (like color, font-family) are passed from parent to child elements automatically.",
+        "!important: Overrides normal specificity rules, but should be used sparingly.",
+        "Conflict resolution: When rules have equal specificity, the last one in CSS takes precedence."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example"
+    },
+    {
+      "type": "code",
+      "code": "p {\n  color: blue; /* inherited by default */\n}\n\n.text {\n  color: green; /* class selector */\n}\n\n#mainText {\n  color: red; /* ID selector has higher specificity */\n}\n\n<p id=\"mainText\" class=\"text\">Hello World</p>\n<!-- This text will be red because ID selector wins -->"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is CSS specificity?",
+      "answer": "Specificity is a weight system that determines which CSS rule applies when multiple rules target the same element."
+    },
+    {
+      "type": "qa",
+      "question": "How is specificity calculated?",
+      "answer": "Inline styles > ID selectors > class/attribute/pseudo-class selectors > element/pseudo-element selectors."
+    },
+    {
+      "type": "qa",
+      "question": "What properties are inherited by default?",
+      "answer": "Properties like color, font-family, font-size, line-height are inherited automatically by child elements."
+    },
+    {
+      "type": "qa",
+      "question": "How does !important work?",
+      "answer": "It forces a style to override other rules, regardless of normal specificity, but should be used carefully."
+    },
+    {
+      "type": "qa",
+      "question": "What happens if two selectors have the same specificity?",
+      "answer": "The last defined rule in the CSS file takes precedence."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Specificity decides which CSS rule applies when multiple rules target the same element.",
+        "Inheritance allows child elements to automatically get certain styles from their parent.",
+        "!important can override normal specificity rules but should be avoided if possible.",
+        "Understanding these concepts helps write predictable and maintainable CSS."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa191" },
+  "path": "/frontend/css-units",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Units define the size of elements, text, spacing, and layout in your web page. There are different types of units: absolute and relative."
+    },
+    {
+      "type": "heading",
+      "text": "Common CSS Units"
+    },
+    {
+      "type": "list",
+      "items": [
+        "px (pixels): Fixed size. One pixel on the screen. Always the same regardless of parent.",
+        "em: Relative to the font-size of the parent. Useful for scalable text.",
+        "rem: Relative to the root (html) font-size. Consistent across the page.",
+        "%: Relative to the parent element's size. Often used for width, height, or spacing.",
+        "vh / vw: Relative to viewport height / viewport width. 1vh = 1% of viewport height.",
+        "ch: Relative to the width of the '0' (zero) character in current font.",
+        "ex: Relative to the height of 'x' character in current font.",
+        "fr: Fractional unit used in CSS Grid to divide space proportionally."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Relative vs Absolute Sizing"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Absolute units: px – fixed, don’t scale with parent or viewport.",
+        "Relative units: em, rem, %, vh, vw, ch, ex, fr – scale depending on parent, root, or viewport."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example"
+    },
+    {
+      "type": "code",
+      "code": "/* Absolute unit */\ndiv { width: 200px; }\n\n/* Relative units */\np { font-size: 1.2em; }  /* 1.2 times parent font size */\nh1 { font-size: 2rem; }  /* 2 times root font size */\n.container { width: 80%; }  /* 80% of parent width */\nsection { height: 50vh; }  /* 50% of viewport height */"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between px, em, and rem?",
+      "answer": "px is fixed, em is relative to parent font-size, rem is relative to root font-size."
+    },
+    {
+      "type": "qa",
+      "question": "When should you use relative units over absolute units?",
+      "answer": "Use relative units to make layouts and text scalable and responsive across devices."
+    },
+    {
+      "type": "qa",
+      "question": "What does 1vw and 1vh mean?",
+      "answer": "1vw is 1% of the viewport width, and 1vh is 1% of the viewport height."
+    },
+    {
+      "type": "qa",
+      "question": "How does the fr unit work in CSS Grid?",
+      "answer": "It divides available space proportionally; e.g., 1fr + 2fr = total space split in 1:2 ratio."
+    },
+    {
+      "type": "qa",
+      "question": "What happens if you mix absolute and relative units in a layout?",
+      "answer": "Absolute units stay fixed while relative units scale; mixing requires careful planning to avoid inconsistencies."
+    },
+    {
+      "type": "heading",
+      "text": "Summary / Why It Matters"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Relative units make your site responsive and scalable.",
+        "Absolute units give precise control but may break on different devices.",
+        "Choosing the right unit improves readability, layout, and design flexibility."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa192" },
+  "path": "/frontend/css-overflow-visibility-display",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Display, Visibility, and Overflow control how elements appear, hide, or handle extra content in your web page."
+    },
+    {
+      "type": "heading",
+      "text": "Display Types"
+    },
+    {
+      "type": "list",
+      "items": [
+        "block: Element starts on a new line and takes full width. Example: div, p.",
+        "inline: Element flows with text and only takes as much width as its content. Example: span, a.",
+        "inline-block: Inline flow but you can set width and height.",
+        "none: Hides the element completely (no space taken, not visible)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Visibility"
+    },
+    {
+      "type": "list",
+      "items": [
+        "visible: Default. Element is shown.",
+        "hidden: Element is invisible but still takes up space in the layout."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Overflow"
+    },
+    {
+      "type": "list",
+      "items": [
+        "visible: Content spills out of the container (default).",
+        "hidden: Extra content is clipped and not visible.",
+        "scroll: Adds scrollbars to access extra content.",
+        "auto: Adds scrollbars only if content overflows."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Text Overflow & Clipping"
+    },
+    {
+      "type": "list",
+      "items": [
+        "text-overflow: ellipsis; Shows '…' when text overflows its container. Works with white-space: nowrap; and overflow: hidden;.",
+        "clip: Hides content outside the container without scrollbars or ellipsis."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example"
+    },
+    {
+      "type": "code",
+      "code": "/* Display */\ndiv { display: block; }\nspan { display: inline; }\nbutton { display: inline-block; }\n.hidden-element { display: none; }\n\n/* Visibility */\np.invisible { visibility: hidden; }\n\n/* Overflow */\n.container { width: 200px; height: 50px; overflow: auto; }\n\n/* Text Overflow */\np.ellipsis {\n  width: 150px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between display: none and visibility: hidden?",
+      "answer": "display: none removes the element from the layout, while visibility: hidden keeps the space but hides the content."
+    },
+    {
+      "type": "qa",
+      "question": "When should you use overflow: auto vs overflow: scroll?",
+      "answer": "Use auto to show scrollbars only when content overflows, and scroll to always show scrollbars."
+    },
+    {
+      "type": "qa",
+      "question": "How does text-overflow: ellipsis work?",
+      "answer": "It displays '…' for overflowing text, but only works with white-space: nowrap and overflow: hidden."
+    },
+    {
+      "type": "qa",
+      "question": "What’s the difference between inline and inline-block?",
+      "answer": "inline flows with text and ignores width/height, while inline-block flows inline but respects width and height."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use display to control layout behavior of elements.",
+        "visibility hides elements without removing space.",
+        "overflow controls how extra content behaves and scrolls.",
+        "Text overflow and clipping improve readability in fixed-size containers."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa19a" },
+  "path": "/frontend/responsive-design",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Responsive Design ensures that a website looks and works well on all screen sizes and devices such as mobiles, tablets, laptops, and desktops. Media queries allow you to apply CSS styles based on screen width, height, or device characteristics."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Responsive design adapts layouts automatically based on screen size.",
+        "Media queries apply CSS rules conditionally using screen properties.",
+        "Mobile-first approach starts styling for small screens first, then scales up.",
+        "Breakpoints define screen widths where layout changes occur."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Mobile-First vs Desktop-First"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Mobile-first: Use min-width media queries and design for small screens first.",
+        "Desktop-first: Use max-width media queries and scale down for smaller screens.",
+        "Mobile-first is recommended for better performance and accessibility."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Common Breakpoints"
+    },
+    {
+      "type": "list",
+      "items": [
+        "320px – 480px: Mobile devices",
+        "481px – 768px: Tablets",
+        "769px – 1024px: Small laptops",
+        "1025px and above: Desktops and large screens"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Example – Media Queries"
+    },
+    {
+      "type": "code",
+      "code": "/* Mobile-first styles */\nbody {\n  font-size: 14px;\n}\n\n/* Tablet and above */\n@media (min-width: 768px) {\n  body {\n    font-size: 16px;\n  }\n}\n\n/* Desktop and above */\n@media (min-width: 1024px) {\n  body {\n    font-size: 18px;\n  }\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is responsive design?",
+      "answer": "Responsive design is an approach where a website layout adapts to different screen sizes and devices using flexible layouts, media queries, and relative units."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between min-width and max-width?",
+      "answer": "min-width applies styles when the screen is larger than a value, while max-width applies styles when the screen is smaller than a value."
+    },
+    {
+      "type": "qa",
+      "question": "Why is mobile-first design recommended?",
+      "answer": "Mobile-first improves performance, focuses on essential content, and scales better for larger screens."
+    },
+    {
+      "type": "qa",
+      "question": "What are breakpoints?",
+      "answer": "Breakpoints are specific screen widths where the layout or styles change to improve usability."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Responsive design makes websites usable on all devices.",
+        "Media queries control styles based on screen size.",
+        "Mobile-first design uses min-width queries and scales upward.",
+        "Well-chosen breakpoints improve layout and user experience."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa19b" },
+  "path": "/frontend/css-animations",
+  "priority": "Low",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "CSS Animations & Transitions allow you to create smooth visual effects, motion, and interactions without using JavaScript. They improve user experience by making UI changes feel natural and responsive."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Transitions animate changes between two states of an element.",
+        "Animations use keyframes to define multiple stages of motion.",
+        "Transform properties move, rotate, scale, or skew elements efficiently.",
+        "Timing functions control the speed and acceleration of animations.",
+        "GPU acceleration improves performance by animating transform and opacity."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "CSS Transitions"
+    },
+    {
+      "type": "list",
+      "items": [
+        "transition-property: Specifies which CSS property to animate.",
+        "transition-duration: Defines how long the transition lasts.",
+        "transition-timing-function: Controls animation speed (ease, linear, ease-in, ease-out).",
+        "transition-delay: Adds a delay before the transition starts."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "CSS Animations & Keyframes"
+    },
+    {
+      "type": "list",
+      "items": [
+        "@keyframes define the animation stages from start to end.",
+        "animation-name links the element to keyframes.",
+        "animation-duration sets how long the animation runs.",
+        "animation-iteration-count controls how many times it repeats.",
+        "animation-fill-mode defines styles before and after animation."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Basic Examples"
+    },
+    {
+      "type": "code",
+      "code": "/* Transition Example */\nbutton {\n  background-color: blue;\n  transition: background-color 0.3s ease, transform 0.3s ease;\n}\n\nbutton:hover {\n  background-color: darkblue;\n  transform: scale(1.1);\n}\n\n/* Animation Example */\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n.card {\n  animation: fadeIn 0.6s ease-in-out;\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Performance & Best Practices"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Prefer transform and opacity for smoother animations.",
+        "Avoid animating layout properties like width, height, or top.",
+        "Use will-change sparingly to hint browser optimizations.",
+        "Keep animations short and meaningful to avoid distraction."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between CSS transitions and animations?",
+      "answer": "Transitions animate between two states, while animations use keyframes to control multiple stages of motion."
+    },
+    {
+      "type": "qa",
+      "question": "What are keyframes in CSS?",
+      "answer": "Keyframes define intermediate steps of an animation using percentage-based stages from start to end."
+    },
+    {
+      "type": "qa",
+      "question": "Why are transform and opacity preferred for animations?",
+      "answer": "They are GPU-accelerated and do not trigger layout recalculations, resulting in smoother animations."
+    },
+    {
+      "type": "qa",
+      "question": "What does animation-fill-mode do?",
+      "answer": "It controls how styles are applied before the animation starts and after it ends."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Transitions animate state changes smoothly.",
+        "Animations use keyframes for complex motion effects.",
+        "Using transform and opacity improves performance.",
+        "Well-designed animations enhance user experience without hurting performance."
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+]

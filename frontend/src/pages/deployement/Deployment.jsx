@@ -1,0 +1,147 @@
+// DeploymentPage.jsx
+import React, { useState } from "react";
+import { Container, Accordion, Badge, Row, Col, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { deploymentSections } from "./deploymentTopics";
+import PriorityLegend from "../../components/PriorityLegend";
+import FadeScrollWrapper from "../../components/FadeScrollWrapper";
+import SearchFilter from "../../components/SearchFilter";
+
+// Map priority → Bootstrap badge colors
+const getBadgeColor = (priority) => {
+  switch (priority) {
+    case "Compulsory":
+      return "danger";
+    case "High":
+      return "warning";
+    case "Medium":
+      return "info";
+    case "Low":
+      return "secondary";
+    default:
+      return "secondary";
+  }
+};
+
+const DeploymentPage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [priorityFilter, setPriorityFilter] = useState("All"); // ✅ new state
+  let globalCounter = 1;
+
+  let filteredSections = [];
+
+  // ✅ Safe filtering (sections + topics)
+  try {
+    const query = searchQuery.toLowerCase();
+
+    filteredSections = deploymentSections
+      .map((section) => {
+        const filteredTopics = section.topics.filter((topic) => {
+          const matchesSearch =
+            topic.title.toLowerCase().includes(query) ||
+            topic.explanation?.toLowerCase().includes(query);
+          const matchesPriority =
+            priorityFilter === "All" || topic.priority === priorityFilter;
+
+          return matchesSearch && matchesPriority;
+        });
+
+        return filteredTopics.length
+          ? { ...section, topics: filteredTopics }
+          : null;
+      })
+      .filter(Boolean);
+  } catch (error) {
+    console.error("Deployment search error:", error);
+    filteredSections = [];
+  }
+
+  return (
+    <Container className="my-5">
+      <FadeScrollWrapper>
+        <h2 className="mb-4 text-center fw-bold">
+          Deployment Topics (Interview Friendly)
+        </h2>
+
+        <PriorityLegend />
+
+        {/* 🔍 Search + Priority Filter in one row */}
+        <Row className="mb-4">
+          <Col md={6}>
+            <SearchFilter
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search deployment topics by name..."
+            />
+          </Col>
+          <Col md={6}>
+            <Form.Select
+              value={priorityFilter}
+              onChange={(e) => setPriorityFilter(e.target.value)}
+            >
+              <option value="All">All Priorities</option>
+              <option value="Compulsory">Compulsory</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </Form.Select>
+          </Col>
+        </Row>
+      </FadeScrollWrapper>
+
+      <FadeScrollWrapper>
+        <Accordion alwaysOpen>
+          {filteredSections.map((section, sectionIndex) => (
+            <Accordion.Item
+              eventKey={`section-${sectionIndex}`}
+              key={`section-${sectionIndex}`}
+            >
+              <Accordion.Header>
+                <span className="fw-bold">
+                  <strong>{globalCounter++}.</strong> {section.sectionTitle}
+                </span>
+              </Accordion.Header>
+
+              <Accordion.Body>
+                {section.topics.map((topic) => (
+                  <div key={topic.id} className="mb-4 p-3 border rounded">
+                    <h5 className="fw-semibold d-flex align-items-center">
+                      {topic.title}
+                      {topic.priority && (
+                        <Badge
+                          bg={getBadgeColor(topic.priority)}
+                          className={`ms-2 ${
+                            getBadgeColor(topic.priority) === "warning"
+                              ? "text-dark"
+                              : "text-light"
+                          } fw-semibold py-1 px-2`}
+                        >
+                          {topic.priority}
+                        </Badge>
+                      )}
+                    </h5>
+
+                    <p className="text-muted">{topic.explanation}</p>
+
+                    <Link to={topic.path} className="btn btn-primary btn-sm">
+                      Open Topic
+                    </Link>
+                  </div>
+                ))}
+              </Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+
+        {/* ❌ Topics Not Found */}
+        {filteredSections.length === 0 && (
+          <h1 className="text-center text-muted mt-5">
+            ❌ Topics Not Found
+          </h1>
+        )}
+      </FadeScrollWrapper>
+    </Container>
+  );
+};
+
+export default DeploymentPage;

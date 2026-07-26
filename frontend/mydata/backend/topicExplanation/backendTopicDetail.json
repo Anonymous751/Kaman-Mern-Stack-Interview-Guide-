@@ -1,0 +1,1862 @@
+[
+  {
+  "topic": { "$oid": "YOUR_NODEJS_TOPIC_OBJECTID" },
+  "path": "/backend/nodeBasics",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Node.js is a high-performance, event-driven, non-blocking JavaScript runtime built on Chrome's V8 engine. It is widely used for scalable APIs, real-time apps, microservices, streaming, DevOps automation, and backend systems. Interviews focus on understanding the event loop, async patterns, performance, architecture, modules, security, and API design."
+    },
+    {
+      "type": "heading",
+      "text": "1. Core Node.js Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Event Loop: Handles async operations in phases (timers, I/O callbacks, idle, poll, check, close). Enables Node.js to manage thousands of concurrent connections. Why: Foundation of Node’s async behavior. Benefit: High scalability with low overhead.",
+        "Non-blocking I/O: Operations do not block the main thread. Uses callbacks, Promises, async/await. Why: Avoids slowdowns caused by I/O. Benefit: Faster API response under load.",
+        "Single Threaded + Libuv: JS runs on one thread; heavy operations handled by thread pool. Why: Simpler concurrency model. Benefit: Efficient for I/O-heavy apps.",
+        "Modules: CommonJS (`require`) and ES Modules (`import`). Why: Organized, reusable code.",
+        "Streams: Handle data chunk-by-chunk (e.g., large files). Why: Memory efficient. Benefit: Best for video, audio, logs.",
+        "Buffers: Handle binary data for streams and file operations.",
+        "Process Object: Gives access to environment variables, arguments, memory usage, PID.",
+        "Event Emitter: Publish/subscribe pattern inside apps.",
+        "Middleware: Function executed before request response cycle. Used in: Express, NestJS."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2. Architecture & Scaling"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Cluster Module: Creates multiple Node.js processes to use all CPU cores. Benefit: Better performance under heavy load.",
+        "Worker Threads: Used for heavy CPU tasks (hashing, compression). Benefit: Prevents blocking the event loop.",
+        "Load Balancing: Use Nginx, PM2, AWS ELB.",
+        "Microservices: Node excellent for distributed, decoupled services."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3. API Development Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "REST APIs: CRUD, validation, routing, controllers.",
+        "Middleware: Logging, CORS, rate limiting.",
+        "Error Handling: Centralized middleware handles exceptions.",
+        "Authentication: JWT, OAuth, Sessions, Cookies.",
+        "Validation: joi, zod, express-validator.",
+        "Request Lifecycle: req → middleware → controller → service → response."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4. Performance Optimization"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use clustering to distribute CPU load.",
+        "Implement caching using Redis.",
+        "Enable Gzip/Brotli compression.",
+        "Use streaming instead of loading entire files.",
+        "Optimize N+1 queries with joins/aggregate.",
+        "Use connection pooling for databases.",
+        "Break monolith into microservices when needed."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "5. Security in Node.js"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Helmet: Secures headers.",
+        "Rate Limiting: Prevent brute force attacks.",
+        "Sanitization: Prevent XSS, SQL injection.",
+        "HTTPS: Always use TLS.",
+        "Store env variables using dotenv.",
+        "Hash passwords using bcrypt or argon2."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "6. File System, Streams & Buffers"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Streaming large files using fs.createReadStream.",
+        "Piping streams (readStream.pipe(writeStream)).",
+        "Using buffers for binary data.",
+        "Asynchronous file read/write."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "7. Tooling & Deployment"
+    },
+    {
+      "type": "list",
+      "items": [
+        "PM2: Process manager with logging, auto-restart, clustering.",
+        "Nodemon: Auto restart during development.",
+        "Docker: Containerize Node.js apps.",
+        "CI/CD: GitHub Actions, Jenkins.",
+        "Cloud: AWS EC2, Lambda, S3."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "8. Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the Node.js event loop?",
+      "answer": "A mechanism that handles asynchronous operations in phases (timers, poll, check, close). It allows Node.js to run non-blocking operations on a single thread."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between process.nextTick() and setImmediate()?",
+      "answer": "nextTick executes before the next event loop cycle. setImmediate executes during the check phase."
+    },
+    {
+      "type": "qa",
+      "question": "What are streams? Types?",
+      "answer": "Streams handle data chunk-by-chunk. Types: Readable, Writable, Duplex, Transform."
+    },
+    {
+      "type": "qa",
+      "question": "When do you use Worker Threads?",
+      "answer": "For CPU-heavy tasks (hashing, encryption, compression) to avoid blocking the event loop."
+    },
+    {
+      "type": "qa",
+      "question": "What is middleware in Node.js?",
+      "answer": "A function executed before final request handling. Used for auth, logging, validation."
+    },
+    {
+      "type": "qa",
+      "question": "How do you secure a Node.js application?",
+      "answer": "Helmet, rate limiting, sanitization, JWT best practices, hashing passwords, avoiding eval()."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between synchronous and asynchronous code?",
+      "answer": "Synchronous code executes one operation at a time, blocking further execution until the current task completes. Asynchronous code allows operations (like I/O, database, timers) to run in the background, so the main thread is free to continue running other code."
+    },
+    {
+      "type": "heading",
+      "text": "9. Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Node.js is fast, scalable, and event-driven.",
+        "Uses non-blocking I/O for high concurrency.",
+        "Event loop + Libuv = heart of performance.",
+        "Streams & buffers help with large data handling.",
+        "Security & performance optimization are crucial in interviews.",
+        "Strong ecosystem: npm, PM2, Docker, Express, NestJS."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "YOUR_TOPIC_OBJECT_ID_HERE" },
+  "path": "/backend/nodeCore",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Node.js comes with built-in core modules that simplify backend development. These modules provide ready-to-use functionalities without installing extra packages."
+    },
+    {
+      "type": "list",
+      "items": [
+        "fs (File System): Read/write files, directories. How: fs.readFile, fs.writeFile. Why: Handle data storage. Benefit: Efficient file operations asynchronously or synchronously.",
+        "path: Work with file and directory paths. How: path.join, path.resolve. Why: Normalize paths across OS. Benefit: Avoids path errors in cross-platform apps.",
+        "http: Create web servers. How: http.createServer(). Why: Serve requests and responses. Benefit: Lightweight server without frameworks.",
+        "os: Get system info (CPU, memory, platform). How: os.cpus(), os.totalmem(). Why: Optimize app based on host system. Benefit: Efficient resource management.",
+        "events: Event-driven programming. How: EventEmitter, on/emit. Why: Decouple logic and respond to async events. Benefit: Cleaner, scalable, maintainable code."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What are Node.js core modules?",
+      "answer": "Built-in modules that provide essential functionalities like file handling, HTTP, paths, OS info, and events without external libraries."
+    },
+    {
+      "type": "qa",
+      "question": "How do you read a file asynchronously using fs module?",
+      "answer": "Use fs.readFile('path', 'utf-8', callback). Node.js reads file in the background and executes callback when done."
+    },
+    {
+      "type": "qa",
+      "question": "Why use path module instead of concatenating strings?",
+      "answer": "Path module ensures cross-platform compatibility, normalizes paths, and avoids errors with slashes."
+    },
+    {
+      "type": "qa",
+      "question": "Benefits of events module?",
+      "answer": "Decouples code, allows async event handling, simplifies building scalable applications."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between synchronous and asynchronous fs methods?",
+      "answer": "Synchronous methods block the main thread until completed; asynchronous methods run in background and invoke a callback, keeping Node.js responsive."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Node.js core modules provide essential backend functionality out-of-the-box.",
+        "They help in file handling, server creation, path management, OS info, and events.",
+        "Using them correctly improves performance, scalability, and maintainability.",
+        "Essential for interview questions on 'how Node.js works' and 'why use modules'."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "YOUR_TOPIC_OBJECT_ID_HERE" },
+  "path": "/backend/nodeStreams",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Node.js Streams and Buffers allow efficient handling of data, especially large files and continuous data flows. Streams process data in chunks, not all at once — making Node.js ideal for performance-heavy tasks."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Readable Streams: Streams you can read data from. Examples: fs.createReadStream(). Benefit: Handles large file reading without loading full file in memory.",
+        "Writable Streams: Streams you can write data to. Examples: fs.createWriteStream(). Benefit: Write massive data chunks without memory overload.",
+        "Duplex Streams: Both readable + writable. Examples: net.Socket. Benefit: Used in network communication and sockets.",
+        "Transform Streams: Duplex streams that modify data. Examples: zlib.createGzip(). Benefit: Compression, encryption, and data manipulation pipelines.",
+        "Buffers: Store raw binary data. How: Buffer.from('Hello'). Why: Handle binary files, images, streams. Benefit: Works directly with memory for high-performance tasks.",
+        "Piping: Connect one stream to another. Example: readStream.pipe(writeStream). Benefit: Zero-cost data transfer, avoids manual read/write loops."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What are streams in Node.js?",
+      "answer": "Streams allow data to be processed in chunks, enabling efficient handling of large files and continuous data flow without loading everything into memory."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between Readable and Writable streams?",
+      "answer": "Readable streams output data (reading files), while writable streams receive data (writing files)."
+    },
+    {
+      "type": "qa",
+      "question": "What is a Buffer in Node.js?",
+      "answer": "A Buffer is a temporary memory container that holds binary data. It enables interaction with raw bytes — crucial for file systems, network packets, and streams."
+    },
+    {
+      "type": "qa",
+      "question": "Why use streaming instead of reading full files?",
+      "answer": "Streaming avoids loading the entire file into memory, improving performance and reducing RAM usage especially for GB-sized files."
+    },
+    {
+      "type": "qa",
+      "question": "What does pipe() do?",
+      "answer": "It connects the output of one stream to another, creating a data pipeline with zero manual handling."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Streams process data chunk-by-chunk for high performance.",
+        "Buffers store raw binary data for efficient data handling.",
+        "Piping allows automatic flow between streams.",
+        "Ideal for large files, network operations, media, and real-time processing.",
+        "Crucial for interview topics like performance optimization & Node.js internals."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "YOUR_TOPIC_OBJECT_ID_HERE" },
+  "path": "/backend/nodeEvents",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Node.js is built on an event-driven architecture. The EventEmitter class allows you to create, emit, and listen to custom events, enabling clean asynchronous programming."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "EventEmitter Class: How: const EventEmitter = require('events'); Why: Provides the core mechanism to manage events in Node.js. Benefit: Forms the base of async patterns used across Node internals.",
+        "Listening to Events (on): How: emitter.on('start', callback) Why: Execute logic every time an event occurs. Benefit: Clean structure for repeated async actions.",
+        "Emitting Events (emit): How: emitter.emit('start', data) Why: Trigger custom events programmatically. Benefit: Decouples logic — event producers don’t need to know listeners.",
+        "once() Listener: How: emitter.once('init', cb) Why: Run logic only once, for one-time setups. Benefit: Prevents unnecessary repeated execution.",
+        "Removing Listeners: How: emitter.removeListener() or off() Why: Avoid memory leaks in long-running apps. Benefit: Ensures performance remains stable.",
+        "Real Use Cases: Why: Handle async lifecycle events (server start, request end). How: Emit custom events tied to operations. Benefit: Makes applications modular & testable."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is EventEmitter?",
+      "answer": "A Node.js class that lets you create, emit, and listen to events. It powers Node's async, event-driven architecture."
+    },
+    {
+      "type": "qa",
+      "question": "Why use events in Node.js?",
+      "answer": "Events enable non-blocking async operations and help decouple logic, improving scalability and code clarity."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between on() and once()?",
+      "answer": "on() runs every time the event fires; once() runs only the first time."
+    },
+    {
+      "type": "qa",
+      "question": "Can we send data while emitting events?",
+      "answer": "Yes. emit('event', data) passes data to all listeners."
+    },
+    {
+      "type": "qa",
+      "question": "Where is EventEmitter used internally?",
+      "answer": "Streams, HTTP server (request), file system events, process events (exit, uncaughtException)."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "EventEmitter enables event-driven async operations in Node.js.",
+        "on(), once(), and emit() are core to building modular logic.",
+        "Used in streams, servers, and internal async operations.",
+        "Essential for interviews on Node internals and async architecture."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "YOUR_TOPIC_OBJECT_ID_HERE" },
+  "path": "/backend/asyncPatterns",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Node.js is asynchronous and non-blocking by design. Understanding how Node handles async tasks is essential for writing fast, scalable backend applications. These patterns help manage operations like database queries, API calls, file reading, timers, and background tasks."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Callbacks: What: Functions passed as arguments to be executed later. How: fs.readFile(path, (err, data) => {}) Why: Foundation of async programming in Node. Benefit: Simple but can lead to 'callback hell.'",
+        "Promises: What: Objects representing future completion/failure of an async operation. How: doTask().then().catch() Why: Avoids nested callbacks. Benefit: Clean chaining & clearer error handling.",
+        "Async/Await: What: Syntactic sugar over promises. How: const result = await asyncTask(); Why: Makes async code look synchronous. Benefit: Highly readable & easy to maintain.",
+        "Error Handling: Callback: if (err) return; Promise: .catch() Async/Await: try/catch Why: Prevent silent crashes & ensure reliability.",
+        "Avoiding Callback Hell: How: Use promises instead of deep-nested callbacks; Break functions into smaller modules; Use async/await for linear readable flow. Benefit: Cleaner, maintainable code structure."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Why is Node.js asynchronous?",
+      "answer": "To keep the single-threaded event loop non-blocking, allowing high performance for I/O-heavy tasks."
+    },
+    {
+      "type": "qa",
+      "question": "Callback vs Promise?",
+      "answer": "Callbacks can become deeply nested; Promises allow cleaner chaining and built-in error handling."
+    },
+    {
+      "type": "qa",
+      "question": "What problem does async/await solve?",
+      "answer": "It simplifies asynchronous code, making it look synchronous and easier to debug and maintain."
+    },
+    {
+      "type": "qa",
+      "question": "How do you handle errors in async/await?",
+      "answer": "Wrap code inside try/catch blocks to catch promise rejections."
+    },
+    {
+      "type": "qa",
+      "question": "What is callback hell?",
+      "answer": "A situation where multiple nested callbacks make code unreadable. Solutions include promises, async/await, and modular functions."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Node uses async patterns to keep execution fast and non-blocking.",
+        "Callbacks → Promises → Async/Await is the evolution path.",
+        "Async/Await is the cleanest and most commonly used modern approach.",
+        "Error handling is critical for reliability and stability.",
+        "Avoid callback hell by using promises, async/await, and modular code."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d63" },
+  "path": "/backend/nodeProcess",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The process object gives information about the running Node.js program. The cluster module helps utilize all CPU cores by running multiple Node processes for better performance and scalability."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "process Object: What: Global object representing the current Node.js process. Why: Access environment data, runtime info, arguments. How: process.pid, process.env, process.argv. Benefit: Essential for configs, logs, deployment, and handling exits.",
+        "Environment Variables (process.env): Why: Store secrets, config values. How: process.env.PORT. Benefit: Secure, flexible deployments.",
+        "process.exit(): Why: Close app manually or on errors. Benefit: Proper shutdown.",
+        "Cluster Module: What: Allows running multiple Node.js processes. Why: Node is single-threaded → cluster uses all CPU cores. How: cluster.fork() creates worker processes. Benefit: Improves performance & handles high traffic.",
+        "Master & Worker Processes: Master: Creates workers. Workers: Handle requests independently. Benefit: Full CPU utilization + crash isolation."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the process object?",
+      "answer": "A global object giving information and control over the current Node.js runtime."
+    },
+    {
+      "type": "qa",
+      "question": "Why use environment variables in Node.js?",
+      "answer": "To store config and secrets securely without hardcoding."
+    },
+    {
+      "type": "qa",
+      "question": "Why use the cluster module?",
+      "answer": "Node is single-threaded; cluster enables multi-core performance by running multiple worker processes."
+    },
+    {
+      "type": "qa",
+      "question": "How does cluster improve scalability?",
+      "answer": "It spreads incoming requests across multiple workers, increasing throughput."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "process gives runtime data, environment variables, and exit control.",
+        "cluster helps utilize all CPU cores using multiple worker processes.",
+        "Essential for scalable, production-ready Node.js apps."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d64" },
+  "path": "/backend/expressBasics",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Express is a fast, minimalist Node.js web framework used to build APIs and server-side applications. It simplifies routing, middleware handling, and request–response management."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "What is Express?: A lightweight framework built on top of Node's HTTP module. Why: Node’s native HTTP module is low-level. How: const express = require('express'). Benefit: Faster development with built-in routing & middleware.",
+        "Middleware: Functions that run before your final request handler. How: app.use((req, res, next) => next()). Why: Logging, authentication, parsing, validation. Benefit: Clean, modular request pipelines.",
+        "Routing: Defines how your app responds to different URLs. How: app.get('/users', handler). Why: Organizes endpoints by method & path. Benefit: Clear API architecture.",
+        "app.use vs app.get: app.use: Runs for all HTTP methods (GET, POST, etc). Example: app.use('/api', middleware). Use: middleware, global handlers. app.get: Handles only GET requests. Example: app.get('/users', handler). Use: fetching data.",
+        "req & res Objects: req: Incoming request data (headers, body, params). res: Used to send response back to client. How: res.send(), res.json(), res.status(). Benefit: Full control of API responses."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is Express.js?",
+      "answer": "A minimal Node.js framework used to build servers and APIs with clean routing and middleware support."
+    },
+    {
+      "type": "qa",
+      "question": "What is middleware in Express?",
+      "answer": "Middleware are functions that execute before route handlers, used for parsing, authentication, logging, and more."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between app.use and app.get?",
+      "answer": "app.use applies middleware for all HTTP methods, while app.get handles only GET requests."
+    },
+    {
+      "type": "qa",
+      "question": "What are req and res objects?",
+      "answer": "req represents the client request, res represents the server response."
+    },
+    {
+      "type": "qa",
+      "question": "Why use Express over Node's core HTTP module?",
+      "answer": "Express provides built-in routing, middleware, cleaner API design, and faster development."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Express simplifies server creation using middleware and routing.",
+        "app.use is for middleware; app.get is for GET routes.",
+        "req & res are essential for handling requests and sending responses.",
+        "Lightweight, fast, and the most popular Node.js framework."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d65" },
+  "path": "/backend/folderStructure",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "A clean backend folder structure is crucial for building scalable, maintainable, and production-ready applications. Using MVC (Model–View–Controller) along with services, middlewares, and utils helps separate responsibilities clearly."
+    },
+    {
+      "type": "heading",
+      "text": "Why Folder Structure Matters?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Maintainability: Code is easy to navigate and update.",
+        "Scalability: New features can be added without breaking existing ones.",
+        "Team Friendly: Developers instantly understand where logic belongs.",
+        "Testing: Each layer can be tested independently.",
+        "Production Readiness: Clean separation avoids bugs & duplication."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Production-Ready Folder Structure"
+    },
+    {
+      "type": "code",
+      "code": "project/\n│\n├── src/\n│   ├── config/            # env, DB configs\n│   ├── controllers/       # Handle req/res, no business logic\n│   ├── services/          # Business logic (heavy work happens here)\n│   ├── models/            # Database schemas (Mongo, SQL)\n│   ├── routes/            # Route definitions (mapping URL → controller)\n│   ├── middlewares/       # Auth, validation, logging\n│   ├── utils/             # Helper functions\n│   ├── validators/        # Joi / Zod validation schemas\n│   ├── constants/         # App constants & enums\n│   ├── jobs/              # Cron jobs, background workers\n│   ├── libs/              # Third-party integrations (email, S3, JWT)\n│   ├── app.js             # Express app initialization\n│   └── server.js          # App entry point\n│\n├── tests/                 # Unit & integration tests\n├── .env                   # Environment variables\n├── package.json\n└── README.md"
+    },
+    {
+      "type": "heading",
+      "text": "How Each Layer Works"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Controllers (How?): Receive requests → validate input → call services → send response. Why? Keep express logic clean — no business logic.",
+        "Services (How?): Perform business logic (DB queries, calculations). Why? Reusable across controllers; testable.",
+        "Models (How?): Define schemas → map collections/tables. Why? Centralized DB structure.",
+        "Routes (How?): Map endpoints to controllers. Why? Cleaner URL structure, separation from logic.",
+        "Middlewares: Auth, rate limiting, validation. Why? Reusable logic between request and controller.",
+        "Config: DB connection, environment setup. Why? Keep credentials & settings isolated."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Why use an MVC architecture?",
+      "answer": "It separates data (Model), UI/API layer (View/Response), and logic (Controller), making the code modular, testable, and scalable."
+    },
+    {
+      "type": "qa",
+      "question": "What goes inside controllers?",
+      "answer": "Only request handling: validation, calling services, sending response. No business logic."
+    },
+    {
+      "type": "qa",
+      "question": "Why do we use services?",
+      "answer": "To isolate business logic from express routes & controllers, improve reusability, and make testing easier."
+    },
+    {
+      "type": "qa",
+      "question": "Should routes contain business code?",
+      "answer": "No. Routes only map endpoints to controllers for clean separation."
+    },
+    {
+      "type": "qa",
+      "question": "Why separate config, utils, and middlewares?",
+      "answer": "It keeps code organized and prevents duplication in large apps."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "MVC improves code clarity and scalability.",
+        "Production-ready structure includes controllers, services, models, routes, config, utils, and middlewares.",
+        "Clean folder organization makes backend apps easier to maintain.",
+        "Widely asked topic in backend & Express.js interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d66" },
+  "path": "/backend/middleware",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Express middleware are functions that run between the request and the response. They can modify req, res, run validation, log data, authorize users, or handle errors. Everything in Express flows through middleware, making it the core of Express apps."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Middleware?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Reusability: Write once, apply everywhere (auth, logging, validation).",
+        "Clean Architecture: Separation of concerns → no messy route handlers.",
+        "Pipeline Control: Controls request flow using next().",
+        "Centralized Error Handling: One place to catch all errors."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "How Middleware Works?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Middleware receives (req, res, next).",
+        "Calling next() moves execution to the next middleware.",
+        "Not calling next() stops the request (useful for auth failures)."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Levels / Types of Middleware"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Application-level Middleware (Global): How: app.use(). Why: Apply to every route (logging, CORS, parsing, rate limiting).",
+        "Router-level Middleware: How: router.use(). Why: Use inside specific route groups (user routes, admin routes).",
+        "Built-in Middleware: express.json() – parse JSON body; express.urlencoded() – parse form data; express.static() – serve static files.",
+        "Third-party Middleware: cors – handle cross-origin requests; helmet – security headers; morgan – logging; express-rate-limit – protect from brute-force attacks.",
+        "Custom Middleware: How: (req, res, next) => {}. Why: Custom logic like validation, authentication, logging.",
+        "Error-handling Middleware: How: (err, req, res, next). Why: Capture errors globally without repeating try/catch.",
+        "Asynchronous Middleware: Promise-based middleware used for DB operations and external API calls. How: async (req, res, next) => {}."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is middleware in Express?",
+      "answer": "A function that runs between request and response, modifying them or controlling the execution flow."
+    },
+    {
+      "type": "qa",
+      "question": "What does next() do?",
+      "answer": "It forwards the request to the next middleware. Without calling next(), the request stops."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between application-level and router-level middleware?",
+      "answer": "Application-level middleware runs for all routes, while router-level middleware applies only to specific route groups."
+    },
+    {
+      "type": "qa",
+      "question": "Why is error-handling middleware special?",
+      "answer": "It has four parameters (err, req, res, next), which Express recognizes for global error handling."
+    },
+    {
+      "type": "qa",
+      "question": "What are common third-party middleware?",
+      "answer": "cors, helmet, morgan, and express-rate-limit."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Middleware controls the request → response lifecycle in Express.",
+        "Types include application-level, router-level, built-in, custom, third-party, and error-handling middleware.",
+        "next() is essential for moving through the middleware pipeline.",
+        "Middleware makes Express apps modular, scalable, secure, and clean."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d67" },
+  "path": "/backend/databaseBasics",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Databases are the backbone of backend systems. They store, retrieve, and manage application data. They are primarily divided into SQL (Relational) and NoSQL (Non-Relational) depending on structure and scalability approach."
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "SQL (Relational Databases): Examples: MySQL, PostgreSQL, SQL Server. Why: Strong consistency and structured schemas. How: Uses tables, rows, columns, and relationships.",
+        "NoSQL (Non-Relational Databases): Examples: MongoDB, Cassandra, DynamoDB. Why: High scalability and flexible schemas. How: Uses documents, key-value pairs, wide-columns, or graphs.",
+        "ACID: Atomicity, Consistency, Isolation, Durability. Why: Ensures reliable and safe transactions in SQL databases, especially for financial systems.",
+        "BASE: Basically Available, Soft state, Eventually consistent. Why: Enables high availability and horizontal scalability in NoSQL databases.",
+        "Normalization: Why: Reduce data duplication and improve consistency. How: Apply 1NF, 2NF, and 3NF rules.",
+        "Denormalization: Why: Improve read performance. How: Duplicate or combine data strategically.",
+        "Indexes: Why: Faster query performance. How: Use B-Tree or Hash indexes.",
+        "Joins (SQL): INNER, LEFT, RIGHT, FULL joins. Why: Retrieve related data from multiple tables.",
+        "Aggregations: Why: Perform summaries and analytics. How: SQL uses GROUP BY and SUM(); NoSQL uses MongoDB aggregate pipelines."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Difference between SQL and NoSQL?",
+      "answer": "SQL databases are relational, structured, and ACID compliant. NoSQL databases are non-relational, flexible, and BASE oriented, designed for large-scale distributed systems."
+    },
+    {
+      "type": "qa",
+      "question": "What is ACID and why is it important?",
+      "answer": "ACID ensures safe, consistent, isolated, and durable transactions, which is critical for banking, payments, and other sensitive data systems."
+    },
+    {
+      "type": "qa",
+      "question": "When should you choose NoSQL over SQL?",
+      "answer": "When you need high horizontal scalability, flexible schemas, or must handle massive unstructured data such as social media or IoT workloads."
+    },
+    {
+      "type": "qa",
+      "question": "What are database indexes?",
+      "answer": "Indexes speed up searches by avoiding full table scans, similar to an index in a book."
+    },
+    {
+      "type": "qa",
+      "question": "What is normalization?",
+      "answer": "It is the process of organizing database tables to reduce redundancy and improve data consistency."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "SQL databases are structured, relational, and ACID compliant — best for strong consistency.",
+        "NoSQL databases are flexible, scalable, and BASE oriented — best for distributed systems.",
+        "Indexes, joins, and normalization optimize relational databases.",
+        "Aggregations enable analytics and reporting.",
+        "Choosing SQL vs NoSQL depends on data structure and scalability requirements."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d68" },
+  "path": "/backend/mongoDB",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "MongoDB is a NoSQL document database that stores data as JSON-like documents. Mongoose is an ODM (Object Data Modeling) library that provides schemas, validation, and structured data modeling for MongoDB."
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Schemas: Blueprint that defines structure of documents. Keeps data consistent. Example: new mongoose.Schema({ name: String })",
+        "Models: A schema wrapped into a model to interact with a collection. Example: mongoose.model(\"User\", userSchema). Benefit: Easy CRUD operations.",
+        "Validation: Built-in and custom rules like required, min, match. Prevents invalid data storage. Example: { email: { type: String, required: true } }",
+        "Timestamps: Automatically adds createdAt and updatedAt fields. Example: { timestamps: true }",
+        "Populate(): Joins data across collections. Example: User.find().populate(\"posts\"). Replaces referenced IDs with actual documents.",
+        "References (ObjectId): Creates relationships in NoSQL. Example: { user: { type: ObjectId, ref: \"User\" } }",
+        "Aggregation Pipeline: Advanced data processing like grouping, filtering, and lookups. Example: [{ $match: {} }, { $group: {} }]",
+        "Indexes: Improves read and query speed. Example: userSchema.index({ email: 1 }). Trade-off: Faster reads but slower writes."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+
+    {
+      "type": "qa",
+      "question": "What is Mongoose?",
+      "answer": "Mongoose is a MongoDB ODM that provides schemas, validation, and structured models for managing data."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between Schema and Model?",
+      "answer": "Schema defines the structure of documents, while Model interacts with the MongoDB collection using that schema."
+    },
+    {
+      "type": "qa",
+      "question": "What is populate()?",
+      "answer": "populate() is a Mongoose feature that performs reference-based joins between collections."
+    },
+    {
+      "type": "qa",
+      "question": "When do you use Aggregation Pipeline?",
+      "answer": "For advanced operations like grouping, lookup, sorting, and analytics directly inside the database."
+    },
+    {
+      "type": "qa",
+      "question": "What are indexes and why are they used?",
+      "answer": "Indexes speed up queries but slow down inserts and updates. They are used for query performance optimization."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "MongoDB stores flexible JSON-like documents.",
+        "Mongoose adds structure using schemas and models.",
+        "Validation ensures data safety at the database level.",
+        "populate() manages relationships between collections.",
+        "Aggregation pipelines and indexes improve performance and analytics."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d69" },
+  "path": "/backend/queryMethods",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Mongoose provides various query methods to interact with MongoDB collections. These methods allow you to read, update, and delete documents efficiently."
+    },
+
+    {
+      "type": "heading",
+      "text": "Common Methods & How to Use"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "find(): Retrieve multiple documents. Example: Model.find({ age: { $gt: 18 } })",
+        "findOne(): Retrieve a single document. Example: Model.findOne({ email: \"test@example.com\" })",
+        "findById(): Find a document by its _id. Example: Model.findById(\"64a12345abc6789def012345\")",
+        "updateOne(): Update a single document. Example: Model.updateOne({ name: \"John\" }, { $set: { age: 30 } })",
+        "deleteOne(): Delete a single document. Example: Model.deleteOne({ name: \"John\" })",
+        "aggregate(): Perform aggregation operations. Example: Model.aggregate([{ $match: {} }, { $group: { _id: \"$field\", count: { $sum: 1 } } }])",
+        "lean(): Returns plain JavaScript objects instead of Mongoose documents. Example: Model.find().lean(). Faster for read-only queries with lower memory usage.",
+        "exec(): Executes a query and returns a promise. Example: Model.find().exec(). Enables async/await syntax."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+
+    {
+      "type": "qa",
+      "question": "Difference between find() and findOne()?",
+      "answer": "find() returns an array of documents, while findOne() returns a single document."
+    },
+    {
+      "type": "qa",
+      "question": "Why use lean()?",
+      "answer": "lean() returns plain JavaScript objects, making queries faster and reducing memory usage. It is ideal for read-only operations."
+    },
+    {
+      "type": "qa",
+      "question": "What does exec() do?",
+      "answer": "exec() executes the query and returns a promise, allowing the use of async/await for cleaner asynchronous code."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Mongoose query methods allow reading, updating, and deleting documents efficiently.",
+        "Use find, findOne, and findById for fetching data.",
+        "Use updateOne and deleteOne for modifying data.",
+        "Use lean() for performance optimization and exec() for promise-based queries."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d6a" },
+  "path": "/backend/sqlQueries",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "SQL queries are used to interact with relational databases (RDBMS). Optimizing queries ensures better performance, lower latency (Latency: time taken for a single request to get a response; Concurrency: ability to handle multiple tasks at the same time), and efficient use of indexes."
+    },
+
+    {
+      "type": "heading",
+      "text": "Common SQL Queries & How to Use"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "SELECT: Retrieve data from tables. Example: SELECT * FROM users;",
+        "JOINS: Combine data from multiple tables. Example: SELECT u.name, o.total FROM users u INNER JOIN orders o ON u.id = o.user_id;",
+        "GROUP BY: Aggregate data based on a column. Example: SELECT department, COUNT(*) FROM employees GROUP BY department;",
+        "Subqueries: Nested queries inside another query. Example: SELECT name FROM users WHERE id IN (SELECT user_id FROM orders);",
+        "Indexes: Speed up data retrieval. Example: CREATE INDEX idx_user_email ON users(email);",
+        "Transactions: Execute multiple queries atomically. Example: BEGIN; UPDATE accounts SET balance = balance - 100 WHERE id = 1; UPDATE accounts SET balance = balance + 100 WHERE id = 2; COMMIT;"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Query Optimization Tips"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Use indexes for frequently searched columns.",
+        "Avoid SELECT * and fetch only required columns.",
+        "Use JOINs wisely to prevent unnecessary data scanning.",
+        "Analyze query execution plans using EXPLAIN to detect bottlenecks."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+
+    {
+      "type": "qa",
+      "question": "Difference between INNER JOIN and LEFT JOIN?",
+      "answer": "INNER JOIN returns only matching rows from both tables, while LEFT JOIN returns all rows from the left table along with matching rows from the right table."
+    },
+    {
+      "type": "qa",
+      "question": "Why use transactions?",
+      "answer": "Transactions ensure multiple queries execute atomically and prevent partial updates if a failure occurs."
+    },
+    {
+      "type": "qa",
+      "question": "How do indexes improve performance?",
+      "answer": "Indexes speed up data retrieval by avoiding full table scans and allowing faster lookups."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "SQL queries provide structured access to relational databases.",
+        "Joins, GROUP BY, and subqueries enable complex data manipulation.",
+        "Indexes and transactions improve performance and data integrity.",
+        "Query optimization is essential for scalable and efficient applications."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d6b" },
+  "path": "/backend/caching",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Caching improves application performance by storing frequently accessed data in fast storage (memory) to reduce database or API calls."
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Why caching: Reduce database load, speed up response time, and improve overall user experience.",
+        "Redis basics: In-memory key-value store used for caching. Examples: SET user:1 '{\"name\":\"John\"}', GET user:1",
+        "In-memory vs Persistent caching: In-memory caching is extremely fast but data is lost on server restart (e.g., Redis, Node memory). Persistent caching stores data on disk and survives restarts (e.g., Redis with RDB or AOF persistence). Redis RDB creates periodic snapshots and is fast but may lose recent data. Redis AOF logs every write operation, is more durable, but slightly slower. Memcached is typically in-memory only with no persistence.",
+        "Cache invalidation: Ensures cached data remains fresh. Use DEL key or TTL-based expiration like SET key value EX 60.",
+        "Reducing DB load: Cache frequently executed queries, API responses, or computed results to avoid repeated database hits."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+
+    {
+      "type": "qa",
+      "question": "Why use caching?",
+      "answer": "Caching reduces latency, decreases database load, and significantly improves application performance."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between in-memory and persistent cache?",
+      "answer": "In-memory caching is faster but volatile and loses data on restart, while persistent caching survives restarts but is slightly slower."
+    },
+    {
+      "type": "qa",
+      "question": "What is cache invalidation?",
+      "answer": "Cache invalidation is the process of removing or updating stale cache data to ensure data freshness."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Caching improves backend performance and reduces database or API load.",
+        "Redis is a widely used in-memory caching solution.",
+        "TTL and invalidation strategies are critical to keep cache data fresh.",
+        "Caching is essential for building scalable and high-performance backend systems."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d6c" },
+  "path": "/backend/authAuthz",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Authentication and authorization are key for securing backend applications. Authentication verifies who the user is, and authorization determines what the user can access."
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "JWT (JSON Web Tokens): Token-based authentication. How: jwt.sign(payload, secret, { expiresIn: '1h' }). Why: Stateless, scalable, and easy to use for APIs.",
+        "Access vs Refresh Tokens: Access tokens are short-lived and used for API requests. Refresh tokens are long-lived and used to obtain new access tokens without re-login.",
+        "Session-based Authentication: Stores user session on the server. How: req.session.user = { id: userId }. Why: Simple and effective for server-rendered apps, but less scalable.",
+        "RBAC (Role-Based Access Control): Assigns roles with specific permissions. How: if(user.role === 'admin'){ /* allow */ }",
+        "Permissions: Fine-grained control over individual resources or actions. Why: Ensures only authorized users can access or modify data.",
+        "Secure Storage: Secrets and tokens should be stored securely using environment variables or encrypted databases to prevent leaks and security breaches."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+
+    {
+      "type": "qa",
+      "question": "Difference between authentication and authorization?",
+      "answer": "Authentication verifies the identity of a user, while authorization controls what resources the user can access."
+    },
+    {
+      "type": "qa",
+      "question": "Why use JWT over sessions?",
+      "answer": "JWTs are stateless, scalable, and ideal for APIs and microservice-based architectures."
+    },
+    {
+      "type": "qa",
+      "question": "What are access and refresh tokens?",
+      "answer": "Access tokens are short-lived and used for API requests, while refresh tokens are long-lived and used to obtain new access tokens without requiring the user to log in again."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Authentication verifies user identity, while authorization controls access to resources.",
+        "JWT and token-based strategies are well-suited for modern backend APIs.",
+        "RBAC and permissions enable fine-grained access control.",
+        "Secure storage of secrets and tokens is critical for backend security."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d6d" },
+  "path": "/backend/fileUpload",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "File uploads are common in backend applications for images, documents, or media. Node.js uses libraries like Multer for handling multipart/form-data."
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Multer: Middleware to handle file uploads. Example: const upload = multer({ dest: 'uploads/' })",
+        "Single vs Multiple Uploads: upload.single('file') allows one file per request, while upload.array('files', 5) allows multiple files with a limit of 5.",
+        "Storage Engines: Control where and how files are stored using multer.diskStorage({ destination, filename }).",
+        "Cloud Upload: Files can be stored on cloud services like Cloudinary or AWS S3 to reduce server load and improve scalability.",
+        "GridFS: Used to store large files (>16MB) in MongoDB. Example: const bucket = new mongodb.GridFSBucket(db);"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+
+    {
+      "type": "qa",
+      "question": "What is Multer?",
+      "answer": "Multer is a Node.js middleware used to handle multipart/form-data, primarily for uploading files."
+    },
+
+    {
+      "type": "qa",
+      "question": "Difference between single and multiple file uploads?",
+      "answer": "Single upload handles one file per request, while multiple upload handles many files with a defined limit."
+    },
+
+    {
+      "type": "qa",
+      "question": "Why use cloud storage for file uploads?",
+      "answer": "Cloud storage is scalable, reduces server load, improves security, and allows global access to files."
+    },
+
+    {
+      "type": "qa",
+      "question": "When should GridFS be used?",
+      "answer": "GridFS is used when files exceed MongoDB’s 16MB document size limit."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+
+    {
+      "type": "list",
+      "items": [
+        "Multer simplifies file uploads in Node.js applications.",
+        "Single and multiple upload strategies depend on application requirements.",
+        "Storage engines control file destination and naming.",
+        "Cloud storage and GridFS provide scalable solutions for large files.",
+        "Understanding file upload strategies is essential for backend scalability and reliability."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d6e" },
+  "path": "/backend/errorHandling",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Proper error handling ensures applications are robust, maintainable, and provide meaningful feedback to clients."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Global Error Handler: Central place to catch and respond to all errors. How: app.use((err, req, res, next) => { res.status(err.status || 500).json({ message: err.message }); });",
+        "Try/Catch with Async/Await: Catch errors in asynchronous code. How: try { await asyncFunc(); } catch (err) { next(err); }",
+        "Error Middleware: Middleware specifically for handling errors in Express. How: function errorHandler(err, req, res, next) { res.status(err.status || 500).send(err.message); }",
+        "HTTP Status Codes: Communicate type of error to client. Examples: 200 OK – Request successful; 201 Created – New resource created; 400 Bad Request – Invalid syntax; 401 Unauthorized – Authentication required; 403 Forbidden – Access denied; 404 Not Found – Resource not found; 408 Request Timeout – Server timed out; 409 Conflict – Conflict with current state; 422 Unprocessable Entity – Well-formed but semantic errors; 500 Internal Server Error – Generic server error; 502 Bad Gateway – Invalid response from upstream; 503 Service Unavailable – Server temporarily unavailable; 504 Gateway Timeout – Upstream server failed to respond."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "How to handle async errors in Express?",
+      "answer": "Use try/catch blocks in async functions and call next(err) to pass errors to error middleware."
+    },
+    {
+      "type": "qa",
+      "question": "Why use a global error handler?",
+      "answer": "Centralizes error handling, reduces code duplication, and ensures consistent responses."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between 4xx and 5xx status codes?",
+      "answer": "4xx indicates client errors; 5xx indicates server errors."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use try/catch with async/await to handle asynchronous errors.",
+        "Centralize error responses with global error middleware.",
+        "Return appropriate HTTP status codes for clear client communication.",
+        "Proper error handling improves app reliability, debugging, and user experience."
+      ]
+    },
+
+    {
+  "topic": { "$oid": "69450bcec612a78e1be03d6f" },
+  "title": "Security (Web Security)",
+  "path": "/backend/security",
+  "priority": "Compulsory",
+  "order": 27,
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web security is crucial to protect applications and users from attacks and data breaches."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "CORS (Cross-Origin Resource Sharing): Controls which domains can access your API. How: app.use(cors({ origin: 'https://example.com' }))",
+        "XSS (Cross-Site Scripting): Prevent injection of malicious scripts. How: Sanitize user inputs and use libraries like DOMPurify.",
+        "CSRF (Cross-Site Request Forgery): Prevent unauthorized actions from other sites. How: Use CSRF tokens such as csurf().",
+        "Input Sanitization: Clean and validate user inputs to prevent attacks. How: Use express-validator or custom validation functions.",
+        "Rate Limiting: Prevent abuse by limiting requests per IP. How: express-rate-limit({ windowMs: 15*60*1000, max: 100 })",
+        "Password Hashing: Store passwords securely. How: bcrypt.hash(password, saltRounds).",
+        "HTTPS Basics: Encrypts communication between client and server. Why: Protects sensitive data from eavesdropping and man-in-the-middle attacks."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is CORS and why is it important?",
+      "answer": "CORS controls which domains can access your API, preventing unauthorized cross-origin requests."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between XSS and CSRF?",
+      "answer": "XSS injects malicious scripts into web pages, while CSRF tricks users into performing unwanted actions on authenticated websites."
+    },
+    {
+      "type": "qa",
+      "question": "Why hash passwords instead of storing plain text?",
+      "answer": "Hashing passwords protects users by ensuring that even if the database is compromised, original passwords cannot be easily recovered."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Apply CORS, input validation, and sanitization to protect APIs.",
+        "Prevent attacks like XSS and CSRF using proper middleware and security tokens.",
+        "Always hash passwords and enforce HTTPS for secure communication.",
+        "Rate limiting helps prevent abuse and ensures application stability."
+      ]
+    }
+  ]
+},
+
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d70" },
+  "title": "API Design Best Practices",
+  "path": "/backend/apiDesign",
+  "priority": "Compulsory",
+  "order": 28,
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Designing APIs correctly ensures maintainable, scalable, and user-friendly backend services."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "REST Naming Conventions: Use nouns for resources in plural form. How / Example: GET /users // get all users, POST /orders // create a new order.",
+        "Versioning: Manage changes without breaking clients. Example: /api/v1/users (v1), /api/v2/users (v2 with new fields).",
+        "DTOs (Data Transfer Objects): Define what data is sent to clients. Example: Sending user info { id: 1, name: 'John' } instead of full database model containing password, roles, and timestamps.",
+        "Status Codes: Communicate request outcome. Examples: 200 OK // successful GET request, 201 Created // new resource created, 400 Bad Request // invalid input, 404 Not Found // resource not found.",
+        "Pagination & Filtering: Handle large datasets efficiently. Example: GET /users?page=2&limit=10&role=admin → Returns page 2 of users, 10 per page, filtered by role = admin.",
+        "Query Optimization: Reduce database load and improve response time. Example: Use index db.users.createIndex({ email: 1 }); Select only needed fields db.users.find({}, { name: 1, email: 1 }); Limit results db.users.find().limit(10)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Why use API versioning?",
+      "answer": "API versioning allows changes to be introduced without breaking existing clients. Example: /api/v1/users vs /api/v2/users."
+    },
+    {
+      "type": "qa",
+      "question": "What is a DTO and why is it useful?",
+      "answer": "DTOs define what data is sent externally and prevent sensitive information leaks. Example: { id, name } instead of { id, name, password, role }."
+    },
+    {
+      "type": "qa",
+      "question": "How do pagination and filtering help?",
+      "answer": "They reduce response size, database load, and improve client performance. Example: GET /users?page=2&limit=10&role=admin."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use REST conventions and API versioning for scalable and maintainable APIs.",
+        "DTOs improve security and consistency of API responses.",
+        "Pagination, filtering, and optimized queries significantly improve performance.",
+        "Correct HTTP status codes clearly communicate request results to clients."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d71" },
+  "title": "Background Jobs & Queues",
+  "path": "/backend/jobsQueues",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Background jobs and queues help handle tasks asynchronously, improving performance and responsiveness of applications."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Why Use Background Jobs: Offload long-running or repeated tasks so API responses remain fast. Examples: Sending emails, push notifications, generating reports, image/video processing.",
+        "Bull (Redis-based queue): Job queue for Node.js with retries, scheduling, and concurrency. How: const Queue = require('bull'); const emailQueue = new Queue('emails');",
+        "RabbitMQ: Message broker for distributed systems; reliable for scaling tasks across multiple servers. How: channel.sendToQueue('task_queue', Buffer.from('Hello World')).",
+        "Queue Examples: Emails: emailQueue.add({ to: 'user@example.com', subject: 'Welcome' }); Notifications: notificationQueue.add({ userId: 1, message: 'New alert' }); Long-running tasks: reportQueue.add({ reportId: 123 })."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Why use background jobs instead of processing tasks immediately?",
+      "answer": "Background jobs are used to keep API responses fast and avoid blocking the main thread by handling heavy or time-consuming tasks asynchronously."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between Bull and RabbitMQ?",
+      "answer": "Bull is Redis-based and simple to integrate with Node.js applications, while RabbitMQ is a full-featured message broker designed for large-scale distributed systems."
+    },
+    {
+      "type": "qa",
+      "question": "Give an example of a background job.",
+      "answer": "Sending a welcome email after user registration using a background job queue."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use background jobs to offload long-running tasks and improve API performance.",
+        "Bull and RabbitMQ are popular tools for queue management in Node.js and distributed systems.",
+        "Queues are ideal for emails, notifications, report generation, and other asynchronous tasks.",
+        "Understanding background jobs and queues is essential for building scalable and responsive backend systems."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d72" },
+  "title": "Testing Backend APIs",
+  "path": "/backend/testing",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Testing ensures backend APIs work correctly, handle edge cases, and remain reliable as the codebase grows."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Unit Tests: Test individual functions or modules in isolation. How: expect(add(2,3)).toBe(5).",
+        "Integration Tests: Test multiple components together, such as API endpoints with database interactions. How: request(app).get('/users').expect(200) using Supertest.",
+        "Jest: JavaScript testing framework used for writing unit and integration tests. Example: jest.fn() for mocking functions.",
+        "Supertest: Library used to test HTTP endpoints of Node.js and Express applications. How: await request(app).post('/login').send({ email, password }).expect(200).",
+        "Mocking Database: Avoid hitting the real database during tests by using mocks or an in-memory database. Example: jest.mock('../models/User').",
+        "Testing Authentication & Errors: Verify protected routes and error handling logic. How: await request(app).get('/profile').set('Authorization', 'Bearer token')."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Difference between unit and integration tests?",
+      "answer": "Unit tests check a single function or module in isolation, while integration tests verify multiple components working together, such as APIs and databases."
+    },
+    {
+      "type": "qa",
+      "question": "How do you test API endpoints?",
+      "answer": "API endpoints are tested using tools like Supertest to send HTTP requests and assert response status codes and data."
+    },
+    {
+      "type": "qa",
+      "question": "Why mock the database during tests?",
+      "answer": "Mocking the database isolates tests, speeds them up, and prevents modification of real production or development data."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use unit tests to validate individual functions and modules.",
+        "Use integration tests to verify complete API flows.",
+        "Jest and Supertest are standard tools for testing Node.js backend APIs.",
+        "Mocking databases and authentication improves test reliability and speed.",
+        "Proper testing ensures backend stability, reliability, and long-term maintainability."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d73" },
+  "title": "Deployment & Environment",
+  "path": "/backend/deployment",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Proper deployment and environment management ensures your backend app runs securely, efficiently, and reliably in production."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Environment Variables: Used to store configuration values and secrets outside the source code. How: process.env.DB_URL or by using a .env file.",
+        "Deployment Basics: Deploy backend applications to cloud platforms. Examples: Heroku using git push heroku main, Vercel using vercel deploy, and AWS using EC2, Lambda, or Elastic Beanstalk.",
+        "Logging: Used to track application activity and errors. How: console.log() during development or production tools like Winston and Log4js.",
+        "Monitoring: Helps detect performance issues and runtime errors in production. How: Tools such as New Relic, Datadog, and Prometheus."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Why use environment variables?",
+      "answer": "Environment variables are used to keep sensitive information such as database URLs and API keys out of the source code and make configuration environment-specific."
+    },
+    {
+      "type": "qa",
+      "question": "How do you deploy a Node.js app to Heroku?",
+      "answer": "You initialize a Git repository, commit the code, and deploy the application using the command git push heroku main."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between logging and monitoring?",
+      "answer": "Logging records application events and errors, while monitoring tracks system performance, uptime, and overall application health."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Environment variables should be used to store sensitive configuration outside the codebase.",
+        "Backend applications can be deployed using platforms like Heroku, Vercel, or AWS.",
+        "Logging helps with debugging, while monitoring helps track performance and availability.",
+        "Good deployment practices ensure backend reliability, scalability, and long-term maintainability."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d74" },
+  "title": "WebSockets & Real-time Communication",
+  "path": "/backend/websockets",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "WebSockets enable full-duplex, real-time communication between client and server, allowing instant data updates."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Socket.io Basics: Simplifies WebSocket implementation in Node.js. How: const io = require('socket.io')(server);",
+        "Events: Communication happens using events emitted and listened on both client and server. Example: io.on('connection', socket => { socket.on('chat', msg => { io.emit('chat', msg) }) })",
+        "Broadcasting: Send messages to multiple clients except the sender. Example: socket.broadcast.emit('message', 'Hello everyone').",
+        "Rooms: Used to group clients for targeted messaging. Example: socket.join('room1'); io.to('room1').emit('message', 'Hello Room1').",
+        "Scaling Real-time Apps: Redis adapter or message brokers help scale Socket.io apps across multiple servers. Example: io.adapter(redisAdapter({ host: 'localhost', port: 6379 }))."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Difference between WebSockets and HTTP?",
+      "answer": "WebSockets provide a persistent, full-duplex communication channel, while HTTP follows a stateless request-response model."
+    },
+    {
+      "type": "qa",
+      "question": "What is a room in Socket.io?",
+      "answer": "A room is a logical group of connected sockets that allows broadcasting messages to specific users instead of all clients."
+    },
+    {
+      "type": "qa",
+      "question": "How to scale real-time apps with Socket.io?",
+      "answer": "By using Redis adapters or message brokers to synchronize events between multiple Socket.io server instances."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "WebSockets enable instant two-way communication between client and server.",
+        "Socket.io simplifies event handling, broadcasting, and room-based messaging.",
+        "Scaling real-time applications requires adapters like Redis in multi-server environments.",
+        "WebSockets are essential for chat systems, live notifications, gaming, and real-time dashboards."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d75" },
+  "title": "Performance & Scalability",
+  "path": "/backend/performance",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Performance and scalability strategies ensure your backend can handle growing traffic and data efficiently."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Clustering: Utilize multiple CPU cores for Node.js applications to handle more concurrent requests. How: const cluster = require('cluster'); if (cluster.isMaster) { cluster.fork(); }",
+        "Load Balancing: Distribute incoming traffic across multiple servers to prevent overload and improve availability. Example: Use Nginx or AWS ELB to balance requests between Node.js instances.",
+        "Horizontal vs Vertical Scaling: Vertical scaling increases resources (CPU/RAM) on a single server, while horizontal scaling adds more servers to handle traffic.",
+        "Database Replication: Duplicate data across multiple database servers to improve availability and read scalability. Example: MongoDB replica sets with primary and secondary nodes.",
+        "Database Sharding: Split data across multiple servers to scale writes and storage efficiently. Example: MongoDB sharded clusters such as shard1 handling users_0_1000 and shard2 handling users_1001_2000."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Difference between horizontal and vertical scaling?",
+      "answer": "Vertical scaling increases the resources of a single server, while horizontal scaling adds more servers to distribute the load."
+    },
+    {
+      "type": "qa",
+      "question": "Why use clustering in Node.js?",
+      "answer": "Node.js is single-threaded by default, so clustering allows multiple CPU cores to process requests concurrently and improve throughput."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between replication and sharding?",
+      "answer": "Replication copies the same data across servers for redundancy and availability, while sharding splits data across servers to improve scalability."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Clustering and load balancing improve backend performance and reliability.",
+        "Horizontal scaling and database sharding support growing traffic and large datasets.",
+        "Replication enhances availability and read performance.",
+        "These concepts are essential for building scalable, high-performance backend systems."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d76" },
+  "title": "Logging & Monitoring",
+  "path": "/backend/logging",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Logging and monitoring help track application behavior, detect errors, and ensure system reliability in production."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Winston: A flexible logging library for Node.js used to log application events and errors. How: const logger = require('winston'); logger.info('Server started');",
+        "Morgan: HTTP request logging middleware for Express applications. How: app.use(require('morgan')('combined')).",
+        "ELK Stack Basics: Elasticsearch, Logstash, and Kibana used for centralized logging and visualization. Example: Collect logs with Logstash, store them in Elasticsearch, and visualize them in Kibana.",
+        "Monitoring Tools: Used to track performance, uptime, and system health. Examples include New Relic, Datadog, Prometheus, and Grafana.",
+        "Error Tracking & Alerting: Detect runtime errors and notify teams in real time. How: Use tools like Sentry or Rollbar, for example Sentry.captureException(err)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Difference between Winston and Morgan?",
+      "answer": "Winston is used for logging application-level events and errors, while Morgan is used specifically for logging HTTP requests."
+    },
+    {
+      "type": "qa",
+      "question": "Why use centralized logging like ELK?",
+      "answer": "Centralized logging aggregates logs from multiple services, making it easier to search, analyze, visualize, and troubleshoot issues."
+    },
+    {
+      "type": "qa",
+      "question": "How do monitoring tools help in production?",
+      "answer": "Monitoring tools track uptime, performance metrics, and errors, and send alerts when anomalies or failures occur."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Winston and Morgan are commonly used for logging application events and HTTP requests.",
+        "Centralized logging solutions like ELK simplify monitoring across distributed systems.",
+        "Monitoring tools provide real-time insights into performance and system health.",
+        "Error tracking and alerting enable faster issue resolution and improved system reliability."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69450bcec612a78e1be03d77" },
+  "title": "Microservices & Architecture",
+  "path": "/backend/microservices",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Microservices architecture breaks a monolithic application into smaller, independent services that communicate over APIs, improving scalability, maintainability, and deployment flexibility."
+    },
+    {
+      "type": "heading",
+      "text": "Key Concepts & Examples"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Monolith vs Microservices: Monolith: Single codebase, tightly coupled. Microservices: Multiple independent services, deployable separately. Example: E-commerce monolith vs separate services for orders, payments, inventory.",
+        "REST vs gRPC: Communication protocols between services. REST: HTTP + JSON, human-readable. gRPC: HTTP/2 + Protobuf, faster and strongly typed. Example: Use gRPC for internal microservice communication.",
+        "API Gateway: Single entry point for client requests that routes to appropriate services. Example: /api/users routed to User Service, /api/orders routed to Order Service.",
+        "Service Discovery: Dynamically locate services in distributed systems. Example: Eureka, Consul, or Kubernetes service discovery.",
+        "Inter-service Communication: Services communicate via synchronous (REST/gRPC) or asynchronous (message queues) methods. Example: Order Service sends message to Inventory Service via RabbitMQ."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Difference between monolith and microservices?",
+      "answer": "Monolith is a single codebase; microservices are independent services that can scale and deploy separately."
+    },
+    {
+      "type": "qa",
+      "question": "Why use an API Gateway?",
+      "answer": "An API Gateway provides a central entry point for requests, routes them to appropriate services, and handles cross-cutting concerns like authentication, rate limiting, and aggregation."
+    },
+    {
+      "type": "qa",
+      "question": "How do services communicate?",
+      "answer": "Services communicate synchronously via REST/gRPC or asynchronously via message queues."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Microservices improve scalability, maintainability, and deployment flexibility.",
+        "Use API Gateway to route requests and handle cross-cutting concerns.",
+        "Choose REST or gRPC depending on performance and typing requirements.",
+        "Service discovery and inter-service communication are essential for distributed systems."
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+]

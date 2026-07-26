@@ -1,0 +1,921 @@
+[
+  {
+  "topic": { "$oid": "69426686067372ab33ffa19c" },
+  "path": "/frontend/js-fundamentals",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Mastering core JavaScript concepts is essential for both interviews and real-world development. Topics like the event loop, closures, hoisting, prototype chain, and promises are frequently asked and tested."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ Event Loop & Asynchronous JavaScript"
+    },
+    {
+      "type": "paragraph",
+      "text": "The event loop manages the execution order of synchronous and asynchronous code."
+    },
+    {
+      "type": "code",
+      "code": "console.log(\"Start\");\nsetTimeout(() => console.log(\"Timeout\"), 0);\nPromise.resolve().then(() => console.log(\"Promise\"));\nconsole.log(\"End\");\n\n// Output:\n// Start\n// End\n// Promise\n// Timeout"
+    },
+    {
+      "type": "paragraph",
+      "text": "Note: Promise callbacks (microtasks) run before setTimeout callbacks (macrotasks)."
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ Closures"
+    },
+    {
+      "type": "paragraph",
+      "text": "A closure is created when a function remembers variables from its lexical scope even after the outer function has executed."
+    },
+    {
+      "type": "code",
+      "code": "function outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    return count;\n  }\n}\n\nconst counter = outer();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2"
+    },
+    {
+      "type": "heading",
+      "text": "3️⃣ Hoisting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Declarations are moved to the top of their scope.",
+        "var is hoisted with undefined initialization.",
+        "let and const are hoisted but remain in the Temporal Dead Zone until initialized."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4️⃣ Prototype Chain"
+    },
+    {
+      "type": "paragraph",
+      "text": "JavaScript uses prototypal inheritance where objects inherit methods and properties through their prototype chain."
+    },
+    {
+      "type": "heading",
+      "text": "5️⃣ Promises"
+    },
+    {
+      "type": "paragraph",
+      "text": "Promises represent the eventual completion of asynchronous operations. Use then/catch or async/await for cleaner async code."
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "Explain the event loop and microtasks vs macrotasks.",
+      "answer": "JavaScript runs on a single thread. Microtasks like Promises run before the next render and before macrotasks such as setTimeout."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between closure and scope?",
+      "answer": "Scope defines where variables are accessible. Closure is when a function remembers its outer scope even after execution."
+    },
+    {
+      "type": "qa",
+      "question": "Prototype inheritance vs class-based inheritance?",
+      "answer": "Prototype inheritance uses objects inheriting from other objects directly. Classes are syntactic sugar over prototypes."
+    },
+    {
+      "type": "qa",
+      "question": "What does 'this' refer to in JavaScript?",
+      "answer": "It refers to the object calling the function. In arrow functions, 'this' is lexical."
+    },
+    {
+      "type": "qa",
+      "question": "What is hoisting?",
+      "answer": "Declarations are moved to the top of their scope before execution. let and const are hoisted but not initialized."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between var, let, and const?",
+      "answer": "var is function scoped and can be redeclared. let is block scoped and updatable. const is block scoped and not updatable."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between == and ===?",
+      "answer": "== compares values with type coercion. === compares both value and type strictly."
+    },
+    {
+      "type": "qa",
+      "question": "What are Promises and async/await?",
+      "answer": "Promises handle async operations using then/catch. async/await is syntactic sugar for writing async code cleanly."
+    },
+    {
+      "type": "qa",
+      "question": "Explain call, apply, and bind.",
+      "answer": "They control the 'this' context: call invokes immediately with arguments, apply with argument array, bind returns a new function."
+    },
+    {
+      "type": "qa",
+      "question": "Shallow copy vs deep copy?",
+      "answer": "Shallow copy copies top-level values only. Deep copy duplicates all nested objects."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Event loop manages async execution order.",
+        "Closures preserve lexical scope.",
+        "Hoisting moves declarations to top.",
+        "Prototype chain enables inheritance.",
+        "Promises simplify async programming."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa19d" },
+  "path": "/frontend/js-execution-context",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Execution Context is the environment in which JavaScript code is evaluated and executed. It defines how variables, functions, and the value of 'this' are created and accessed during runtime."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ Types of Execution Context"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Global Execution Context (GEC): Created when the JavaScript file loads. It creates the global object (window in browser) and sets 'this' to it.",
+        "Function Execution Context (FEC): Created every time a function is invoked. Each function gets its own execution context.",
+        "Eval Execution Context: Created when eval() is used (rare and discouraged)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ Creation Phase (Memory Allocation Phase)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Variables are allocated memory and initialized with undefined.",
+        "Function declarations are stored fully in memory.",
+        "The value of 'this' is determined.",
+        "Lexical Environment and Variable Environment are created."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3️⃣ Execution Phase (Code Execution Phase)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "JavaScript executes code line by line.",
+        "Variables are assigned actual values.",
+        "Functions are executed and new execution contexts are pushed to the call stack."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4️⃣ Lexical Environment"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Lexical Environment is a structure that holds variable bindings and a reference to its outer environment. It determines scope and enables closures."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Environment Record: Stores variable and function declarations.",
+        "Outer Environment Reference: Points to the parent scope.",
+        "Forms the scope chain used during variable lookup."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "5️⃣ Variable Environment"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Variable Environment is similar to the Lexical Environment but primarily stores variables declared using var and function declarations."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Contains var variables and functions.",
+        "Shares outer reference with Lexical Environment.",
+        "Helps JavaScript manage older scoping rules."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "6️⃣ this Binding"
+    },
+    {
+      "type": "list",
+      "items": [
+        "In Global Execution Context: 'this' refers to window (browser) or global object (Node.js).",
+        "Inside regular functions: 'this' depends on how the function is called.",
+        "Inside object methods: 'this' refers to the object itself.",
+        "Inside arrow functions: 'this' is lexically inherited from the surrounding scope."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Execution Context Flow Example"
+    },
+    {
+      "type": "code",
+      "code": "var x = 10;\nfunction foo() {\n  var y = 20;\n  console.log(x + y);\n}\nfoo();\n\n// Global EC created → foo() creates Function EC → values assigned → output: 30"
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is an Execution Context in JavaScript?",
+      "answer": "It is the environment where JavaScript code is created and executed, managing variables, functions, scope, and 'this'."
+    },
+    {
+      "type": "qa",
+      "question": "What happens during the creation phase?",
+      "answer": "Memory is allocated for variables and functions, variables get undefined, functions are stored fully, and 'this' is set."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between Lexical Environment and Variable Environment?",
+      "answer": "Lexical Environment handles let/const and block scopes; Variable Environment mainly handles var and function declarations."
+    },
+    {
+      "type": "qa",
+      "question": "How is 'this' determined?",
+      "answer": "'this' depends on execution context and how the function is called; arrow functions inherit it lexically."
+    },
+    {
+      "type": "qa",
+      "question": "Why are Execution Contexts important?",
+      "answer": "They explain hoisting, scope, closures, call stack behavior, and how JavaScript executes code internally."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Execution Context controls how JS code runs.",
+        "Global and Function contexts manage scope and memory.",
+        "Creation phase allocates memory and hoists declarations.",
+        "Execution phase runs code line by line.",
+        "Lexical & Variable Environments handle scope resolution.",
+        "'this' binding depends on context."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa19e" },
+  "path": "/frontend/js-call-stack",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Call Stack is a data structure used by JavaScript to keep track of function calls. It determines the order in which functions are executed and completed during program execution."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ What Is the Call Stack?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A stack data structure.",
+        "Uses LIFO (Last In, First Out) principle.",
+        "Stores stack frames for each function call.",
+        "Ensures JavaScript executes one function at a time."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ What Is a Stack Frame?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A record of a function call.",
+        "Contains function arguments.",
+        "Contains local variables.",
+        "Stores the return address.",
+        "Created when a function is called.",
+        "Removed when the function finishes execution."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3️⃣ How the Call Stack Works"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Global Execution Context is pushed first.",
+        "Each function call is pushed onto the stack.",
+        "When a function completes, it is popped off the stack."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4️⃣ Push and Pop Mechanism"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Push: When a function is invoked, its execution context is added to the stack.",
+        "Pop: When a function finishes, its execution context is removed."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "5️⃣ LIFO Execution Order"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The last function called executes first.",
+        "Inner functions complete before outer functions.",
+        "Creates predictable execution flow."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Example"
+    },
+    {
+      "type": "code",
+      "code": "function first() {\n  console.log(\"First\");\n}\n\nfunction second() {\n  first();\n  console.log(\"Second\");\n}\n\nfunction third() {\n  second();\n  console.log(\"Third\");\n}\n\nthird();"
+    },
+    {
+      "type": "list",
+      "items": [
+        "third() is pushed to the stack.",
+        "second() is pushed.",
+        "first() is pushed.",
+        "first() completes and pops.",
+        "second() completes and pops.",
+        "third() completes and pops."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "6️⃣ Call Stack and Recursion"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Each recursive call creates a new stack frame.",
+        "Deep recursion grows the call stack.",
+        "Exceeding stack limit causes stack overflow."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "7️⃣ Stack Overflow"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Occurs when call stack memory limit is exceeded.",
+        "Often caused by infinite recursion.",
+        "Results in runtime error and program crash."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "8️⃣ Relation with Execution Context"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Each stack frame represents an execution context.",
+        "Call Stack manages execution contexts.",
+        "Contexts are pushed and popped in order."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the call stack?",
+      "answer": "A stack data structure that tracks function calls in JavaScript."
+    },
+    {
+      "type": "qa",
+      "question": "Why is JavaScript single-threaded?",
+      "answer": "Because it uses a single call stack to execute code."
+    },
+    {
+      "type": "qa",
+      "question": "What causes stack overflow?",
+      "answer": "Too many nested or infinite function calls."
+    },
+    {
+      "type": "qa",
+      "question": "Difference between call stack and execution context?",
+      "answer": "Execution context defines how code runs; call stack manages the order of execution."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Call Stack controls function execution order.",
+        "Uses LIFO principle.",
+        "Each call creates a stack frame.",
+        "Explains recursion and runtime errors clearly."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa19f" },
+  "path": "/frontend/js/lexical-environment",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Lexical Environment is an internal JavaScript structure that defines how variables are stored and how they are accessed based on where they are written in the code. It is the foundation of scope and closures."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ What Is a Lexical Environment?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Created whenever code is written lexically.",
+        "Determines variable accessibility.",
+        "Used during identifier resolution.",
+        "Exists for global scope, functions, and blocks."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ Components of Lexical Environment"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Environment Record – Stores variable and function declarations.",
+        "Outer Lexical Reference – Reference to the parent lexical environment."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3️⃣ Environment Record"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Contains bindings for variables, functions, and parameters.",
+        "Declarative Environment Record (let, const, function declarations).",
+        "Object Environment Record (global object storage)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4️⃣ Outer Lexical Reference"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Points to the lexical environment of the parent scope.",
+        "Creates the scope chain.",
+        "Stops at the global lexical environment."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "5️⃣ Scope Chain"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A chain of lexical environments.",
+        "Used during variable lookup.",
+        "Searches from inner scope to outer scope."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "6️⃣ Identifier Resolution"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Process of finding variables in the scope chain.",
+        "Stops once the identifier is found.",
+        "Throws a reference error if not found."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "7️⃣ Lexical Environment and Closures"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Closures retain access to their outer lexical environment.",
+        "Allows functions to remember variables after execution.",
+        "Essential for callbacks and asynchronous code."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Example"
+    },
+    {
+      "type": "code",
+      "code": "function outer() {\n  let x = 10;\n\n  function inner() {\n    console.log(x);\n  }\n\n  return inner;\n}\n\nconst fn = outer();\nfn();"
+    },
+    {
+      "type": "list",
+      "items": [
+        "inner() remembers x.",
+        "Closure keeps reference to outer lexical environment.",
+        "x is resolved through the scope chain."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is a lexical environment?",
+      "answer": "An internal structure that stores variable bindings and manages scope resolution."
+    },
+    {
+      "type": "qa",
+      "question": "What is an environment record?",
+      "answer": "A storage structure that holds variable and function declarations."
+    },
+    {
+      "type": "qa",
+      "question": "What is outer lexical reference?",
+      "answer": "A reference pointing to the parent lexical environment."
+    },
+    {
+      "type": "qa",
+      "question": "How does JavaScript find variables?",
+      "answer": "By searching through the scope chain from inner to outer environments."
+    },
+    {
+      "type": "qa",
+      "question": "How are closures related to lexical environment?",
+      "answer": "Closures preserve access to their lexical environment even after execution."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Lexical environment defines scope.",
+        "Controls variable access and lookup.",
+        "Forms the scope chain.",
+        "Core mechanism behind closures.",
+        "Critical for understanding JavaScript internals."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa1a0" },
+  "path": "/frontend/js/variable-environment",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Variable Environment is an internal JavaScript structure that stores variable and function declarations during code execution. It plays a major role in hoisting, scope handling, and the creation phase of execution contexts."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ What Is a Variable Environment?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Created for every execution context.",
+        "Stores variable and function bindings.",
+        "Used mainly during the creation phase.",
+        "Controls JavaScript hoisting behavior."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ What Does It Store?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "var declarations.",
+        "Function declarations.",
+        "Function parameters."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3️⃣ Creation Phase and Hoisting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Memory is allocated before execution begins.",
+        "var variables are initialized as undefined.",
+        "Function declarations are stored fully.",
+        "Allows variables to be accessed before declaration."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4️⃣ Binding Initialization"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Defines how variables are initialized in memory.",
+        "var → initialized as undefined.",
+        "let and const → remain uninitialized initially."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "5️⃣ Temporal Dead Zone (TDZ)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Applies to let and const variables.",
+        "Time between declaration and initialization.",
+        "Accessing variables in TDZ throws an error."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "6️⃣ Environment Record Storage"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Variables are stored inside environment records.",
+        "Separate records exist for global and function scopes.",
+        "Supports identifier resolution."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Example"
+    },
+    {
+      "type": "code",
+      "code": "console.log(a); // undefined\nvar a = 10;\n\nconsole.log(b); // ReferenceError\nlet b = 20;\n\ntest();\n\nfunction test() {\n  console.log(\"Function Hoisted\");\n}"
+    },
+    {
+      "type": "list",
+      "items": [
+        "a is hoisted and initialized as undefined.",
+        "b exists in the Temporal Dead Zone.",
+        "test() is fully hoisted."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Difference: Variable vs Lexical Environment"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Variable Environment manages hoisting and declarations.",
+        "Lexical Environment manages scope and closures.",
+        "Both operate together inside execution contexts."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is a variable environment?",
+      "answer": "An internal structure that stores variable and function declarations."
+    },
+    {
+      "type": "qa",
+      "question": "Why does hoisting occur?",
+      "answer": "Because memory is allocated for variables during the creation phase."
+    },
+    {
+      "type": "qa",
+      "question": "What is the Temporal Dead Zone?",
+      "answer": "A period where let and const exist but cannot be accessed."
+    },
+    {
+      "type": "qa",
+      "question": "Are let and const hoisted?",
+      "answer": "Yes, but they are not initialized until execution reaches them."
+    },
+    {
+      "type": "qa",
+      "question": "What is stored in environment records?",
+      "answer": "Variable bindings, function declarations, and parameters."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Variable environment controls hoisting behavior.",
+        "Created during execution context creation phase.",
+        "Explains var, let, and const differences.",
+        "Key concept for JavaScript internals."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa1a1" },
+  "path": "/frontend/js/environment-records",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Environment Records are internal JavaScript data structures used to store variable and function bindings inside an execution context. They work closely with the lexical environment to manage scope and identifier resolution."
+    },
+    {
+      "type": "heading",
+      "text": "1️⃣ What Is an Environment Record?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Stores bindings for variables, functions, and parameters.",
+        "Created for each lexical environment.",
+        "Helps JavaScript resolve identifiers.",
+        "Not directly accessible by developers."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2️⃣ Types of Environment Records"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Declarative Environment Record",
+        "Object Environment Record"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3️⃣ Declarative Environment Records"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Used for function, block, and module scopes.",
+        "Stores let and const variables.",
+        "Stores function declarations.",
+        "Stores function parameters.",
+        "Supports Temporal Dead Zone (TDZ)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "4️⃣ Object Environment Records"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Used mainly in the global scope.",
+        "Bindings are stored as properties on an object.",
+        "In browsers, this object is window.",
+        "Used by var declarations."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "5️⃣ Variable and Function Bindings"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Variables are mapped to values.",
+        "Functions are stored fully during creation phase.",
+        "Parameters act as bindings inside functions."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "6️⃣ Scope Management"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Each scope has its own environment record.",
+        "Prevents variable name conflicts.",
+        "Controls variable visibility."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "7️⃣ Outer References"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Each environment record references its parent.",
+        "Forms the scope chain.",
+        "Stops at the global environment."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Example – Environment Records in Action"
+    },
+    {
+      "type": "code",
+      "code": "let x = 10;\n\nfunction test() {\n  let y = 20;\n\n  function inner() {\n    console.log(x + y);\n  }\n\n  inner();\n}\n\ntest();"
+    },
+    {
+      "type": "heading",
+      "text": "Relation with Lexical Environment"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Lexical environment consists of an environment record and an outer reference.",
+        "Environment record stores the actual bindings.",
+        "Outer reference connects parent scopes."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is an environment record?",
+      "answer": "It is an internal JavaScript structure that stores variable and function bindings."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between declarative and object environment records?",
+      "answer": "Declarative records store let, const, functions, and parameters, while object records store var bindings on the global object."
+    },
+    {
+      "type": "qa",
+      "question": "Where are function parameters stored?",
+      "answer": "Inside the function’s environment record."
+    },
+    {
+      "type": "qa",
+      "question": "How does JavaScript resolve identifiers?",
+      "answer": "By checking environment records through the scope chain."
+    },
+    {
+      "type": "qa",
+      "question": "Can developers access environment records directly?",
+      "answer": "No, they are internal JavaScript mechanisms."
+    },
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Environment records store variable and function bindings.",
+        "They manage scope and identifier resolution.",
+        "They are a core part of lexical environments.",
+        "Essential for understanding JavaScript closures and scope."
+      ]
+    }
+  ]
+}
+
+
+
+
+]

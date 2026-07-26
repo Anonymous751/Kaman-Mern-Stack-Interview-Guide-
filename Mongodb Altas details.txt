@@ -1,0 +1,7 @@
+Username- kamanpreetsingh51_db_user || kamanpreetsingh51_db
+
+Password- 9rSSPvmQ5VRNjs6u || codeNest
+
+
+
+connection string : mongodb+srv://kamanpreetsingh51_db:codeNest@codenestcluster.dvpnwex.mongodb.net/?appName=codeNestCluster

@@ -1,0 +1,1468 @@
+[
+  {
+    "title": "HTML Basics & Semantics",
+    "path": "/frontend/html-basics",
+    "explanation": "Why semantic tags matter for SEO, screen readers, and structure. Interview often asks: semantic tags vs div soup?",
+    "priority": "Medium",
+    "order": 1
+  },
+  {
+    "title": "HTML Forms",
+    "path": "/frontend/html-forms",
+    "explanation": "Form elements, input types, textarea, select, radio, checkbox, buttons, form submission lifecycle",
+    "priority": "Compulsory",
+    "order": 2
+  },
+  {
+    "title": "HTML Form Internals",
+    "path": "/frontend/html-forms-internals",
+    "explanation": "Controlled vs uncontrolled forms, browser validation, submit event flow, accessibility considerations",
+    "priority": "High",
+    "order": 3
+  },
+  {
+    "title": "HTML Tables",
+    "path": "/frontend/html-tables",
+    "explanation": "Table, thead, tbody, tfoot, tr, th, td, semantic and accessibility best practices",
+    "priority": "High",
+    "order": 4
+  },
+  {
+    "title": "HTML Media Elements",
+    "path": "/frontend/html-media",
+    "explanation": "Audio, video, picture, img, source, attributes and browser support",
+    "priority": "Medium",
+    "order": 5
+  },
+  {
+    "title": "CSS Basics, Flexbox & Grid",
+    "path": "/frontend/css-basics",
+    "explanation": "Understand flexbox (1D) vs grid (2D), alignment, gap, and responsive layouts. Interview favorite: flex-grow, grid-template-areas.",
+    "priority": "High",
+    "order": 6
+  },
+  {
+    "title": "CSS Box Model",
+    "path": "/frontend/css-box-model",
+    "explanation": "Content, padding, border, margin, box-sizing, width/height calculation, reflow and repaint impact",
+    "priority": "Compulsory",
+    "order": 7
+  },
+  {
+    "title": "CSS Positioning",
+    "path": "/frontend/css-positioning",
+    "explanation": "Static, relative, absolute, fixed, sticky, z-index and stacking context",
+    "priority": "Compulsory",
+    "order": 8
+  },
+  {
+    "title": "CSS Typography",
+    "path": "/frontend/css-typography",
+    "explanation": "Fonts, font-size, line-height, letter-spacing, word-spacing, text-align, text-transform, font-weight",
+    "priority": "Medium",
+    "order": 9
+  },
+  {
+    "title": "CSS Colors & Backgrounds",
+    "path": "/frontend/css-colors-backgrounds",
+    "explanation": "Color formats, gradients, images, background-size, background-position, background-repeat",
+    "priority": "Medium",
+    "order": 10
+  },
+  {
+    "title": "CSS Pseudo-classes & Pseudo-elements",
+    "path": "/frontend/css-pseudo",
+    "explanation": "hover, focus, active, nth-child, before, after and custom styling techniques",
+    "priority": "High",
+    "order": 11
+  },
+  {
+    "title": "CSS Specificity & Inheritance",
+    "path": "/frontend/css-specificity-inheritance",
+    "explanation": "Selector specificity rules, inheritance, important usage, and conflict resolution",
+    "priority": "High",
+    "order": 12
+  },
+  {
+    "title": "CSS Units & Measurements",
+    "path": "/frontend/css-units",
+    "explanation": "px, em, rem, percent, vh, vw, ch, ex, fr units, relative vs absolute sizing, calculations",
+    "priority": "Medium",
+    "order": 13
+  },
+  {
+    "title": "CSS Overflow, Visibility & Display",
+    "path": "/frontend/css-overflow-visibility-display",
+    "explanation": "Display types, visibility, overflow, text-overflow, clip",
+    "priority": "High",
+    "order": 14
+  },
+  {
+    "title": "Responsive Design & Media Queries",
+    "path": "/frontend/responsive-design",
+    "explanation": "Mobile-first, min-width vs max-width, breakpoints.",
+    "priority": "Medium",
+    "order": 15
+  },
+  {
+    "title": "CSS Animations & Transitions",
+    "path": "/frontend/css-animations",
+    "explanation": "keyframes, transform, transition timing, GPU acceleration.",
+    "priority": "Low",
+    "order": 16
+  },
+  {
+    "title": "JavaScript Fundamentals",
+    "path": "/frontend/js-fundamentals",
+    "explanation": "Event loop, closures, hoisting, prototype chain, promises.",
+    "priority": "Compulsory",
+    "order": 17
+  },
+  {
+    "title": "Execution Context",
+    "path": "/frontend/js-execution-context",
+    "explanation": "Global execution context, function execution context, creation phase, execution phase, variable environment, lexical environment, this binding",
+    "priority": "High",
+    "order": 18
+  },
+  {
+    "title": "Call Stack",
+    "path": "/frontend/js-call-stack",
+    "explanation": "Function call order, stack frames, LIFO execution, push/pop mechanism, recursion handling, stack overflow",
+    "priority": "High",
+    "order": 19
+  },
+  {
+    "title": "Lexical Environment",
+    "path": "/frontend/js-lexical-environment",
+    "explanation": "Identifier resolution, environment record, outer lexical reference, scope chain, closure access, variable lookup",
+    "priority": "High",
+    "order": 20
+  },
+  {
+    "title": "Variable Environment",
+    "path": "/frontend/js-variable-environment",
+    "explanation": "Var/function declarations, hoisting, TDZ, binding initialization, creation phase, environment record storage",
+    "priority": "High",
+    "order": 21
+  },
+  {
+    "title": "Environment Records",
+    "path": "/frontend/js-environment-records",
+    "explanation": "Declarative environment records, object environment records, variable bindings, function bindings, scope management, outer references",
+    "priority": "High",
+    "order": 22
+  },
+  {
+    "title": "Scope Chain",
+    "path": "/frontend/js-scope-chain",
+    "explanation": "Lexical scopes, variable lookup, parent scope references, closure access, execution context chain",
+    "priority": "High",
+    "order": 23
+  },
+  {
+    "title": "Hoisting Internals",
+    "path": "/frontend/js-hoisting",
+    "explanation": "Function declarations hoisting, var hoisting, temporal dead zone impact, engine parsing order, memory allocation",
+    "priority": "High",
+    "order": 24
+  },
+  {
+    "title": "Temporal Dead Zone (TDZ)",
+    "path": "/frontend/js-tdz",
+    "explanation": "let/const uninitialized access, ReferenceError, scope boundaries, runtime checks, engine enforcement",
+    "priority": "High",
+    "order": 25
+  },
+  {
+    "title": "Lexical Scoping",
+    "path": "/frontend/js-lexical-scoping",
+    "explanation": "Function scope determination at definition time, closure retention, parent scope access, variable resolution",
+    "priority": "High",
+    "order": 26
+  },
+  {
+    "title": "Function Scope vs Block Scope",
+    "path": "/frontend/js-function-vs-block-scope",
+    "explanation": "var function-scoped, let/const block-scoped, hoisting differences, TDZ, lifetime of variables",
+    "priority": "Medium",
+    "order": 27
+  },
+  {
+    "title": "Parser & AST (Abstract Syntax Tree)",
+    "path": "/frontend/js-engine/parser-ast",
+    "explanation": "Tokenization, syntax analysis, AST creation, code validation, node types, interpreter input",
+    "priority": "High",
+    "order": 28
+  },
+  {
+    "title": "Ignition Interpreter",
+    "path": "/frontend/js-engine/ignition",
+    "explanation": "Bytecode execution, step-by-step interpretation, baseline performance, call stack integration, microtask handling",
+    "priority": "High",
+    "order": 29
+  },
+  {
+    "title": "TurboFan Compiler",
+    "path": "/frontend/js-engine/turbofan",
+    "explanation": "Hot code detection, optimizing compiler, machine code generation, inline caching, type specialization, deoptimization handling",
+    "priority": "High",
+    "order": 30
+  },
+  {
+    "title": "Bytecode Generation",
+    "path": "/frontend/js-engine/bytecode",
+    "explanation": "Intermediate representation, Ignition output, function call instructions, execution efficiency, optimization input",
+    "priority": "High",
+    "order": 31
+  },
+  {
+    "title": "Hidden Classes",
+    "path": "/frontend/js-engine/hidden-classes",
+    "explanation": "V8 internal structures, property map, monomorphic/polymorphic shapes, inline cache optimization, fast property access",
+    "priority": "High",
+    "order": 32
+  },
+  {
+    "title": "Inline Caching",
+    "path": "/frontend/js-engine/inline-caching",
+    "explanation": "V8 optimization storing property/method access results, hidden classes, monomorphic/polymorphic caches, speeding repeated lookups, type specialization",
+    "priority": "High",
+    "order": 33
+  },
+  {
+    "title": "Deoptimization",
+    "path": "/frontend/js-engine/deoptimization",
+    "explanation": "When runtime assumptions fail, optimized code is reverted to baseline/interpreted code, bailouts, impact on performance, TurboFan engine behavior",
+    "priority": "High",
+    "order": 34
+  },
+  {
+    "title": "Garbage Collection (Mark & Sweep)",
+    "path": "/frontend/js-engine/gc-mark-sweep",
+    "explanation": "Mark reachable objects, sweep unreferenced objects, incremental vs full GC, impact on performance, memory freeing strategy",
+    "priority": "High",
+    "order": 35
+  },
+  {
+    "title": "Generational Garbage Collection",
+    "path": "/frontend/js-engine/gc-generational",
+    "explanation": "New space for short-lived objects, old space for long-lived objects, minor vs major GC, efficiency of young generation collection, promotion rules",
+    "priority": "Medium",
+    "order": 36
+  },
+  {
+    "title": "Memory Management in V8",
+    "path": "/frontend/js-engine/memory-management",
+    "explanation": "Heap allocation, stack vs heap separation, object lifetimes, garbage collection, memory fragmentation, pointer tracking, optimization strategies",
+    "priority": "High",
+    "order": 37
+  },
+  {
+    "title": "Memory Stack",
+    "path": "/frontend/js-memory/stack",
+    "explanation": "Stores primitive values, function call frames, local variables, LIFO order, call stack overflow, execution context management",
+    "priority": "High",
+    "order": 38
+  },
+  {
+    "title": "Memory Heap",
+    "path": "/frontend/js-memory/heap",
+    "explanation": "Stores objects, arrays, functions, closures, dynamic allocation, garbage collection, reference tracking, memory fragmentation issues",
+    "priority": "High",
+    "order": 39
+  },
+  {
+    "title": "Call Stack Frame Layout",
+    "path": "/frontend/js-memory/call-stack-frame",
+    "explanation": "Stores return address, execution context, local variables, arguments, 'this' binding, frame creation/destruction during function calls",
+    "priority": "Medium",
+    "order": 40
+  },
+  {
+    "title": "Closures Memory Retention",
+    "path": "/frontend/js-memory/closures-retention",
+    "explanation": "Closures retain outer lexical scope references, prevents GC of captured variables, memory retention patterns, best practices to avoid leaks",
+    "priority": "High",
+    "order": 41
+  },
+  {
+    "title": "Reference Holding in JavaScript",
+    "path": "/frontend/js-memory/reference-holding",
+    "explanation": "Objects stored by reference, variables hold pointers, shared references, shallow vs deep copies, implications on mutation and memory management",
+    "priority": "Medium",
+    "order": 42
+  },
+  {
+    "title": "Garbage Collection Phases",
+    "path": "/frontend/js-memory/gc-phases",
+    "explanation": "Mark-and-sweep, reference counting, generational GC, incremental/compacting GC, memory freeing strategies, JS engine optimizations",
+    "priority": "High",
+    "order": 43
+  },
+  {
+    "title": "Memory Leak: Global Leaks",
+    "path": "/frontend/js-memory/global-leaks",
+    "explanation": "Unintended global variables, window object references, long-lived memory retention, debugging globals, impact on performance",
+    "priority": "High",
+    "order": 44
+  },
+  {
+    "title": "Memory Leak: Detached DOM Nodes",
+    "path": "/frontend/js-memory/detached-dom",
+    "explanation": "DOM removed from document but still referenced in JS, closures retaining nodes, preventing GC, identifying and cleaning detached nodes",
+    "priority": "High",
+    "order": 45
+  },
+  {
+    "title": "Memory Leak: Closures Retaining Data",
+    "path": "/frontend/js-memory/closure-leaks",
+    "explanation": "Closures capturing large objects, lexical scope memory retention, long-lived references, optimizing closure usage",
+    "priority": "High",
+    "order": 46
+  },
+  {
+    "title": "Memory Leak: Event Listener Leaks",
+    "path": "/frontend/js-memory/listener-leaks",
+    "explanation": "Unremoved listeners, keeping DOM nodes alive, event delegation to prevent leaks, cleanup best practices",
+    "priority": "Medium",
+    "order": 47
+  },
+  {
+    "title": "Memory Leak: Timer & Interval Leaks",
+    "path": "/frontend/js-memory/timer-leaks",
+    "explanation": "setInterval/setTimeout not cleared, references to objects retained, impact on memory, clearing timers for GC",
+    "priority": "Medium",
+    "order": 48
+  },
+  {
+    "title": "Function Declarations vs Expressions",
+    "path": "/frontend/js-functions/declaration-vs-expression",
+    "explanation": "Hoisting behavior, temporal dead zone (TDZ), named vs anonymous functions, memory allocation, execution context differences",
+    "priority": "High",
+    "order": 49
+  },
+  {
+    "title": "Arrow Functions vs Normal Functions",
+    "path": "/frontend/js-functions/arrow-vs-normal",
+    "explanation": "Lexical 'this', no arguments object, cannot be constructors, no prototype, concise syntax, functional programming usage",
+    "priority": "High",
+    "order": 50
+  },
+  {
+    "title": "The 'this' Binding — Full Internal Behavior",
+    "path": "/frontend/js-functions/this-binding",
+    "explanation": "Default binding, implicit binding, explicit binding (call, apply), new binding, lexical binding in arrow functions, context resolution order",
+    "priority": "High",
+    "order": 51
+  },
+  {
+    "title": "bind(), call(), apply() Internals",
+    "path": "/frontend/js-functions/bind-call-apply",
+    "explanation": "Explicitly setting 'this', parameter passing, function cloning via bind, immediate invocation with call/apply, memory implications",
+    "priority": "High",
+    "order": 52
+  },
+  {
+    "title": "Closures — Internal Mechanics",
+    "path": "/frontend/js-functions/closures",
+    "explanation": "Lexical scope, function scope chain, environment records, captured variables retention, memory closure, private state emulation",
+    "priority": "High",
+    "order": 53
+  },
+  {
+    "title": "Higher-Order Functions",
+    "path": "/frontend/js-functions/higher-order",
+    "explanation": "Functions as arguments, functions returning functions, map, filter, reduce, callback handling, functional programming patterns",
+    "priority": "Medium",
+    "order": 54
+  },
+  {
+    "title": "Currying — Deep Explanation",
+    "path": "/frontend/js-functions/currying",
+    "explanation": "Transform multi-argument function to sequence of single-argument functions, partial application, function composition, argument binding",
+    "priority": "Medium",
+    "order": 55
+  },
+  {
+    "title": "Partial Application",
+    "path": "/frontend/js-functions/partial-application",
+    "explanation": "Pre-filling arguments, returning new function, argument placeholders, improving reusability, functional composition",
+    "priority": "Medium",
+    "order": 56
+  },
+  {
+    "title": "Pure vs Impure Functions",
+    "path": "/frontend/js-functions/pure-functions",
+    "explanation": "No side effects, deterministic output, referential transparency, state immutability, functional programming core principles",
+    "priority": "Low",
+    "order": 57
+  },
+  {
+    "title": "Function Scope vs Block Scope",
+    "path": "/frontend/js-functions/scope-types",
+    "explanation": "var function scope, let/const block scope, hoisting differences, temporal dead zone, closure interactions",
+    "priority": "High",
+    "order": 58
+  },
+  {
+    "title": "Function Execution Context Internals",
+    "path": "/frontend/js-functions/execution-context",
+    "explanation": "Creation phase, execution phase, activation object, variable environment, lexical environment, 'this' binding, scope chain resolution",
+    "priority": "High",
+    "order": 59
+  },
+  {
+    "title": "Recursion — Internals",
+    "path": "/frontend/js-functions/recursion",
+    "explanation": "Stack frames, call stack, function memory allocation, tail-call optimization, recursive vs iterative performance",
+    "priority": "Low",
+    "order": 60
+  },
+  {
+    "title": "Prototype Chain",
+    "path": "/frontend/js-prototypes/prototype-chain",
+    "explanation": "Internal [[Prototype]], __proto__ linkage, property lookup, inheritance chain, method resolution order, object delegation",
+    "priority": "High",
+    "order": 61
+  },
+  {
+    "title": "__proto__ vs prototype",
+    "path": "/frontend/js-prototypes/proto-vs-prototype",
+    "explanation": "__proto__ instance link to constructor prototype, constructor.prototype as blueprint, inheritance mechanism, method/property sharing, prototype chain relation",
+    "priority": "High",
+    "order": 62
+  },
+  {
+    "title": "Constructor Functions & ES6 Classes",
+    "path": "/frontend/js-prototypes/constructor-classes",
+    "explanation": "Constructor functions, ES6 class syntax, prototype linkage, instance creation with 'new', method placement on prototype, differences between classes and functions",
+    "priority": "High",
+    "order": 63
+  },
+  {
+    "title": "Super Keyword Behavior",
+    "path": "/frontend/js-prototypes/super-keyword",
+    "explanation": "'super' usage in constructors, 'super' for parent methods, prototype chain lookup, [[Prototype]] internal reference, behavior in class inheritance, call order with super()",
+    "priority": "High",
+    "order": 64
+  },
+  {
+    "title": "Inheritance Internals",
+    "path": "/frontend/js-prototypes/inheritance",
+    "explanation": "Prototypal inheritance, prototype chain, property/method lookup, __proto__ vs prototype, inheritance of methods, overriding properties, object hierarchy",
+    "priority": "High",
+    "order": 65
+  },
+  {
+    "title": "Method Lookup & Resolution",
+    "path": "/frontend/js-prototypes/method-lookup",
+    "explanation": "Engine method resolution, own property vs prototype property, prototype chain traversal, property descriptors, method overriding, lookup performance",
+    "priority": "High",
+    "order": 66
+  },
+  {
+    "title": "Property Shadowing",
+    "path": "/frontend/js-prototypes/property-shadowing",
+    "explanation": "Instance property vs prototype property, shadowing behavior, lookup order, deletion impact on prototype, overriding inherited properties",
+    "priority": "Medium",
+    "order": 67
+  },
+  {
+    "title": "Private Fields (#fields)",
+    "path": "/frontend/js-prototypes/private-fields",
+    "explanation": "Private instance fields (#field), class encapsulation, per-instance storage, inaccessible via prototype, runtime enforcement by engine, privacy in classes",
+    "priority": "High",
+    "order": 68
+  },
+  {
+    "title": "Property Descriptors",
+    "path": "/frontend/js-objects/property-descriptors",
+    "explanation": "Property attributes: writable, enumerable, configurable, defineProperty usage, control of read/write/deletion, effect on object behavior, internal slots",
+    "priority": "High",
+    "order": 69
+  },
+  {
+    "title": "Getters & Setters",
+    "path": "/frontend/js-objects/getters-setters",
+    "explanation": "Define accessors on properties, computed property behavior, invoked on get/set, integration with descriptors, reactive patterns, encapsulation",
+    "priority": "High",
+    "order": 70
+  },
+  {
+    "title": "Object.freeze, seal, preventExtensions",
+    "path": "/frontend/js-objects/freeze-seal-preventextensions",
+    "explanation": "freeze: immutable object, no add/delete/change, seal: prevent add/delete but allow update, preventExtensions: stop new properties, object mutability control, engine enforcement",
+    "priority": "High",
+    "order": 71
+  },
+  {
+    "title": "Spread Operator Internals",
+    "path": "/frontend/js-objects/spread-operator",
+    "explanation": "Object spread operator, copies own enumerable properties, excludes prototype properties, uses internal [[OwnPropertyKeys]] and [[Get]] operations, shallow copy behavior, interaction with getters, property order",
+    "priority": "Medium",
+    "order": 72
+  },
+  {
+    "title": "Shallow vs Deep Copy",
+    "path": "/frontend/js-objects/shallow-deep-copy",
+    "explanation": "Shallow copy top-level properties only, nested objects remain references, Deep copy recursively clones all nested objects, manual deep copy, structured cloning",
+    "priority": "High",
+    "order": 73
+  },
+  {
+    "title": "Structured Cloning Algorithm",
+    "path": "/frontend/js-objects/structured-cloning",
+    "explanation": "Internal use in postMessage, IndexedDB, Worker transfers, deep cloning, handles circular references, supports special objects like Date, Map, Set",
+    "priority": "Medium",
+    "order": 74
+  },
+  {
+    "title": "Object Property Internal Slots",
+    "path": "/frontend/js-objects/internal-slots",
+    "explanation": "Hidden internal slots for metadata, prototype link, extensibility flag, property attributes, internal engine storage, object behavior tracking",
+    "priority": "High",
+    "order": 75
+  },
+  {
+    "title": "Symbol Properties",
+    "path": "/frontend/js-objects/symbol-properties",
+    "explanation": "Unique non-enumerable keys, avoid name collisions, maintain privacy, stored separately by engine, used for meta-programming, internal properties",
+    "priority": "Medium",
+    "order": 76
+  },
+  {
+    "title": "Event Loop",
+    "path": "/frontend/js-async/event-loop",
+    "explanation": "Manages task execution, continuously checks call stack and task queues, executes queued tasks when stack is empty, coordinates microtasks and macrotasks, async handling",
+    "priority": "High",
+    "order": 77
+  },
+  {
+    "title": "Callbacks Queue",
+    "path": "/frontend/js-async/callbacks-queue",
+    "explanation": "Stores macrotasks, includes setTimeout, setInterval, I/O callbacks, pushed to call stack when stack empty, event loop integration, task scheduling",
+    "priority": "High",
+    "order": 78
+  },
+  {
+    "title": "Microtask Queue",
+    "path": "/frontend/js-async/microtask-queue",
+    "explanation": "Stores microtasks like Promises and queueMicrotask, executed immediately after current stack, before macrotasks, predictable async order, affects rendering timing",
+    "priority": "High",
+    "order": 79
+  },
+  {
+    "title": "Macrotask Queue",
+    "path": "/frontend/js-async/macrotask-queue",
+    "explanation": "Contains timers, I/O, UI events, executes after current stack and all microtasks, scheduled via event loop, ensures non-blocking execution",
+    "priority": "High",
+    "order": 80
+  },
+  {
+    "title": "Promise Execution Model",
+    "path": "/frontend/js-async/promises",
+    "explanation": "Promises schedule microtasks on resolve/reject, .then/.catch queued in microtask queue, asynchronous execution after current stack, predictable async behavior, event loop integration",
+    "priority": "High",
+    "order": 81
+  },
+  {
+    "title": "Async/Await Internals",
+    "path": "/frontend/js-async/async-await",
+    "explanation": "Transforms async functions into generator-like functions, await pauses execution, returns Promise, resumes via microtask scheduling, async flow control, error propagation",
+    "priority": "High",
+    "order": 82
+  },
+  {
+    "title": "setTimeout vs setImmediate vs requestAnimationFrame",
+    "path": "/frontend/js-async/timers-vs-raf",
+    "explanation": "setTimeout macrotask scheduling, setImmediate Node.js post-I/O execution, requestAnimationFrame callback before repaint, smooth rendering, task prioritization, event loop integration",
+    "priority": "Medium",
+    "order": 83
+  },
+  {
+    "title": "fetch Streaming & ReadableStreams",
+    "path": "/frontend/js-async/fetch-streaming",
+    "explanation": "fetch returns Promise, streaming chunks processing, ReadableStream API, reduce memory usage, incremental response handling, large payload optimization",
+    "priority": "Medium",
+    "order": 84
+  },
+  {
+    "title": "Job Queue Mechanics",
+    "path": "/frontend/js-async/job-queue",
+    "explanation": "Microtask scheduling, promise/async function execution, task queue after current stack, event loop integration, async timing, predictable task order",
+    "priority": "High",
+    "order": 85
+  },
+  {
+    "title": "Cooperative Concurrency",
+    "path": "/frontend/js-async/cooperative-concurrency",
+    "explanation": "Yielding long-running tasks, avoid UI blocking, interleaved execution, event loop coordination, React internal scheduling, non-blocking updates",
+    "priority": "Medium",
+    "order": 86
+  },
+  {
+    "title": "Promise States",
+    "path": "/frontend/js-promises/states",
+    "explanation": "Promise internal states pending, fulfilled, rejected, immutable transitions, state tracking, async resolution, error handling propagation",
+    "priority": "High",
+    "order": 87
+  },
+  {
+    "title": ".then() Scheduling Mechanics",
+    "path": "/frontend/js-promises/then-scheduling",
+    "explanation": ".then() handler microtask queue, queued after call stack, asynchronous execution, predictable order, promise chaining integration",
+    "priority": "High",
+    "order": 88
+  },
+  {
+    "title": "Promise Chaining",
+    "path": "/frontend/js-promises/chaining",
+    "explanation": "Each .then() returns new Promise, sequential async operations, state propagation, error handling, chainable callbacks, maintain execution order",
+    "priority": "High",
+    "order": 89
+  },
+  {
+    "title": "Error Propagation in Promises",
+    "path": "/frontend/js-promises/error-propagation",
+    "explanation": "Rejection propagation down chain, uncaught rejection triggers global events, mirrors synchronous error flow, async error handling, promise catch integration",
+    "priority": "High",
+    "order": 90
+  },
+  {
+    "title": "Promise.all Internals",
+    "path": "/frontend/js-promises/promise-all",
+    "explanation": "Waits for all promises to resolve, rejects if any reject, preserves result order, aggregate handling, async batch execution, microtask integration",
+    "priority": "High",
+    "order": 91
+  },
+  {
+    "title": "Promise.allSettled Internals",
+    "path": "/frontend/js-promises/promise-allsettled",
+    "explanation": "Waits for all promises to settle, returns array of outcomes, handles both fulfillment and rejection, asynchronous batch tracking, predictable results, microtask queue",
+    "priority": "Medium",
+    "order": 92
+  },
+  {
+    "title": "Promise.race Internals",
+    "path": "/frontend/js-promises/promise-race",
+    "explanation": "Settling first promise, resolve or reject, ignores other promises, race behavior, microtask execution, predictable async results",
+    "priority": "Medium",
+    "order": 93
+  },
+  {
+    "title": "Promise.any Internals",
+    "path": "/frontend/js-promises/promise-any",
+    "explanation": "Resolves on first fulfillment, rejects only if all reject, AggregateError, multiple promises handling, microtask execution, async error handling",
+    "priority": "Medium",
+    "order": 94
+  },
+  {
+    "title": "resolve() and reject() Internals",
+    "path": "/frontend/js-promises/resolve-reject",
+    "explanation": "resolve(), reject(), pending → fulfilled/rejected, state transition, triggers microtask queue, promise handler execution, async resolution",
+    "priority": "High",
+    "order": 95
+  },
+  {
+    "title": "Promise Execution Order in Event Loop",
+    "path": "/frontend/js-promises/execution-order",
+    "explanation": "Microtasks queue, promise handlers execution, after current call stack, before macrotasks, predictable async execution, event loop integration",
+    "priority": "High",
+    "order": 96
+  },
+  {
+    "title": "ES Modules (ESM) Internals",
+    "path": "/frontend/js-modules/esm",
+    "explanation": "Static analysis, compile-time imports, live bindings, dependency graph, strict mode execution, predictable module loading, tree shaking compatibility",
+    "priority": "High",
+    "order": 97
+  },
+  {
+    "title": "CommonJS Internals",
+    "path": "/frontend/js-modules/commonjs",
+    "explanation": "Runtime module loading, require(), exports as copies, synchronous execution, Node.js module system, no live bindings, dynamic module resolution",
+    "priority": "High",
+    "order": 98
+  },
+  {
+    "title": "Tree Shaking Fundamentals",
+    "path": "/frontend/js-modules/tree-shaking",
+    "explanation": "Dead code elimination, static analysis, ESM compatibility, unused import removal, optimized bundles, dependency graph scanning, module pruning",
+    "priority": "High",
+    "order": 99
+  },
+  {
+    "title": "Bundling Concepts (Webpack/Vite/Rollup)",
+    "path": "/frontend/js-modules/bundling",
+    "explanation": "Dependency graph scanning, module conversion, chunk generation, loaders/plugins application, code minification, optimized bundles, bundler workflow",
+    "priority": "High",
+    "order": 100
+  },
+  {
+    "title": "Module Graph Creation",
+    "path": "/frontend/js-modules/graph",
+    "explanation": "Directed dependency graph, module as node, code splitting, dead code removal, execution order resolution, dependency analysis, bundler optimization",
+    "priority": "Medium",
+    "order": 101
+  },
+  {
+    "title": "Live Bindings (ESM- ECMAScript Module)",
+    "path": "/frontend/js-modules/live-bindings",
+    "explanation": "ESM exports as references, not copies, updated values reflected on import, dynamic updates, dependency tracking, module state sharing, live binding behavior",
+    "priority": "Medium",
+    "order": 102
+  },
+
+  {
+    "title": "Import & Export Behavior",
+    "path": "/frontend/js-modules/import-export",
+    "explanation": "Static imports, top-level imports, module exports, module interface definition, dynamic import(), lazy-loading modules, asynchronous module execution",
+    "priority": "High",
+    "order": 103
+  },
+  {
+    "title": "Dynamic Import Internals",
+    "path": "/frontend/js-modules/dynamic-import",
+    "explanation": "import() function, returns Promise, code splitting, lazy loading, on-demand module execution, asynchronous module resolution",
+    "priority": "Medium",
+    "order": 104
+  },
+  {
+    "title": "Module Hoisting in ESM",
+    "path": "/frontend/js-modules/module-hoisting",
+    "explanation": "Import hoisting, module initialization order, dependency graph resolution, execution before code runs, static analysis, predictable module execution",
+    "priority": "Medium",
+    "order": 105
+  },
+  {
+    "title": "Bundler Optimization (Minification & Compression)",
+    "path": "/frontend/js-modules/optimization",
+    "explanation": "Minification, dead code elimination, variable name shortening, function inlining, gzip/brotli compression, bundle size reduction, performance optimization",
+    "priority": "Low",
+    "order": 106
+  },
+  {
+    "title": "DOM Tree Internals",
+    "path": "/frontend/js-browser/dom-tree",
+    "explanation": "HTML parsing, tokenization, node creation, DOM tree construction, parent/child relationships, node types, live DOM updates, browser parsing internals",
+    "priority": "High",
+    "order": 107
+  },
+  {
+    "title": "CSSOM Tree",
+    "path": "/frontend/js-browser/cssom-tree",
+    "explanation": "CSS parsing, CSSOM creation, rule storage, specificity, cascading order, inheritance, DOM + CSSOM merging, computed styles calculation",
+    "priority": "High",
+    "order": 108
+  },
+  {
+    "title": "Render Tree Construction",
+    "path": "/frontend/js-browser/render-tree",
+    "explanation": "Render tree construction, DOM + CSSOM combination, visible nodes, layout calculation, painting preparation, browser rendering pipeline",
+    "priority": "High",
+    "order": 109
+  },
+  {
+    "title": "Reflow (Layout Calculation)",
+    "path": "/frontend/js-browser/reflow",
+    "explanation": "Layout calculation, DOM element positions and sizes, triggered by DOM changes, resizing, font loading, expensive operation, browser reflow internals",
+    "priority": "High",
+    "order": 110
+  },
+  {
+    "title": "Repaint (Visual Update)",
+    "path": "/frontend/js-browser/repaint",
+    "explanation": "Paint operation, style changes, pixel rendering, color updates, no layout recalculation, visual update optimization, browser painting internals",
+    "priority": "Medium",
+    "order": 111
+  },
+  {
+    "title": "Layout Thrashing",
+    "path": "/frontend/js-browser/layout-thrashing",
+    "explanation": "Forced synchronous reflows, alternating reads/writes to layout properties, offsetWidth/scrollTop reads, performance bottleneck, DOM access patterns, browser layout optimization",
+    "priority": "High",
+    "order": 112
+  },
+  {
+    "title": "Event Capturing & Bubbling",
+    "path": "/frontend/js-browser/event-phases",
+    "explanation": "Event capturing, event bubbling, target phase, event propagation, DOM event phases, listener execution order, event flow management",
+    "priority": "High",
+    "order": 113
+  },
+  {
+    "title": "addEventListener Options",
+    "path": "/frontend/js-browser/event-listener-options",
+    "explanation": "Capture option, passive listeners, once option, non-blocking scroll, auto-remove listeners, event listener configuration, performance optimization",
+    "priority": "Medium",
+    "order": 114
+  },
+  {
+    "title": "Debouncing & Throttling (Browser Level)",
+    "path": "/frontend/js-browser/debounce-throttle",
+    "explanation": "Debounce, throttle, controlling event firing rate, optimizing scroll/resize/input events, improving performance, preventing layout thrashing, efficient event handling",
+    "priority": "Medium",
+    "order": 115
+  },
+  {
+    "title": "DOMParser & Serialization Internals",
+    "path": "/frontend/js-browser/domparser",
+    "explanation": "DOMParser, XMLSerializer, HTML/XML string to DOM nodes, DOM to string serialization, live DOM manipulation, parsing and serializing internals",
+    "priority": "Low",
+    "order": 116
+  },
+  {
+    "title": "Intersection Observer Internals",
+    "path": "/frontend/js-browser/intersection-observer",
+    "explanation": "IntersectionObserver API, bounding box tracking, visibility changes, lazy loading, infinite scroll, avoiding layout thrashing, viewport detection",
+    "priority": "Medium",
+    "order": 117
+  },
+  {
+    "title": "Mutation Observer Internals",
+    "path": "/frontend/js-browser/mutation-observer",
+    "explanation": "MutationObserver API, asynchronous DOM mutation monitoring, microtask queue, avoiding expensive DOM polling, change detection, performance optimization",
+    "priority": "Medium",
+    "order": 118
+  },
+  {
+    "title": "Critical Rendering Path",
+    "path": "/frontend/js-browser/critical-rendering-path",
+    "explanation": "HTML parsing, DOM construction, CSSOM creation, render tree building, layout calculation, painting, compositing, optimizing first render, page load performance",
+    "priority": "High",
+    "order": 119
+  },
+  {
+    "title": "Compositing & Layers",
+    "path": "/frontend/js-browser/compositing",
+    "explanation": "GPU-accelerated layers, compositing, transforms, opacity, will-change property, promoting elements, rendering performance optimization",
+    "priority": "Medium",
+    "order": 120
+  },
+  {
+    "title": "Event Propagation Phases",
+    "path": "/frontend/js-events/propagation",
+    "explanation": "Capturing phase, target phase, bubbling phase, listener execution order, event flow management, event propagation, DOM event model",
+    "priority": "High",
+    "order": 121
+  },
+  {
+    "title": "Capturing vs Bubbling Internals",
+    "path": "/frontend/js-events/capture-bubble",
+    "explanation": "Event capture phase, bubble phase, downward propagation, upward propagation, listener options, controlling execution, internal event mechanics",
+    "priority": "High",
+    "order": 122
+  },
+  {
+    "title": "Event Target, CurrentTarget, and Path",
+    "path": "/frontend/js-events/target-path",
+    "explanation": "event.target, event.currentTarget, composedPath(), event origin, event propagation chain, event handling, debugging event flow",
+    "priority": "Medium",
+    "order": 123
+  },
+  {
+    "title": "Event Delegation",
+    "path": "/frontend/js-events/delegation",
+    "explanation": "Event delegation, bubbling, single parent listener, multiple child handling, performance optimization, large DOMs, efficient event management",
+    "priority": "High",
+    "order": 124
+  },
+  {
+    "title": "Custom Events & Event Dispatching",
+    "path": "/frontend/js-events/custom-events",
+    "explanation": "Creating custom events, new CustomEvent(), dispatchEvent(), event detail payload, event-driven architecture, cross-component communication",
+    "priority": "Medium",
+    "order": 125
+  },
+  {
+    "title": "Default Behavior & Preventing It",
+    "path": "/frontend/js-events/prevent-default",
+    "explanation": "event.preventDefault(), stopping default browser actions, cancelable events, form submission control, link navigation prevention, browser behavior control",
+    "priority": "Medium",
+    "order": 126
+  },
+  {
+    "title": "Stopping Propagation",
+    "path": "/frontend/js-events/stop-propagation",
+    "explanation": "event.stopPropagation(), event.stopImmediatePropagation(), stopping bubbling, stopping capturing, controlling listener execution, event flow management",
+    "priority": "High",
+    "order": 127
+  },
+  {
+    "title": "addEventListener Options",
+    "path": "/frontend/js-events/listener-options",
+    "explanation": "capture option, passive listeners, once option, scroll performance optimization, non-blocking events, efficient event listener configuration",
+    "priority": "Medium",
+    "order": 128
+  },
+  {
+    "title": "How Browser Queues Events",
+    "path": "/frontend/js-events/event-loop-integration",
+    "explanation": "Event macrotask queue, microtask queue, async handler execution, call stack integration, event loop mechanics, browser task scheduling, predictable async behavior",
+    "priority": "High",
+    "order": 129
+  },
+  {
+    "title": "Synthetic Events vs Native Events",
+    "path": "/frontend/js-events/synthetic-native",
+    "explanation": "Synthetic events, React event system, cross-browser consistency, native DOM events, event normalization, performance benefits, event pooling removal",
+    "priority": "Medium",
+    "order": 130
+  },
+  {
+    "title": "Pointer Events & Touch Events",
+    "path": "/frontend/js-events/pointer-touch",
+    "explanation": "Pointer events, touch events, unified input handling, mouse/touch API replacement, pressure support, tilt support, multi-touch gestures, cross-device compatibility",
+    "priority": "Low",
+    "order": 131
+  },
+  {
+    "title": "Passive & Non-Blocking Events",
+    "path": "/frontend/js-events/passive-events",
+    "explanation": "Passive event listeners, preventDefault optimization, scroll performance, gesture handling, non-blocking event processing",
+    "priority": "Medium",
+    "order": 132
+  },
+  {
+    "title": "Async Event Handling",
+    "path": "/frontend/js-events/async-events",
+    "explanation": "Async handlers, microtasks, macrotasks, event loop integration, UI update timing, rendering order, non-blocking execution",
+    "priority": "Medium",
+    "order": 133
+  },
+  {
+    "title": "try/catch Internals",
+    "path": "/frontend/js-errors/try-catch",
+    "explanation": "Protected code block, catch execution, synchronous error handling, exception handling mechanism, error propagation, engine behavior",
+    "priority": "High",
+    "order": 134
+  },
+  {
+    "title": "Error Propagation Mechanism",
+    "path": "/frontend/js-errors/propagation",
+    "explanation": "Error bubbling, call stack propagation, synchronous errors, unhandled errors, global error handlers, stack unwinding",
+    "priority": "High",
+    "order": 135
+  },
+  {
+    "title": "Types of Errors in JS",
+    "path": "/frontend/js-errors/types",
+    "explanation": "SyntaxError, ReferenceError, TypeError, RangeError, URIError, EvalError, engine-specific error types, debugging insights",
+    "priority": "Medium",
+    "order": 136
+  },
+  {
+    "title": "Custom Error Classes",
+    "path": "/frontend/js-errors/custom-errors",
+    "explanation": "Extending Error class, domain-specific errors, preserving message, stack trace, error naming, structured error handling",
+    "priority": "Medium",
+    "order": 137
+  },
+  {
+    "title": "Async Error Handling (Promises)",
+    "path": "/frontend/js-errors/async-promises",
+    "explanation": "Promise rejections, .catch() handling, async/await error catching, unhandled rejection events, async stack propagation, global error handling",
+    "priority": "High",
+    "order": 138
+  },
+  {
+    "title": "Promise Rejection Propagation",
+    "path": "/frontend/js-errors/rejection-propagation",
+    "explanation": "Promise chaining, rejection propagation, mirroring synchronous call stack, error catching, microtask queue, debugging async errors",
+    "priority": "High",
+    "order": 139
+  },
+  {
+    "title": "Unhandled Promise Rejections",
+    "path": "/frontend/js-errors/unhandled-rejection",
+    "explanation": "Uncaught promise rejections, window.onunhandledrejection, Node.js process crash, async error tracking, global rejection events",
+    "priority": "High",
+    "order": 140
+  },
+  {
+    "title": "Global Error Handling (window.onerror)",
+    "path": "/frontend/js-errors/global",
+    "explanation": "Capturing uncaught synchronous errors, main thread errors, logging systems, monitoring, error reporting, debugging insights",
+    "priority": "Medium",
+    "order": 141
+  },
+  {
+    "title": "Error Object Internals",
+    "path": "/frontend/js-errors/error-object",
+    "explanation": "Error message, name, stack trace, engine-specific stack differences, V8 vs SpiderMonkey, error metadata, debugging information",
+    "priority": "Low",
+    "order": 142
+  },
+
+  {
+    "title": "Stack Trace & Call Stack Integration",
+    "path": "/frontend/js-errors/stack-trace",
+    "explanation": "Call stack frames, error propagation, async stack tracking, debugging asynchronous code, stack frame creation, error origin identification",
+    "priority": "Medium",
+    "order": 143
+  },
+  {
+    "title": "try/catch Cost & V8 Optimization",
+    "path": "/frontend/js-errors/engine-cost",
+    "explanation": "try/catch performance, deoptimization in V8, optimized error paths, impact on hot code, engine optimizations, exception handling cost",
+    "priority": "Low",
+    "order": 144
+  },
+  {
+    "title": "Error Boundaries (React vs JS)",
+    "path": "/frontend/js-errors/react-boundaries",
+    "explanation": "React error boundaries, render-time error catching, synchronous JS errors, async errors not caught, event handler errors, component-level error isolation",
+    "priority": "Low",
+    "order": 145
+  },
+  {
+    "title": "Async Stack Traces",
+    "path": "/frontend/js-errors/async-stack",
+    "explanation": "Async call stacks, zones, Promise chains, async/await stack propagation, microtask queue tracking, error debugging across asynchronous boundaries, meaningful stack traces for async errors",
+    "priority": "Low",
+    "order": 146
+  },
+  {
+    "title": "JavaScript Design Patterns",
+    "path": "/frontend/js-design-patterns",
+    "explanation": "module pattern, revealing module pattern, constructor pattern, prototype pattern, factory pattern, singleton pattern, observer pattern, decorator pattern, proxy pattern, strategy pattern, command pattern",
+    "priority": "High",
+    "order": 147
+  },
+  {
+    "title": "Functional Programming Concepts",
+    "path": "/frontend/functional-programming",
+    "explanation": "immutability, recursion, referential transparency, side effects, function composition, pure functions, higher-order functions, memoization, lazy evaluation, currying, partial application",
+    "priority": "High",
+    "order": 148
+  },
+  {
+    "title": "Data Structures & Algorithms in JavaScript",
+    "path": "/frontend/data-structures-algorithms",
+    "explanation": "arrays (internal representation), linked lists, stacks, queues, maps, weakmaps, sets, weaksets, hash tables, trees, tries, graphs, event delegation algorithm, sorting algorithms, searching algorithms, big-O analysis",
+    "priority": "High",
+    "order": 149
+  },
+  {
+    "title": "Advanced Browser APIs",
+    "path": "/frontend/advanced-browser-apis",
+    "explanation": "fetch API deep behavior, web workers, service workers, web sockets, indexedDB, history API, web storage (localStorage/sessionStorage), file system API, webRTC, web animations API, intersection observer API, performance API, mutation observer",
+    "priority": "High",
+    "order": 150
+  },
+  {
+    "title": "Performance Optimization",
+    "path": "/frontend/performance-optimization",
+    "explanation": "debounce, throttle, requestIdleCallback, lazy loading, prefetch, preload, code splitting, minification, caching strategies, avoiding layout thrashing, long task detection, critical rendering path optimization, tree shaking, bundle size reduction",
+    "priority": "High",
+    "order": 151
+  },
+  {
+    "title": "ES6+ Features",
+    "path": "/frontend/es6",
+    "explanation": "let/const, destructuring, rest/spread, classes",
+    "priority": "High",
+    "order": 152
+  },
+  {
+    "title": "DOM Manipulation & Events",
+    "path": "/frontend/dom-events",
+    "explanation": "DOM selection (getElementById, querySelector), DOM traversal (parentNode, children, nextSibling), DOM updates (innerHTML, textContent, appendChild, removeChild, insertBefore), event phases (capturing, target, bubbling), event delegation, addEventListener options (capture, once, passive), preventDefault, stopPropagation, performance implications of DOM updates",
+    "priority": "Medium",
+    "order": 153
+  },
+  {
+    "title": "Testing in Depth",
+    "path": "/frontend/testing-in-depth",
+    "explanation": "unit testing, integration testing, end-to-end (E2E) testing, mocks, spies, Jest internals, test runners, DOM Testing Library, snapshot testing, test-driven development (TDD), behavior-driven development (BDD), coverage analysis",
+    "priority": "Medium",
+    "order": 154
+  },
+  {
+    "title": "React Rendering System (Core)",
+    "path": "/frontend/react-rendering-system",
+    "explanation": "Virtual DOM creation, reconciliation, diffing algorithm, how React compares trees, batching updates, how React decides when to re-render, and how React commits changes to the actual DOM",
+    "priority": "Compulsory",
+    "order": 155
+  },
+  {
+    "title": "React Fiber Architecture",
+    "path": "/frontend/react-fiber",
+    "explanation": "Fiber node structure, render phase vs commit phase, splitting work into units, handling long tasks, priority levels, cooperative scheduling, and how Fiber is the internal engine of React",
+    "priority": "Compulsory",
+    "order": 156
+  },
+  {
+    "title": "React Scheduler",
+    "path": "/frontend/react-scheduler",
+    "explanation": "Cooperative scheduling, time slicing, yielding back to browser, idle callbacks, avoiding UI blocking, and controlling update priorities inside React",
+    "priority": "High",
+    "order": 157
+  },
+  {
+    "title": "React Concurrent Features",
+    "path": "/frontend/react-concurrent",
+    "explanation": "Concurrent rendering in React 18+, startTransition(), Suspense integration, lazy loading, automatic batching, and preventing UI freezing under heavy updates",
+    "priority": "High",
+    "order": 158
+  },
+  {
+    "title": "React Hooks Internals",
+    "path": "/frontend/react-hooks-internals",
+    "explanation": "Hook call order rule, why hooks cannot be inside loops/conditions, internal behavior of useState, useEffect phases and cleanup, useRef internal mechanism, useMemo & useCallback caching logic, and how hook states are stored inside fiber nodes",
+    "priority": "High",
+    "order": 159
+  },
+  {
+    "title": "React DOM Internals",
+    "path": "/frontend/react-dom-internals",
+    "explanation": "How React interacts with the browser through ReactDOM, document updates, synthetic events, event delegation at root, event bubbling/capturing, and the removal of event pooling",
+    "priority": "High",
+    "order": 160
+  },
+  {
+    "title": "React Reconciliation Algorithm",
+    "path": "/frontend/react-reconciliation",
+    "explanation": "How React compares elements, child reconciliation, role of keys in lists, tree diffing, when nodes are reused vs recreated vs deleted — the heart of React updates",
+    "priority": "Compulsory",
+    "order": 161
+  },
+  {
+    "title": "React Internal Lifecycle (Render → Commit)",
+    "path": "/frontend/react-internal-lifecycle",
+    "explanation": "Internal lifecycle order: Render phase, pre-commit, commit phase, layout effects, passive effects, and effect cleanup timing",
+    "priority": "High",
+    "order": 162
+  },
+
+  {
+    "title": "React State Update Mechanics",
+    "path": "/frontend/react-state-mechanics",
+    "explanation": "Microtask vs macrotask queue, batching logic, what triggers a re-render, when React ignores state updates, update priorities (sync vs concurrent), and async update behavior.",
+    "priority": "High",
+    "order": 163
+  },
+  {
+    "title": "React Server Components (RSC)",
+    "path": "/frontend/react-server-components",
+    "explanation": "RSC internals, zero client bundle for server components, streaming server rendering, React Flight Protocol, how Next.js implements RSC, and why RSCs reduce bundle size drastically.",
+    "priority": "Compulsory",
+    "order": 164
+  },
+  {
+    "title": "React Suspense Internals",
+    "path": "/frontend/react-suspense",
+    "explanation": "Suspense boundaries, fallback mechanics, how React pauses rendering, resuming rendering, async data handling, and how Suspense integrates with server functions.",
+    "priority": "High",
+    "order": 165
+  },
+  {
+    "title": "React Performance System",
+    "path": "/frontend/react-performance-internals",
+    "explanation": "React.memo, avoiding unnecessary renders, Profiler usage, useTransition, useDeferredValue, effect optimization, and how large trees impact performance internally.",
+    "priority": "High",
+    "order": 166
+  },
+  {
+    "title": "JSX Compilation Internals",
+    "path": "/frontend/react-jsx-internals",
+    "explanation": "How JSX compiles via Babel, how React.createElement() works, how JSX becomes JavaScript objects, and how React interprets JSX at runtime.",
+    "priority": "Medium",
+    "order": 167
+  },
+  {
+    "title": "React Synthetic Event System",
+    "path": "/frontend/react-event-system",
+    "explanation": "Why React uses one root event listener, normalization of browser events, synthetic event wrapper, capturing/bubbling handling, and why React removed event pooling.",
+    "priority": "Medium",
+    "order": 168
+  },
+  {
+    "title": "React Error Boundaries Internals",
+    "path": "/frontend/react-error-boundaries",
+    "explanation": "How React catches render-time errors, why hooks/effects cannot catch errors, how component trees recover, and internal error propagation logic.",
+    "priority": "Medium",
+    "order": 169
+  },
+  {
+    "title": "React Context API Internals",
+    "path": "/frontend/react-context-internals",
+    "explanation": "Provider-to-consumer propagation, how context updates trigger re-renders, when they cause full tree render, and how selectors reduce unwanted updates.",
+    "priority": "High",
+    "order": 170
+  },
+  {
+    "title": "React Basics & Components",
+    "path": "/frontend/react-components",
+    "explanation": "Functional components, props, JSX.",
+    "priority": "High",
+    "order": 171
+  },
+  {
+    "title": "React Lifecycle & useEffect",
+    "path": "/frontend/react-lifecycle",
+    "explanation": "useEffect cleanup, dependency array, avoiding infinite loops.",
+    "priority": "High",
+    "order": 172
+  },
+  {
+    "title": "React State & useState",
+    "path": "/frontend/usestate",
+    "explanation": "State batching, asynchronous updates, lifting state up, component re-render triggers",
+    "priority": "Medium",
+    "order": 173
+  },
+  {
+    "title": "React Forms & Validation",
+    "path": "/frontend/react-forms",
+    "explanation": "Controlled components, uncontrolled components, form state management, validation techniques, error handling",
+    "priority": "Medium",
+    "order": 174
+  },
+  {
+    "title": "React Router & Navigation",
+    "path": "/frontend/react-router",
+    "explanation": "Nested routes, dynamic route params, protected routes, redirecting, navigation hooks",
+    "priority": "High",
+    "order": 175
+  },
+  {
+    "title": "API Calls with Axios/Fetch",
+    "path": "/frontend/axios",
+    "explanation": "Request/response interceptors, retry logic, cancellation, error handling, async/await integration",
+    "priority": "High",
+    "order": 176
+  },
+  {
+    "title": "React Context & State Management",
+    "path": "/frontend/react-context",
+    "explanation": "Prop drilling solution, context provider/consumer pattern, performance concerns, memoization, alternative state management options",
+    "priority": "High",
+    "order": 177
+  },
+  {
+    "title": "React Hooks & Custom Hooks",
+    "path": "/frontend/react-hooks",
+    "explanation": "Rules of hooks, reusable logic, useEffect timing, dependency arrays, custom hook patterns",
+    "priority": "High",
+    "order": 178
+  },
+  {
+    "title": "Common Patterns & Best Practices",
+    "path": "/frontend/common-patterns",
+    "explanation": "Smart vs dumb components, atomic design, composition over inheritance, code organization patterns",
+    "priority": "High",
+    "order": 179
+  },
+  {
+    "title": "Error Handling & Debugging",
+    "path": "/frontend/error-handling",
+    "explanation": "React error boundaries, catching render-time errors, console debugging, memory leak identification, devtools usage",
+    "priority": "Medium",
+    "order": 180
+  },
+  {
+    "title": "Performance Optimization",
+    "path": "/frontend/performance",
+    "explanation": "React.memo, useCallback, useMemo, lazy loading, code splitting, preventing unnecessary re-renders",
+    "priority": "High",
+    "order": 181
+  },
+  {
+    "title": "Testing React Components",
+    "path": "/frontend/testing",
+    "explanation": "Unit testing, Jest basics, React Testing Library (RTL), snapshot testing, mocking dependencies",
+    "priority": "Medium",
+    "order": 182
+  },
+  {
+    "title": "Frontend Build Tools & Bundlers",
+    "path": "/frontend/build-tools",
+    "explanation": "Webpack, Vite, Babel, module bundling, transpilation, code splitting, hot module replacement",
+    "priority": "Medium",
+    "order": 183
+  },
+  {
+    "title": "Version Control (Git)",
+    "path": "/frontend/git",
+    "explanation": "Branching strategies, rebasing vs merging, commit history management, resolving conflicts, pull requests, Git workflow patterns",
+    "priority": "Medium",
+    "order": 184
+  },
+  {
+    "title": "TypeScript Basics",
+    "path": "/frontend/typescript",
+    "explanation": "Type annotations, interfaces, type inference, generics, enums, benefits of TS over JS, strict mode",
+    "priority": "High",
+    "order": 185
+  },
+  {
+    "title": "Next.js Fundamentals",
+    "path": "/frontend/nextjs",
+    "explanation": "Server-side rendering (SSR), client-side rendering (CSR), static-site generation (SSG), incremental static regeneration (ISR), routing, API routes",
+    "priority": "High",
+    "order": 186
+  },
+  {
+    "title": "Authentication & Authorization",
+    "path": "/frontend/auth",
+    "explanation": "JWT creation & validation, access vs refresh tokens, cookie-based auth, session management, role-based access control (RBAC), token expiration handling",
+    "priority": "Compulsory",
+    "order": 187
+  },
+  {
+    "title": "Security (XSS, CSRF, CORS)",
+    "path": "/frontend/security",
+    "explanation": "Cross-site scripting prevention, input/output sanitization, CSRF tokens, CORS headers, secure HTTP practices, OWASP Top 10 awareness",
+    "priority": "Compulsory",
+    "order": 188
+  },
+  {
+    "title": "Accessibility (A11y)",
+    "path": "/frontend/a11y",
+    "explanation": "ARIA roles, keyboard navigation, focus management, semantic HTML, screen reader compatibility, color contrast, accessible forms",
+    "priority": "Low",
+    "order": 189
+  },
+  {
+    "title": "Web Performance & Core Web Vitals",
+    "path": "/frontend/web-vitals",
+    "explanation": "Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), First Input Delay (FID), performance optimization techniques, lazy loading, caching strategies",
+    "priority": "High",
+    "order": 190
+  },
+  {
+    "title": "State Management Libraries",
+    "path": "/frontend/state-management",
+    "explanation": "Redux Toolkit setup, Zustand usage, global state patterns, store structure, immutability, side-effects handling, state updates optimization",
+    "priority": "High",
+    "order": 191
+  },
+  {
+    "title": "Networking & Browser Internals",
+    "path": "/frontend/browser-internals",
+    "explanation": "HTTP/2 protocol, caching strategies, DNS lookup process, TCP/IP, TLS handshake, request/response lifecycle, network optimization",
+    "priority": "High",
+    "order": 192
+  },
+  {
+    "title": "Error Tracking & Monitoring",
+    "path": "/frontend/monitoring",
+    "explanation": "Sentry setup, LogRocket usage, logging strategies, tracking runtime errors, reporting, performance monitoring, alerting best practices",
+    "priority": "Medium",
+    "order": 193
+  },
+  {
+    "title": "API Architecture Knowledge",
+    "path": "/frontend/api-architecture",
+    "explanation": "REST vs GraphQL, endpoint design, rate limiting, versioning, caching, pagination, error handling, authentication & authorization",
+    "priority": "Medium",
+    "order": 194
+  },
+  {
+    "title": "File Uploads & Image Optimization",
+    "path": "/frontend/file-upload",
+    "explanation": "File compression, responsive image formats, lazy loading, caching strategies, client-side validation, upload progress handling",
+    "priority": "Medium",
+    "order": 195
+  },
+  {
+    "title": "WebSockets & Real-time Updates",
+    "path": "/frontend/websockets",
+    "explanation": "Socket.io basics, event-based communication, real-time data synchronization, connection handling, fallback mechanisms, scaling considerations",
+    "priority": "High",
+    "order": 196
+  },
+  {
+    "title": "Service Workers & PWAs",
+    "path": "/frontend/pwa",
+    "explanation": "Offline caching strategies, background sync, push notifications, cache invalidation, service worker lifecycle, progressive web app installation",
+    "priority": "Medium",
+    "order": 197
+  },
+  {
+    "title": "Microfrontends",
+    "path": "/frontend/microfrontends",
+    "explanation": "Module federation, independent deployments, shared libraries, inter-app communication, team-based architecture, runtime integration",
+    "priority": "High",
+    "order": 198
+  },
+  {
+    "title": "Design Systems & Component Libraries",
+    "path": "/frontend/design-systems",
+    "explanation": "Storybook setup, reusable components, theming, accessibility, component documentation, atomic design principles",
+    "priority": "Medium",
+    "order": 199
+  },
+  {
+    "title": "Animations Libraries",
+    "path": "/frontend/animation-libraries",
+    "explanation": "GSAP timelines, Framer Motion variants, performance considerations, spring-based animations, sequencing and coordination of animations",
+    "priority": "Low",
+    "order": 200
+  },
+  {
+    "title": "Internationalization (i18n)",
+    "path": "/frontend/i18n",
+    "explanation": "Locale switching, translations, pluralization, date/number formatting, right-to-left (RTL) support, dynamic content localization",
+    "priority": "Low",
+    "order": 201
+  },
+  {
+    "title": "CSS Architecture",
+    "path": "/frontend/css-architecture",
+    "explanation": "BEM methodology, utility-first frameworks, component-scoped CSS, maintainable naming conventions, CSS modules, responsive design patterns",
+    "priority": "Medium",
+    "order": 202
+  },
+  {
+    "title": "Package Managers (npm/yarn/pnpm)",
+    "path": "/frontend/package-managers",
+    "explanation": "Dependency installation, lockfiles, versioning, workspaces, caching, resolving dependency conflicts",
+    "priority": "Low",
+    "order": 203
+  },
+  {
+    "title": "Frontend Deployment & CI/CD",
+    "path": "/frontend/deployment",
+    "explanation": "Deployment pipelines, Vercel/Netlify integration, Docker for containerization, environment variables, automated builds and testing, rollback strategies",
+    "priority": "Medium",
+    "order": 204
+  },
+  {
+    "title": "Browser Storage & Cookies",
+    "path": "/frontend/browser-storage",
+    "explanation": "localStorage, sessionStorage, IndexedDB, cookie attributes (Secure, HttpOnly, SameSite), data persistence, storage limits and best practices",
+    "priority": "High",
+    "order": 205
+  },
+  {
+    "title": "Lazy Loading & Code Splitting",
+    "path": "/frontend/lazy-loading",
+    "explanation": "React.lazy, Suspense, dynamic import(), route-based and component-level code splitting, bundle optimization, reducing initial load time",
+    "priority": "High",
+    "order": 206
+  },
+  {
+    "title": "Web Accessibility Testing Tools",
+    "path": "/frontend/a11y-tools",
+    "explanation": "Lighthouse audits, axe-core, automated accessibility testing, ARIA compliance, keyboard navigation checks, contrast analysis",
+    "priority": "Low",
+    "order": 207
+  },
+  {
+    "title": "Client-side Caching Strategies",
+    "path": "/frontend/caching",
+    "explanation": "SWR (stale-while-revalidate), cache invalidation, revalidation strategies, memoization, localStorage/sessionStorage caching patterns, performance impact",
+    "priority": "High",
+    "order": 208
+  },
+  {
+    "title": "Interview System Design for Frontend",
+    "path": "/frontend/frontend-system-design",
+    "explanation": "Scalable architecture, modular folder structure, component hierarchy, performance optimization, state management patterns, load handling, maintainability considerations",
+    "priority": "Compulsory",
+    "order": 209
+  }
+]

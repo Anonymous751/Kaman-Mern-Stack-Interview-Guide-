@@ -1,0 +1,1641 @@
+[{
+  "topic": { "$oid": "69426686067372ab33ffa18d" },
+  "path": "/web/how-web-works",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Web (World Wide Web) works through communication between a client (browser or application) and a server. The client sends a request, and the server responds with resources such as HTML, CSS, JavaScript, images, or JSON data."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why This Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Understanding how the web works helps developers debug issues, improve performance, secure applications, and confidently answer interview questions. This knowledge is expected from frontend, backend, and full-stack developers."
+    },
+
+    {
+      "type": "heading",
+      "text": "Basic Flow of the Web"
+    },
+    {
+      "type": "code",
+      "code": "Client (Browser/App) → Sends Request → Server\nServer → Processes Request → Sends Response → Browser\nBrowser → Renders the Page"
+    },
+
+    {
+      "type": "heading",
+      "text": "Step-by-Step Explanation"
+    },
+    {
+      "type": "list",
+      "items": [
+        "User enters a URL in the browser, triggering an HTTP request.",
+        "DNS lookup converts the domain name into an IP address.",
+        "Browser establishes a TCP connection and TLS handshake (for HTTPS).",
+        "Browser sends an HTTP request (GET, POST, PUT, DELETE).",
+        "Server processes the request, applies business logic, and accesses databases.",
+        "Server sends an HTTP response with status code, headers, and body.",
+        "Browser parses HTML, applies CSS, executes JavaScript, and renders the UI."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Important Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "HTTP & HTTPS: HTTPS uses TLS encryption to secure data transmission.",
+        "DNS (Domain Name System): Converts human-readable domains into IP addresses.",
+        "Servers & Hosting: Servers store files and execute backend logic.",
+        "CDN (Content Delivery Network): Delivers assets from nearby servers for faster load times.",
+        "Caching: Temporarily stores data to reduce repeated processing and improve speed."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Benefits of Understanding This"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Build faster and more efficient web applications.",
+        "Improve debugging across frontend and backend layers.",
+        "Gain confidence in system design and real-world architecture.",
+        "Strengthen understanding of security concepts like TLS, CORS, and CSRF.",
+        "Answer core interview questions with clarity and confidence."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is DNS?",
+      "answer": "DNS (Domain Name System) converts domain names such as google.com into IP addresses that computers can understand."
+    },
+    {
+      "type": "qa",
+      "question": "What happens when you type a URL and press Enter?",
+      "answer": "DNS lookup → TCP/TLS handshake → HTTP request → server processing → HTTP response → browser renders the page."
+    },
+    {
+      "type": "qa",
+      "question": "What is HTTP vs HTTPS?",
+      "answer": "HTTPS is HTTP with TLS encryption, ensuring data privacy, integrity, and security."
+    },
+    {
+      "type": "qa",
+      "question": "What is a CDN and why is it used?",
+      "answer": "A CDN delivers content from geographically closer servers to reduce latency, improve performance, and reduce server load."
+    },
+    {
+      "type": "qa",
+      "question": "What is caching?",
+      "answer": "Caching stores frequently used data temporarily to reduce server load and improve application performance."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The web works on a client-server communication model.",
+        "DNS translates domain names into IP addresses.",
+        "HTTP and HTTPS handle data transfer between client and server.",
+        "CDNs and caching improve performance and scalability.",
+        "Understanding these concepts is essential for modern web development."
+      ]
+    }
+  ]
+}
+,
+{
+  "topic": { "$oid": "69426686067372ab33ffa18e" },
+  "path": "/web/http-https",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "HTTP (HyperText Transfer Protocol) is the foundation of communication on the web. It defines how clients (browsers or apps) and servers communicate. Every time you open a website, your browser uses HTTP or HTTPS to send and receive data."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why HTTP Exists"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computers do not understand human language. HTTP provides a standard set of rules so that clients can request resources, servers can respond with data, and both follow the same predictable structure. Without HTTP, browsers and servers would not know how to talk to each other."
+    },
+
+    {
+      "type": "heading",
+      "text": "How HTTP Works (Simple)"
+    },
+    {
+      "type": "code",
+      "code": "Browser → HTTP Request → Server\nServer → HTTP Response → Browser"
+    },
+    {
+      "type": "paragraph",
+      "text": "HTTP requests contain a method, headers, URL, and sometimes a body. HTTP responses contain a status code, headers, and response data."
+    },
+
+    {
+      "type": "heading",
+      "text": "HTTP Methods"
+    },
+    {
+      "type": "list",
+      "items": [
+        "GET – Read data (fetch user list, open a webpage).",
+        "POST – Create data (register user, submit a form).",
+        "PUT – Update or replace entire data.",
+        "DELETE – Remove data."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Additional Important HTTP Methods"
+    },
+    {
+      "type": "list",
+      "items": [
+        "PATCH – Partially updates data (update only email).",
+        "HEAD – Same as GET but without response body.",
+        "OPTIONS – Shows allowed operations (used in CORS)."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "HTTP Status Codes"
+    },
+    {
+      "type": "list",
+      "items": [
+        "200 – OK: Request succeeded.",
+        "201 – Created: New resource created successfully.",
+        "400 – Bad Request: Client sent invalid data.",
+        "401 – Unauthorized: Authentication required.",
+        "404 – Not Found: Resource does not exist.",
+        "500 – Server Error: Internal server issue."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Why HTTP Is Important"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Defines communication between browser and server.",
+        "Every API is built using HTTP methods and status codes.",
+        "Helps in backend debugging and API testing.",
+        "Mandatory knowledge for frontend and backend developers.",
+        "One of the most asked interview topics."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "HTTP vs HTTPS"
+    },
+    {
+      "type": "paragraph",
+      "text": "HTTPS is HTTP combined with TLS (Transport Layer Security). It encrypts data, protects user information, and prevents attacks like man-in-the-middle."
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is HTTP?",
+      "answer": "HTTP (HyperText Transfer Protocol) is a communication protocol that defines how clients and servers exchange data on the web."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between PUT and PATCH?",
+      "answer": "PUT updates the entire resource, while PATCH updates only specific fields."
+    },
+    {
+      "type": "qa",
+      "question": "What are HTTP status code categories?",
+      "answer": "1xx – Informational, 2xx – Success, 3xx – Redirection, 4xx – Client errors, 5xx – Server errors."
+    },
+    {
+      "type": "qa",
+      "question": "What is HTTPS and why is it important?",
+      "answer": "HTTPS encrypts data using TLS, making communication secure and protecting users from hackers."
+    },
+    {
+      "type": "qa",
+      "question": "What is an HTTP header?",
+      "answer": "An HTTP header contains metadata such as tokens, content-type, cookies, and authorization details."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "HTTP is the core communication protocol of the web.",
+        "Browsers send requests and servers send responses.",
+        "Methods like GET, POST, PUT, DELETE define actions.",
+        "Status codes indicate success or failure.",
+        "HTTPS adds encryption and security using TLS."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa18f" },
+  "path": "/web/dns-domain",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "DNS (Domain Name System) is the system that converts human-readable domain names like google.com into machine-understandable IP addresses such as 142.250.194.110. Without DNS, users would need to remember numeric IP addresses instead of names."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why This Exists"
+    },
+    {
+      "type": "paragraph",
+      "text": "Humans remember names, but computers communicate using numbers (IP addresses). DNS acts like the phonebook of the internet, making browsing easy, fast, and user-friendly."
+    },
+
+    {
+      "type": "heading",
+      "text": "How DNS Works (Step-by-Step)"
+    },
+    {
+      "type": "code",
+      "code": "1. User types a URL (e.g., youtube.com)\n2. Browser checks cache (browser cache, OS cache)\n3. If not found, query goes to DNS Resolver\n4. Resolver asks the Root DNS Server\n5. Root returns TLD server info (.com, .org)\n6. Resolver asks the TLD Server\n7. TLD provides the Authoritative DNS server\n8. Authoritative server returns the IP address\n9. Browser connects to the server using the IP\n10. Website loads"
+    },
+
+    {
+      "type": "heading",
+      "text": "Important Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Domain Name – Website name (example: facebook.com).",
+        "TLD (Top Level Domain) – .com, .net, .org, .in, .dev.",
+        "IP Address – Unique numeric address of a server.",
+        "DNS Resolver – Looks up domains (ISP, Google DNS).",
+        "Authoritative DNS Server – Stores actual domain to IP mapping.",
+        "Subdomains – blog.example.com, api.example.com.",
+        "TTL (Time To Live) – Time DNS data is cached before refresh."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Types of DNS Records"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A Record – Maps domain to IPv4 address.",
+        "AAAA Record – Maps domain to IPv6 address.",
+        "CNAME – Alias to another domain name.",
+        "MX Record – Mail server configuration.",
+        "NS Record – Specifies DNS servers for the domain.",
+        "TXT Record – Used for verification (SPF, DKIM, Google)."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Why DNS Matters"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Allows websites to use human-friendly names.",
+        "Enables global routing of internet traffic.",
+        "Critical for email systems, APIs, and cloud services.",
+        "Helps debug networking and deployment issues.",
+        "Frequently asked topic in frontend and backend interviews."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Benefits of Understanding DNS"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Better control over custom domains.",
+        "Helps with deployment and hosting setup.",
+        "Improves ability to fix DNS-related errors.",
+        "Builds strong networking and system design fundamentals."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is DNS?",
+      "answer": "DNS (Domain Name System) converts domain names into IP addresses so browsers know where to send requests."
+    },
+    {
+      "type": "qa",
+      "question": "What is TTL?",
+      "answer": "TTL (Time To Live) defines how long a DNS record is cached before being refreshed from the server."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between A and CNAME records?",
+      "answer": "An A Record maps directly to an IP address, while a CNAME maps to another domain name."
+    },
+    {
+      "type": "qa",
+      "question": "Who provides the final IP address?",
+      "answer": "The Authoritative DNS Server for that domain."
+    },
+    {
+      "type": "qa",
+      "question": "What is a subdomain?",
+      "answer": "A subdomain is a separate section of a main domain, such as api.example.com."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "DNS converts domain names into IP addresses.",
+        "It involves Resolver, Root, TLD, and Authoritative servers.",
+        "DNS records define how domains connect to services.",
+        "TTL controls caching and performance.",
+        "DNS is a core concept for web development and interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa190" },
+  "path": "/web/browser-rendering",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Browser Rendering is the complete process through which a browser takes HTML, CSS, and JavaScript and converts them into the final pixels that appear on the screen. This entire pipeline is known as the Critical Rendering Path (CRP)."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Browser Rendering Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Understanding browser rendering helps developers build faster and more optimized web applications. Slow layouts, expensive paint operations, and unnecessary reflows can cause performance issues, especially on low-end devices."
+    },
+
+    {
+      "type": "heading",
+      "text": "Browser Rendering Pipeline (Step-by-Step)"
+    },
+    {
+      "type": "code",
+      "code": "1. Browser downloads HTML, CSS, and JavaScript files\n2. HTML is parsed to build the DOM\n3. CSS is parsed to build the CSSOM\n4. DOM and CSSOM combine to form the Render Tree\n5. Layout (Reflow) calculates size and position of elements\n6. Paint fills pixels (colors, text, borders, shadows)\n7. Compositing combines layers using the GPU\n8. Screen displays the final rendered page"
+    },
+
+    {
+      "type": "heading",
+      "text": "Core Concepts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "DOM (Document Object Model) – Structured representation of HTML.",
+        "CSSOM (CSS Object Model) – Tree structure of all applied CSS styles.",
+        "Render Tree – Combination of DOM and CSSOM for visible elements only.",
+        "Layout / Reflow – Calculates element size and position.",
+        "Paint – Draws colors, text, borders, shadows.",
+        "Compositing – GPU assembles painted layers into final image."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "What Triggers Reflow (Layout)?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Changing element size (width or height).",
+        "Adding or removing DOM elements.",
+        "Changing fonts.",
+        "Changing layout properties (margin, padding, position).",
+        "Resizing the browser window."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "What Triggers Repaint?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Changing colors.",
+        "Changing text color.",
+        "Changing background.",
+        "Changing border color.",
+        "Changing box-shadow."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Browser Optimization Techniques"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use transform and opacity for animations (GPU accelerated).",
+        "Avoid layout thrashing and forced reflows.",
+        "Use will-change carefully.",
+        "Minimize heavy CSS effects like shadows.",
+        "Debounce resize and scroll handlers."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Modern Browser Architecture"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Multi-process browsers like Chrome and Edge.",
+        "Separate processes for tabs, GPU, scripts, and memory.",
+        "Improves performance, security, and crash isolation."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Critical Rendering Path (CRP)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "DOM creation.",
+        "CSSOM creation.",
+        "Render Tree construction.",
+        "Layout.",
+        "Paint.",
+        "Composite layers."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Why This Matters for Developers"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Helps optimize performance.",
+        "Prevents layout shifts (CLS issues).",
+        "Improves animation smoothness.",
+        "Makes apps faster on low-end devices.",
+        "Frequently asked topic in frontend interviews."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is the DOM?",
+      "answer": "DOM (Document Object Model) is the browser’s tree representation of HTML."
+    },
+    {
+      "type": "qa",
+      "question": "What is Reflow?",
+      "answer": "Reflow (Layout) recalculates the size and position of elements."
+    },
+    {
+      "type": "qa",
+      "question": "What causes Repaint?",
+      "answer": "Visual changes such as color, background, borders, and shadows."
+    },
+    {
+      "type": "qa",
+      "question": "What is the Critical Rendering Path?",
+      "answer": "The sequence of steps the browser performs to convert HTML and CSS into pixels."
+    },
+    {
+      "type": "qa",
+      "question": "Why are transforms faster for animations?",
+      "answer": "Transforms are GPU-accelerated and avoid layout and paint steps."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Browser rendering converts HTML, CSS, and JS into pixels.",
+        "DOM and CSSOM form the Render Tree.",
+        "Layout, Paint, and Composite define rendering stages.",
+        "Reflow is expensive and should be minimized.",
+        "Transform and opacity animations are the most performant.",
+        "Essential knowledge for frontend performance and interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa191" },
+  "path": "/web/web-security",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web Security Basics refers to the essential techniques and rules used to protect websites from attacks targeting user data, cookies, sessions, and server resources. Understanding these concepts is crucial for building safe applications and for interviews."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Web Security Matters"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Protects users from data theft and harmful scripts.",
+        "Prevents attackers from taking control of accounts or sessions.",
+        "Keeps backend APIs secure from unauthorized access.",
+        "Improves trust in your application and prevents hacking.",
+        "Highly asked in frontend, backend, and full-stack interviews."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Core Web Security Concepts"
+    },
+
+    {
+      "type": "heading",
+      "text": "1️⃣ CORS (Cross-Origin Resource Sharing)"
+    },
+    {
+      "type": "paragraph",
+      "text": "CORS controls which domains are allowed to access your server. Browsers block requests from other domains by default for safety."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Prevents unauthorized websites from accessing your APIs.",
+        "Uses HTTP headers like Access-Control-Allow-Origin.",
+        "Common in frontend-backend communication."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "2️⃣ CSP (Content Security Policy)"
+    },
+    {
+      "type": "paragraph",
+      "text": "CSP prevents malicious scripts from executing on your website. It specifies which sources of scripts, images, and styles are allowed."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Stops Cross-Site Scripting (XSS) attacks.",
+        "Prevents loading harmful scripts from unknown domains.",
+        "Example: Allow scripts only from your domain → script-src 'self'."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "3️⃣ SSL/TLS (Secure Sockets Layer / Transport Layer Security)"
+    },
+    {
+      "type": "paragraph",
+      "text": "SSL/TLS encrypts data between the browser and server. HTTPS is protected by TLS encryption."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Makes communication secure.",
+        "Prevents data interception.",
+        "Essential for login, signup, payments, and APIs."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "4️⃣ XSS (Cross-Site Scripting)"
+    },
+    {
+      "type": "paragraph",
+      "text": "XSS occurs when attackers inject malicious JavaScript into your website. It runs in the victim’s browser and can steal cookies or modify pages."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Prevent by sanitizing input.",
+        "Avoid dangerouslySetInnerHTML in React.",
+        "Use CSP to block unknown scripts."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "5️⃣ CSRF (Cross-Site Request Forgery)"
+    },
+    {
+      "type": "paragraph",
+      "text": "CSRF forces a logged-in user to perform actions they didn’t intend."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Prevent with anti-CSRF tokens.",
+        "Use SameSite cookies.",
+        "Avoid unsafe GET requests for sensitive actions."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "6️⃣ Cookies & Security Flags"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cookies store session IDs. If unsecured, attackers can steal them."
+    },
+    {
+      "type": "list",
+      "items": [
+        "HttpOnly — JavaScript cannot access the cookie.",
+        "Secure — Cookie sent only over HTTPS.",
+        "SameSite — Prevents cross-site cookie sending, helps avoid CSRF."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "7️⃣ Authentication vs Authorization"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Authentication → Verifies who the user is (login).",
+        "Authorization → Checks what the user is allowed to do."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "8️⃣ Rate Limiting"
+    },
+    {
+      "type": "paragraph",
+      "text": "Restricts the number of requests a user can make in a given time. Protects APIs from bot attacks and brute-force login attempts."
+    },
+
+    {
+      "type": "heading",
+      "text": "9️⃣ Hashing & Encryption"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Hashing — One-way conversion (e.g., password hashing).",
+        "Encryption — Two-way conversion for securing data."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Why This Matters for Developers"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Prevents major vulnerabilities (XSS, CSRF, injection attacks).",
+        "Protects user accounts and payments.",
+        "Ensures APIs are not misused.",
+        "Critical knowledge for frontend and backend interviews."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is CORS?",
+      "answer": "CORS controls which external domains can access your server resources using specific headers."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between SSL and TLS?",
+      "answer": "TLS is the modern, secure version of SSL and is used by HTTPS."
+    },
+    {
+      "type": "qa",
+      "question": "What is XSS?",
+      "answer": "XSS injects malicious scripts that run in the user’s browser."
+    },
+    {
+      "type": "qa",
+      "question": "How do you prevent CSRF?",
+      "answer": "Use CSRF tokens and SameSite cookies."
+    },
+    {
+      "type": "qa",
+      "question": "What are HttpOnly cookies?",
+      "answer": "Cookies that cannot be accessed using JavaScript, used for securing sessions."
+    },
+    {
+      "type": "qa",
+      "question": "What is Content Security Policy?",
+      "answer": "A security layer that restricts what resources (scripts, images, styles) the browser can load."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "CORS controls external access to your APIs.",
+        "CSP protects from script attacks.",
+        "SSL/TLS encrypts browser ↔ server communication.",
+        "XSS injects scripts; CSRF forces unwanted actions.",
+        "Security cookies protect sessions.",
+        "Authentication ≠ Authorization.",
+        "Essential for frontend, backend, and system design interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa192" },
+  "path": "/web/web-performance",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web Performance refers to how fast a website loads, renders, and responds to user interactions. Faster websites improve user experience, SEO rankings, conversion rates, and overall application quality."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Web Performance Matters"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Slow websites lose users within seconds.",
+        "Google ranks fast websites higher (Core Web Vitals).",
+        "Low-end mobile devices need optimized pages.",
+        "Improves user engagement and business revenue.",
+        "Critical topic for frontend, backend & system design interviews."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Web Performance Concepts"
+    },
+
+    {
+      "type": "heading",
+      "text": "1️⃣ Latency"
+    },
+    {
+      "type": "paragraph",
+      "text": "Latency is the time taken for a request to travel from the browser to the server and back. Lower latency = faster website."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Affected by distance between user & server.",
+        "CDNs help reduce latency.",
+        "HTTP requests add latency each time."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "2️⃣ Caching"
+    },
+    {
+      "type": "paragraph",
+      "text": "Caching stores web assets so they load faster next time. Browsers, CDNs, and servers all use caching."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Browser Cache — static files saved on device.",
+        "Service Worker Cache — PWA offline support.",
+        "CDN Cache — global edge servers speed up delivery.",
+        "Headers: Cache-Control, ETag, Expires."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "3️⃣ CDN (Content Delivery Network)"
+    },
+    {
+      "type": "paragraph",
+      "text": "A CDN is a network of global servers that deliver images, scripts, videos, and static files from locations close to the user."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Reduces latency.",
+        "Improves load times.",
+        "Reduces load on your backend server."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "4️⃣ Resource Optimization"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Minify HTML/CSS/JS.",
+        "Compress images (WebP, AVIF).",
+        "Tree-shake unused JavaScript.",
+        "Use responsive images (srcset).",
+        "Compress responses using Gzip/Brotli."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "5️⃣ HTTP/2 & HTTP/3"
+    },
+    {
+      "type": "heading",
+      "text": "HTTP/2"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Multiplexing — multiple requests in one connection.",
+        "Header compression.",
+        "Server push (deprecated now)."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "HTTP/3"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Faster connections using QUIC protocol.",
+        "Better performance on unstable networks.",
+        "Lower latency for mobile devices."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "6️⃣ Lazy Loading"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lazy Loading delays loading images, components, or scripts until they are actually needed."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Improves initial page load time.",
+        "Saves data on mobile devices.",
+        "Use loading=\"lazy\" for images."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "7️⃣ Critical Rendering Path Optimization"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Load critical CSS first (<link rel=\"preload\">).",
+        "Defer non-critical JS using defer or async.",
+        "Reduce render-blocking resources."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "8️⃣ Core Web Vitals"
+    },
+    {
+      "type": "list",
+      "items": [
+        "LCP (Largest Contentful Paint) — load speed.",
+        "FID (First Input Delay) — interaction delay.",
+        "CLS (Cumulative Layout Shift) — layout stability."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Performance Optimization Techniques"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use a CDN for static assets.",
+        "Enable caching at browser, CDN, and server levels.",
+        "Minimize JavaScript bundle size.",
+        "Prefetch important resources.",
+        "Use HTTP/2 or HTTP/3 for better performance.",
+        "Optimize images using modern formats.",
+        "Split code into smaller chunks (code splitting).",
+        "Use web workers for heavy computations."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Why This Matters for Developers"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Improves user retention and satisfaction.",
+        "Better SEO ranking.",
+        "Faster loading = higher conversion rates.",
+        "Key topic for frontend system design interviews.",
+        "Helps build modern, scalable web apps."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is latency?",
+      "answer": "Latency is the time delay between sending a request and receiving a response."
+    },
+    {
+      "type": "qa",
+      "question": "What is a CDN and why is it used?",
+      "answer": "A CDN delivers content from servers close to the user to reduce load time."
+    },
+    {
+      "type": "qa",
+      "question": "What is lazy loading?",
+      "answer": "Loading images/components only when needed to improve performance."
+    },
+    {
+      "type": "qa",
+      "question": "What is the difference between HTTP/1.1 and HTTP/2?",
+      "answer": "HTTP/2 supports multiplexing, header compression, and faster parallel requests."
+    },
+    {
+      "type": "qa",
+      "question": "What are Core Web Vitals?",
+      "answer": "LCP, FID, and CLS — metrics to measure website performance."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Web performance focuses on speed, latency, caching, and optimization.",
+        "CDNs and caching improve global delivery.",
+        "Lazy loading and resource optimization reduce load time.",
+        "HTTP/2 and HTTP/3 offer better network performance.",
+        "Core Web Vitals are crucial for SEO.",
+        "Essential topic for frontend performance & interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa193" },
+  "path": "/web/accessibility",
+  "priority": "Compulsory",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Accessibility (A11y) refers to designing and building websites so that everyone — including people who have vision problems, hearing problems, movement difficulties, or learning/thinking difficulties — can use the website effectively. A11y ensures that your UI works with screen readers, keyboards, assistive technologies, and supports proper color contrast and content structure. Accessibility is required by standards like WCAG (Web Content Accessibility Guidelines)."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Accessibility Matters"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Makes the web inclusive for people with disabilities.",
+        "Required by many government and enterprise companies.",
+        "Improves usability for everyone (not just disabled users).",
+        "Better SEO — search engines read pages like screen readers.",
+        "Reduces legal risks (ADA, WCAG compliance).",
+        "Important topic in frontend and UI developer interviews."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Accessibility Concepts"
+    },
+
+    {
+      "type": "heading",
+      "text": "1️⃣ Screen Readers"
+    },
+    {
+      "type": "paragraph",
+      "text": "Screen readers (e.g., NVDA, JAWS, VoiceOver) read the page aloud for visually impaired users. They rely on correct semantic HTML, ARIA roles, and keyboard navigation."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use semantic elements like <header>, <nav>, <main>.",
+        "Use proper headings (h1 → h6).",
+        "Provide text alternatives for images."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "2️⃣ ARIA (Accessible Rich Internet Applications)"
+    },
+    {
+      "type": "paragraph",
+      "text": "ARIA provides extra information to assistive technologies when semantic HTML alone is not enough."
+    },
+    {
+      "type": "list",
+      "items": [
+        "role — defines the purpose of an element.",
+        "aria-label — gives an accessible name to an element.",
+        "aria-hidden — hides elements from screen readers.",
+        "aria-live — announces dynamic content changes."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "3️⃣ Keyboard Navigation"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use Tab to move focus.",
+        "Shift + Tab to go backward.",
+        "Enter or Space to activate buttons.",
+        "Use outline for focus rings (never remove without replacement).",
+        "All interactive elements must be focusable."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "4️⃣ Color Contrast"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Recommended contrast ratio: 4.5:1 for normal text.",
+        "Large text: 3:1.",
+        "Avoid using color alone to show meaning.",
+        "Use tools like “Contrast Checker”."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "5️⃣ Alt Text for Images"
+    },
+    {
+      "type": "list",
+      "items": [
+        "alt=\"User profile photo\" – descriptive alt text.",
+        "Decorative images should have alt=\"\" so screen readers skip them."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "6️⃣ Semantic HTML"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<nav> — navigation menu",
+        "<main> — main content",
+        "<button> — use for buttons, not div/span",
+        "<footer> — page footer",
+        "Correct heading order (never skip levels)"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "7️⃣ Forms Accessibility"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Each input must have a <label>.",
+        "Use aria-required for required fields.",
+        "Describe errors using aria-live.",
+        "Group related fields using <fieldset>."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Accessibility Standards"
+    },
+    {
+      "type": "list",
+      "items": [
+        "WCAG — Web Content Accessibility Guidelines.",
+        "POUR Principles — Perceivable, Operable, Understandable, Robust.",
+        "ADA Compliance — legal accessibility requirement (US)."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Common Accessibility Mistakes"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Removing focus outlines.",
+        "Using divs/spans instead of buttons/links.",
+        "Missing alt text for images.",
+        "Poor color contrast.",
+        "Misusing ARIA roles.",
+        "Incorrect heading hierarchy."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Accessibility Helps Everyone"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Better SEO (search engines behave like screen readers).",
+        "Better UX for keyboard users.",
+        "Improved clarity and structure.",
+        "More usable for elderly or low-vision users."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is A11y?",
+      "answer": "A11y stands for Accessibility — making the web usable for people with disabilities."
+    },
+    {
+      "type": "qa",
+      "question": "What is ARIA used for?",
+      "answer": "ARIA adds extra accessibility information to elements for assistive technologies."
+    },
+    {
+      "type": "qa",
+      "question": "How do screen readers work?",
+      "answer": "They read out semantic HTML, labels, roles, and structure to visually impaired users."
+    },
+    {
+      "type": "qa",
+      "question": "What is the recommended color contrast ratio?",
+      "answer": "4.5:1 for normal text, 3:1 for large text."
+    },
+    {
+      "type": "qa",
+      "question": "Why is semantic HTML important?",
+      "answer": "It gives meaning to content, improves SEO, readability, and accessibility."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A11y ensures websites work for disabled users.",
+        "Use semantic HTML, proper labels, alt text, and ARIA roles.",
+        "Keyboard navigation must work everywhere.",
+        "Color contrast is essential for readability.",
+        "Accessibility improves SEO and user experience.",
+        "Mandatory knowledge for frontend developers & interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa194" },
+  "path": "/web/web-standards",
+  "priority": "High",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web Standards & Protocols ensure that websites work the same way across all browsers (Chrome, Firefox, Edge, Safari). These standards are created and maintained by organizations like W3C (World Wide Web Consortium) and WHATWG (Web Hypertext Application Technology Working Group)."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Web Standards Matter?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Same website works on all browsers",
+        "No weird layout issues",
+        "Better performance",
+        "Better accessibility",
+        "Cleaner and future-proof code"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Main Web Standards"
+    },
+    {
+      "type": "list",
+      "items": [
+        "HTML5 Specification – rules for how HTML tags behave",
+        "DOM (Document Object Model) – browser’s structure of your page as objects",
+        "CSSOM (CSS Object Model) – how browsers understand and apply CSS rules",
+        "ECMAScript – rules for JavaScript",
+        "URL Standard – how browser reads and processes URLs"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Who Defines These Standards?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "W3C (World Wide Web Consortium) — HTML, CSS, ARIA",
+        "WHATWG (Web Hypertext Application Technology Working Group) — HTML Living Standard, DOM, Fetch API"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Cross-Browser Compatibility"
+    },
+    {
+      "type": "paragraph",
+      "text": "This means making sure your website works the same on all browsers. Developers use:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Autoprefixer – adds missing CSS prefixes",
+        "Can I Use – to check browser support",
+        "Polyfills – extra JS code to support old browsers",
+        "Transpilers (like Babel) – convert modern JS to older JS"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is W3C?",
+      "answer": "World Wide Web Consortium — it creates web standards."
+    },
+    {
+      "type": "qa",
+      "question": "What is WHATWG?",
+      "answer": "A group that maintains the HTML Living Standard and modern browser APIs."
+    },
+    {
+      "type": "qa",
+      "question": "What is the DOM?",
+      "answer": "Document Object Model — the browser’s representation of your webpage."
+    },
+    {
+      "type": "qa",
+      "question": "What is CSSOM?",
+      "answer": "CSS Object Model — how the browser understands CSS rules."
+    },
+    {
+      "type": "qa",
+      "question": "How do you handle cross-browser issues?",
+      "answer": "By using Can I Use, polyfills, Babel, and CSS autoprefixer."
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa195" },
+  "path": "/web/pwa",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Progressive Web Apps (PWA) are websites that feel like apps you install on your phone or computer. You can open them without internet (offline), get notifications, and add them to your home screen, just like a normal app."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why PWAs Matter"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Users can access the app even without internet (offline support)",
+        "Can be installed on the home screen without app stores",
+        "Faster and smoother experience than regular websites",
+        "Push notifications help engage users",
+        "Good topic for frontend and full-stack interviews"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Key Concepts"
+    },
+
+    {
+      "type": "subheading",
+      "text": "1. Service Workers"
+    },
+    {
+      "type": "paragraph",
+      "text": "A Service Worker is a background script that runs in the browser. It intercepts network requests, handles caching, and allows offline usage."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Runs separately from web page",
+        "Caches files for offline use",
+        "Manages background sync and push notifications"
+      ]
+    },
+
+    {
+      "type": "subheading",
+      "text": "2. App Manifest"
+    },
+    {
+      "type": "paragraph",
+      "text": "Web App Manifest is a JSON file that tells the browser how your PWA should behave when installed on a device."
+    },
+    {
+      "type": "list",
+      "items": [
+        "App name, short name, icons",
+        "Theme color, background color",
+        "Start URL and display mode (fullscreen, standalone)"
+      ]
+    },
+
+    {
+      "type": "subheading",
+      "text": "3. Offline Capabilities"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Caches static files (HTML, CSS, JS)",
+        "Can serve content when network is unavailable",
+        "Improves user experience in poor network areas"
+      ]
+    },
+
+    {
+      "type": "subheading",
+      "text": "4. Push Notifications"
+    },
+    {
+      "type": "paragraph",
+      "text": "Allows the PWA to send messages to the user even when the app is not open."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Requires user permission",
+        "Used for updates, alerts, or reminders",
+        "Helps improve user engagement"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Benefits of PWAs"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Works offline and on low-quality networks",
+        "No need to publish in app stores",
+        "Lightweight and fast",
+        "Improves user retention and engagement",
+        "Cross-platform support (mobile, tablet, desktop)"
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is a PWA?",
+      "answer": "Progressive Web App is a website that behaves like a native app with offline support and push notifications."
+    },
+    {
+      "type": "qa",
+      "question": "What is a Service Worker?",
+      "answer": "A background script that manages caching, offline support, and background tasks."
+    },
+    {
+      "type": "qa",
+      "question": "What is the Web App Manifest?",
+      "answer": "A JSON file that defines how the PWA should appear and behave when installed on a device."
+    },
+    {
+      "type": "qa",
+      "question": "How do PWAs work offline?",
+      "answer": "Service workers cache files and data so the app can run without internet."
+    },
+    {
+      "type": "qa",
+      "question": "Why are push notifications useful in PWAs?",
+      "answer": "They allow apps to send updates and engage users even when the app is closed."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "PWAs provide app-like experience on the web.",
+        "Service Workers enable offline support and caching.",
+        "Manifest file controls app installation and appearance.",
+        "Push notifications help maintain user engagement.",
+        "Essential for modern frontend and full-stack web development interviews."
+      ]
+    }
+  ]
+},
+{
+  "topic": { "$oid": "69426686067372ab33ffa196" },
+  "path": "/web/web-apis",
+  "priority": "Medium",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web APIs (Application Programming Interfaces) are tools that browsers provide so websites can do cool things without needing extra software. They let you use things like fetching data, storing data, geolocation, and more, just with simple code."
+    },
+
+    {
+      "type": "heading",
+      "text": "Why Web APIs Matter"
+    },
+    {
+      "type": "list",
+      "items": [
+        "They make websites interactive and powerful.",
+        "You can access device features like location or camera safely.",
+        "Helps developers build modern web apps faster.",
+        "Important for frontend interviews and practical development."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Common Browser Web APIs"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Fetch API — Request and get data from a server (like calling a mini web service).",
+        "Local Storage / Session Storage — Save small amounts of data in the browser.",
+        "Geolocation API — Get user’s location (with permission) for maps or services.",
+        "Notification API — Send push notifications to users.",
+        "Canvas API — Draw graphics or animations on a webpage.",
+        "Web Audio API — Play or process audio in the browser."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Benefits of Using Web APIs"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Add interactive features without installing extra software.",
+        "Access device features safely and easily.",
+        "Improve user experience with offline support, notifications, or dynamic content.",
+        "Speeds up development and reduces extra libraries."
+      ]
+    },
+
+    {
+      "type": "heading",
+      "text": "Interview Questions"
+    },
+    {
+      "type": "qa",
+      "question": "What is a Web API?",
+      "answer": "A tool provided by browsers to let websites access features like storage, location, and network requests."
+    },
+    {
+      "type": "qa",
+      "question": "What is the Fetch API used for?",
+      "answer": "To send requests and get data from servers asynchronously."
+    },
+    {
+      "type": "qa",
+      "question": "How does localStorage differ from sessionStorage?",
+      "answer": "localStorage keeps data even after closing the browser, sessionStorage clears data when the tab closes."
+    },
+    {
+      "type": "qa",
+      "question": "Can Web APIs access device features?",
+      "answer": "Yes, with user permission, APIs like Geolocation, Camera, or Notifications can access certain features."
+    },
+
+    {
+      "type": "heading",
+      "text": "Summary"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Web APIs let websites interact with the browser and device.",
+        "Common APIs: Fetch, Storage, Geolocation, Notifications, Canvas.",
+        "They improve user experience and make apps more powerful.",
+        "Important topic for frontend interviews and real-world apps."
+      ]
+    }
+  ]
+}
+]

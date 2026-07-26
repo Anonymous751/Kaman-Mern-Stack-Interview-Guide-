@@ -1,0 +1,184 @@
+[
+{
+    "title": "Node.js Basics",
+    "path": "/backend/nodeBasics",
+    "explanation": "Event loop, non-blocking I/O, single-threaded architecture, modules, npm, require vs import.",
+    "priority": "Compulsory",
+    "order": 1
+  },
+  {
+    "title": "Node.js Core Modules",
+    "path": "/backend/nodeCore",
+    "explanation": "fs, path, http, os, events — usage, examples, and common interview questions.",
+    "priority": "High",
+    "order": 2
+  },
+  {
+    "title": "Node.js Streams & Buffers",
+    "path": "/backend/nodeStreams",
+    "explanation": "Readable, writable, duplex streams, buffers, piping, handling large files efficiently.",
+    "priority": "High",
+    "order": 3
+  },
+  {
+    "title": "Node.js Events & EventEmitter",
+    "path": "/backend/nodeEvents",
+    "explanation": "EventEmitter basics, emitting/listening to events, practical use cases.",
+    "priority": "Medium",
+    "order": 4
+  },
+  {
+    "title": "Asynchronous Patterns",
+    "path": "/backend/asyncPatterns",
+    "explanation": "Callbacks, promises, async/await, error handling, avoiding callback hell.",
+    "priority": "Compulsory",
+    "order": 5
+  },
+  {
+    "title": "Node.js Process & Cluster",
+    "path": "/backend/nodeProcess",
+    "explanation": "process object, environment variables, cluster module for multi-core scaling.",
+    "priority": "Low",
+    "order": 6
+  },
+  {
+    "title": "Express Basics",
+    "path": "/backend/expressBasics",
+    "explanation": "What is Express? Middleware? Routing? Difference between app.use vs app.get. req, res objects.",
+    "priority": "Compulsory",
+    "order": 7
+  },
+  {
+    "title": "Backend Folder Structure (MVC)",
+    "path": "/backend/folderStructure",
+    "explanation": "Why separate controllers, services, and routes? Explain MVC architecture and benefits.",
+    "priority": "Compulsory",
+    "order": 8
+  },
+  {
+    "title": "Middleware (Custom & Built-in)",
+    "path": "/backend/middleware",
+    "explanation": "Application, router, error middleware. How next() works. Common interview scenarios.",
+    "priority": "Compulsory",
+    "order": 9
+  },
+  {
+    "title": "Database Basics (SQL & NoSQL)",
+    "path": "/backend/databaseBasics",
+    "explanation": "RDBMS vs NoSQL, ACID vs BASE, normalization, denormalization, indexes, queries, joins, aggregations.",
+    "priority": "Compulsory",
+    "order": 10
+  },
+  {
+    "title": "MongoDB & Mongoose",
+    "path": "/backend/mongoDB",
+    "explanation": "Schemas, models, validation, timestamps, populate(), references, aggregation pipeline, indexes.",
+    "priority": "Compulsory",
+    "order": 11
+  },
+  {
+    "title": "Mongoose Query Methods",
+    "path": "/backend/queryMethods",
+    "explanation": "find, findOne, findById, updateOne, deleteOne, aggregate, lean(), exec().",
+    "priority": "High",
+    "order": 12
+  },
+  {
+    "title": "SQL Queries & Optimization",
+    "path": "/backend/sqlQueries",
+    "explanation": "Select, joins, group by, subqueries, indexes, query optimization, transactions.",
+    "priority": "High",
+    "order": 13
+  },
+  {
+    "title": "Caching & Performance",
+    "path": "/backend/caching",
+    "explanation": "Why caching? Redis basics, in-memory vs persistent caching, cache invalidation, reducing DB load.",
+    "priority": "High",
+    "order": 14
+  },
+  {
+    "title": "Authentication & Authorization",
+    "path": "/backend/authAuthz",
+    "explanation": "JWT, access vs refresh tokens, session-based auth, RBAC, permissions, secure storage.",
+    "priority": "Compulsory",
+    "order": 15
+  },
+  {
+    "title": "File Upload & Storage",
+    "path": "/backend/fileUpload",
+    "explanation": "Multer, single vs multiple uploads, storage engines, cloud upload (Cloudinary), GridFS.",
+    "priority": "Medium",
+    "order": 16
+  },
+  {
+    "title": "Error Handling",
+    "path": "/backend/errorHandling",
+    "explanation": "Global error handler, try/catch with async/await, error middleware, HTTP status codes.",
+    "priority": "Compulsory",
+    "order": 17
+  },
+  {
+    "title": "Security (Web Security)",
+    "path": "/backend/security",
+    "explanation": "CORS, XSS, CSRF, input sanitization, rate limiting, password hashing, HTTPS basics.",
+    "priority": "Compulsory",
+    "order": 18
+  },
+  {
+    "title": "API Design Best Practices",
+    "path": "/backend/apiDesign",
+    "explanation": "REST naming conventions, versioning, DTOs, status codes, pagination, filtering, query optimization.",
+    "priority": "Compulsory",
+    "order": 19
+  },
+  {
+    "title": "Background Jobs & Queues",
+    "path": "/backend/jobsQueues",
+    "explanation": "Why use background jobs? Bull, RabbitMQ, queues for emails, notifications, long-running tasks.",
+    "priority": "Medium",
+    "order": 20
+  },
+  {
+    "title": "Testing Backend APIs",
+    "path": "/backend/testing",
+    "explanation": "Unit vs integration tests, Jest/Supertest, mocking DB, testing authentication and error scenarios.",
+    "priority": "High",
+    "order": 21
+  },
+  {
+    "title": "Deployment & Environment",
+    "path": "/backend/deployment",
+    "explanation": "Environment variables, process.env, deployment basics (Heroku, Vercel, AWS), logging, monitoring.",
+    "priority": "High",
+    "order": 22
+  },
+  {
+    "title": "WebSockets & Real-time Communication",
+    "path": "/backend/websockets",
+    "explanation": "Socket.io basics, events, broadcasting, rooms, scaling real-time apps.",
+    "priority": "Medium",
+    "order": 23
+  },
+  {
+    "title": "Performance & Scalability",
+    "path": "/backend/performance",
+    "explanation": "Clustering, load balancing, horizontal vs vertical scaling, database replication and sharding.",
+    "priority": "High",
+    "order": 24
+  },
+  {
+    "title": "Logging & Monitoring",
+    "path": "/backend/logging",
+    "explanation": "Winston, Morgan, ELK stack basics, monitoring tools, error tracking and alerting.",
+    "priority": "Medium",
+    "order": 25
+  },
+  {
+    "title": "Microservices & Architecture",
+    "path": "/backend/microservices",
+    "explanation": "Difference between monolith vs microservices, REST vs gRPC, API gateway, service discovery, inter-service communication.",
+    "priority": "Low",
+    "order": 26
+  }
+]
