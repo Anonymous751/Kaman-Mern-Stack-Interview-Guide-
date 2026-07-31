@@ -8,7 +8,7 @@ import fdetail from "../models/fdetail.js";
  * ==================================================
  */
 export const getAllTopics = async (req, res) => {
-  console.log("🔥 getAllTopics HIT");
+  console.log("🔥 getAllTopics HIT")
 
   try {
     const topics = await ftopic.find({}).sort({ order: 1 });

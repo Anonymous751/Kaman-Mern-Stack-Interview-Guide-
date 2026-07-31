@@ -4,4 +4,4 @@ Password- 9rSSPvmQ5VRNjs6u || codeNest
 
 
 
-connection string : mongodb+srv://kamanpreetsingh51_db:codeNest@codenestcluster.dvpnwex.mongodb.net/?appName=codeNestCluster
+connection string : mongodb+srv://kamanpreetsingh51_db:codeNest@codenestcluster.dvpnwex.mongodb.net/codenest?retryWrites=true&w=majority

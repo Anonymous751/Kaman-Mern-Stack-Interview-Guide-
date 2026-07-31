@@ -1,18 +1,35 @@
+import React from "react";
 
-import { Link } from "react-router-dom";
+const BackButton = ({
+  label = "Go Back",
+  className = "",
+  icon = "⬅"
+}) => {
 
-const BackButton = ({ to = "/", label = "Go Back", className = "", icon = "⬅" }) => {
+
+  const handleBack = () => {
+
+    window.history.back();
+
+  };
+
+
   return (
-    <>    
-    <br />
-    <Link to={to}>
-      <button className={`btn btn-primary ${className}`}>
-        {icon} {label}
-      </button>
-    </Link>
-    </>
+    <>
+      <br />
 
+      <button
+        className={`btn btn-primary ${className}`}
+        onClick={handleBack}
+      >
+
+        {icon} {label}
+
+      </button>
+
+    </>
   );
 };
+
 
 export default BackButton;

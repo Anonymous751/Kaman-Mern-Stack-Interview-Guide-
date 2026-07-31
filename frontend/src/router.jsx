@@ -11,6 +11,7 @@ import FolderStructure from "./pages/folderStructure/FolderStructure";
 import ReactFormikValidation from "./pages/quickAccess/ReactFormikValidation";
 import ApiCalling from "./pages/quickAccess/ApiCalling";
 import SearchFilter from "./pages/quickAccess/SearchFilter";
+import SearchFilterBackend from "./pages/quickAccess/SearchFilterBackend";
 
 /* ------------------ Tasks / Projects ------------------ */
 import TasksPage from "./pages/tasks/TasksPage";
@@ -56,6 +57,9 @@ import WebTopicsList from "./pages/web/WebTopicsList";
 import WebTopicsDetailPage from "./pages/web/topicExplanation/WebTopicsDetailPage";
 import ClientPage from "./pages/tasks/projects/jsonServer/pages/ClientPage";
 import BlogHomePage from "./pages/tasks/projects/blogApp/pages/BlogHomePage";
+import FileUpload from "./pages/quickAccess/FileUpload";
+import JwtAuth from "./pages/quickAccess/JwtAuth"
+import RBAC from "./pages/quickAccess/RBAC";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -67,6 +71,14 @@ const router = createBrowserRouter(
       <Route path="form-validation" element={<ReactFormikValidation />} />
       <Route path="api-calling" element={<ApiCalling />} />
       <Route path="search-filter" element={<SearchFilter />} />
+      <Route path="pagination" element={<SearchFilterBackend/>} />
+      <Route path="jwt-auth" element={<JwtAuth />} />
+      <Route path="/rbac" element={<RBAC />} />
+
+       
+      <Route path="file-upload" element={<FileUpload currentPage={1} />}  />
+
+
       <Route path="folder_structure-page" element={<FolderStructure />} />
 
       {/* ------------------ Tasks / Projects ------------------ */}

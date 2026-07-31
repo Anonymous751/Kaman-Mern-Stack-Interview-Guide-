@@ -9,6 +9,9 @@ import { Fade, OverlayTrigger, Tooltip } from "react-bootstrap";
 import FadeScrollWrapper from "../components/FadeScrollWrapper";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
+import "../../customCss/CustomCss.css"
+import FloatingDeveloperBackground from "./HomeComponents/FloatingDeveloperBackground.jsx";
+
 
 // Quick access tasks
 const quickAccessTasks = [
@@ -91,8 +94,8 @@ function HomePage() {
   useEffect(() => {
   const typed = new Typed(typedRef.current, {
     strings: [
-  "MERN Interview Guide",
-  "Real Interview Tasks",
+  "Mern Stack Guide",
+  "One Stop Mern Map ",
   "Full Stack Preparation"
 ],
     typeSpeed: 80,
@@ -111,8 +114,18 @@ function HomePage() {
 }, []);
 
   return (
-    <Container className=" py-5">
+
+
+<>
+<div className="home-page">
+
+
+   <FloatingDeveloperBackground />
+
+ <Container className="py-5">
       {/* ---------------- Hero Section ---------------- */}
+
+      
       <FadeScrollWrapper>
         <div
           id="home"
@@ -181,54 +194,156 @@ function HomePage() {
       </FadeScrollWrapper>
 
       {/* ---------------- Quick Access Tasks ---------------- */}
-      <FadeScrollWrapper>
-        <h3 id="quick-access" className="font-semibold text-gray-800 mb-4 mt-5">
-          Quick Access Tasks
-        </h3>
-        <Row className="g-4">
-          {quickAccessTasks.map((task, idx) => (
-            <Col key={idx} md={6} lg={4}>
-              <Card
-                className="shadow-md rounded-xl h-100 position-relative border-0 transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
-                style={{ minHeight: "250px", paddingTop: "2rem" }}
+  <FadeScrollWrapper>
+
+  <div className="glass-section ">
+
+    <h3
+      id="quick-access"
+      className="font-semibold text-gray-800 mb-4 mt-2 signature-hover cursor-pointer"
+    >
+      Quick Access Tasks
+    </h3>
+
+
+    <Row className="g-4 ">
+
+      {quickAccessTasks.map((task, idx) => (
+
+        <Col key={idx} md={6} lg={4}>
+
+          <Card
+            className="
+rounded-xl
+h-100
+position-relative
+transform
+transition-transform
+duration-500
+hover:scale-105
+hover:shadow-2xl
+border-2
+"
+style={{
+  minHeight:"250px",
+  paddingTop:"2rem"
+}}
+          >
+
+
+            {task.level && (
+
+              <Badge
+                bg={getBadgeColor(task.level)}
+                className="
+                  position-absolute
+                  top-3
+                  end-3
+                  text-nowrap
+                "
+                style={{
+                  fontSize: "0.85rem",
+                  padding: "0.35em 0.55em"
+                }}
               >
-                {task.level && (
-                  <Badge
-                    bg={getBadgeColor(task.level)}
-                    className="position-absolute top-3 end-3 text-nowrap"
-                    style={{ fontSize: "0.85rem", padding: "0.35em 0.55em" }}
-                  >
-                    {task.level}
-                  </Badge>
-                )}
-                <Card.Body className="d-flex flex-column justify-content-between p-4">
-                  <div>
-                    <Card.Title className="text-lg font-semibold text-gray-700 mb-2">
-                      {task.title}
-                    </Card.Title>
-                    <Card.Text className="text-gray-600 text-sm">
-                      {task.description}
-                    </Card.Text>
-                  </div>
-                  <Button
-                    as={Link}
-                    to={task.path}
-                    variant="primary"
-                    className="mt-3 hover:scale-105 transition-transform duration-300"
-                  >
-                    View Steps
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </FadeScrollWrapper>
+
+                {task.level}
+
+              </Badge>
+
+            )}
+
+
+
+            <Card.Body
+              className="
+                d-flex
+                flex-column
+                justify-content-between
+                p-4
+                
+              "
+            >
+
+
+              <div>
+
+                <Card.Title
+                  className="
+                    text-lg
+                    font-semibold
+                    text-gray-700
+                    mb-2
+                  "
+                >
+
+                  {task.title}
+
+                </Card.Title>
+
+
+
+                <Card.Text
+                  className="
+                    text-gray-600
+                    text-sm
+                  "
+                >
+
+                  {task.description}
+
+                </Card.Text>
+
+
+              </div>
+
+
+
+              <Button
+
+                as={Link}
+
+                to={task.path}
+
+                variant="primary"
+
+                className="
+                  mt-3
+                  hover:scale-105
+                  transition-transform
+                  duration-300
+                "
+
+              >
+
+                View Steps
+
+              </Button>
+
+
+            </Card.Body>
+
+
+          </Card>
+
+
+        </Col>
+
+      ))}
+
+
+    </Row>
+
+
+  </div>
+
+
+</FadeScrollWrapper>
 
       {/* ---------------- What's Inside ---------------- */}
       <FadeScrollWrapper>
-        <div className="mt-5 p-5 bg-white rounded-lg shadow-md">
-          <h3 className="font-semibold text-gray-800 mb-3">What’s Inside?</h3>
+        <div className="mt-5 p-5  rounded-lg shadow-md">
+          <h3 className="font-semibold text-gray-800 mb-3 signature-hover cursor-pointer">What’s Inside?</h3>
           <Row className="g-4">
             <Col md={6}>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -262,12 +377,18 @@ function HomePage() {
 
       {/* ---------------- MERN Roadmap ---------------- */}
       <FadeScrollWrapper>
-        <div className="mt-6 p-6 bg-gray-100 rounded-xl shadow-md">
+
+{/* ---------------- MERN Roadmap ---------------- */}
+
+<div className="glass-section mt-6 p-6 rounded-xl">
+
   <h3 className="font-semibold text-gray-800 mb-6 text-center text-xl">
     MERN Roadmap
   </h3>
 
+
   <div className="flex flex-wrap justify-center items-center gap-6 relative">
+
     {[
       "JavaScript Fundamentals",
       "Advanced ES6+",
@@ -287,56 +408,95 @@ function HomePage() {
       "Optimizing MongoDB (Indexes & Aggregation)",
       "Full-Stack Deployment (Render, Railway, Vercel)",
     ].map((step, i, arr) => (
+
       <div key={i} className="flex items-center">
 
+
         {/* Roadmap Card */}
+
         <div
           className="
-            px-5 py-2 bg-white rounded-xl shadow-md
-            transition-all duration-300
-            cursor-pointer
-            hover:scale-105 hover:shadow-2xl
-            relative group
-            border border-gray-200
-            flex items-center gap-3
+          roadmap-card
+          px-5 py-2
+          rounded-xl
+          transition-all
+          duration-300
+          cursor-pointer
+          hover:scale-105
+          relative
+          group
+          border
+          flex
+          items-center
+          gap-3
           "
-          style={{ boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}
         >
+
+
           {/* Number Badge */}
+
           <div
             className="
-              w-7 h-7 rounded-full bg-blue-500
-              text-white text-sm flex items-center justify-center
-              font-semibold shadow
+            w-7
+            h-7
+            rounded-full
+            bg-blue-500
+            text-white
+            text-sm
+            flex
+            items-center
+            justify-center
+            font-semibold
+            shadow
             "
           >
             {i + 1}
           </div>
 
-          <p className="font-medium text-gray-800">{step}</p>
 
-          {/* Glow */}
+
+          <p className="font-medium text-gray-800">
+            {step}
+          </p>
+
+
+
+          {/* Hover Glow */}
+
           <div
             className="
-              absolute inset-0 rounded-xl opacity-0
-              group-hover:opacity-100 transition-all duration-300
-              blur-md
+            absolute
+            inset-0
+            rounded-xl
+            opacity-0
+            group-hover:opacity-100
+            transition-all
+            duration-300
+            blur-md
             "
             style={{
               background:
-                "linear-gradient(135deg, rgba(0,200,255,0.4), rgba(0,120,255,0.4))",
+              "linear-gradient(135deg, rgba(0,200,255,0.35), rgba(0,120,255,0.35))",
             }}
-          ></div>
+          >
+          </div>
+
+
         </div>
 
-        {/* SVG STROKE LINE – hidden on mobile */}
+
+
+        {/* Connector Line */}
+
         {i !== arr.length - 1 && (
+
           <svg
             width="60"
             height="20"
             viewBox="0 0 60 20"
             className="mx-2 hidden sm:block"
           >
+
             <path
               d="M5 10 H55"
               stroke="#3B82F6"
@@ -344,71 +504,152 @@ function HomePage() {
               strokeLinecap="round"
               className="stroke-line"
             />
+
           </svg>
+
         )}
+
+
       </div>
+
     ))}
+
+
   </div>
+
 </div>
+
+
 
 <style>
 {`
+
 .stroke-line {
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  animation: drawLine 0.9s ease-in-out forwards;
+
+  stroke-dasharray:60;
+
+  stroke-dashoffset:60;
+
+  animation:drawLine 0.9s ease-in-out forwards;
+
 }
 
+
 @keyframes drawLine {
+
   to {
-    stroke-dashoffset: 0;
+
+    stroke-dashoffset:0;
+
   }
+
 }
+
 `}
 </style>
 
 
-        {/* ---------------- Why MERN ---------------- */}
-        <div className="mt-6 p-5 bg-white rounded-xl shadow-md">
-          <h3 className="font-semibold text-gray-800 mb-3">Why MERN?</h3>
-          <ul className="list-disc list-inside text-gray-600 space-y-2">
-            <li>Single language (JavaScript) across the full stack</li>
-            <li>Fast, real-time web app development</li>
-            <li>Highly scalable Node.js architecture</li>
-            <li>Mongoose makes database modeling easier</li>
-            <li>Perfect for API-driven apps</li>
-          </ul>
-        </div>
 
-        {/* ---------------- Mini Quiz ---------------- */}
-        <div className="mt-6 p-5 bg-indigo-50 rounded-xl shadow-sm">
-          <h4 className="font-semibold text-indigo-700 mb-3">
-            Quick MERN Quiz
-          </h4>
-          <p className="text-gray-700 mb-3">
-            Which part of MERN handles the backend?
-          </p>
-          <Button
-            variant="outline-dark"
-            className="me-2"
-            onClick={() =>
-              alert("Correct! Node.js + Express handle the backend.")
-            }
-          >
-            Node + Express
-          </Button>
-          <Button
-            variant="outline-dark"
-            onClick={() => alert("Incorrect. React is frontend!")}
-          >
-            React
-          </Button>
-        </div>
-      </FadeScrollWrapper>
+
+
+{/* ---------------- Why MERN ---------------- */}
+
+
+<div className="glass-section mt-6 p-5 rounded-xl">
+
+  <h3 className="font-semibold text-gray-800 mb-3">
+    Why MERN?
+  </h3>
+
+
+  <ul className="list-disc list-inside text-gray-600 space-y-2">
+
+    <li>
+      Single language (JavaScript) across the full stack
+    </li>
+
+    <li>
+      Fast, real-time web app development
+    </li>
+
+    <li>
+      Highly scalable Node.js architecture
+    </li>
+
+    <li>
+      Mongoose makes database modeling easier
+    </li>
+
+    <li>
+      Perfect for API-driven apps
+    </li>
+
+  </ul>
+
+</div>
+
+
+
+
+
+{/* ---------------- Mini Quiz ---------------- */}
+
+
+<div className="glass-section mt-6 p-5 rounded-xl">
+
+  <h4 className="font-semibold text-indigo-700 mb-3">
+    Quick MERN Quiz
+  </h4>
+
+
+  <p className="text-gray-700 mb-3">
+    Which part of MERN handles the backend?
+  </p>
+
+
+
+  <Button
+
+    variant="outline-dark"
+
+    className="me-2"
+
+    onClick={() =>
+      alert("Correct! Node.js + Express handle the backend.")
+    }
+
+  >
+
+    Node + Express
+
+  </Button>
+
+
+
+
+  <Button
+
+    variant="outline-dark"
+
+    onClick={() =>
+      alert("Incorrect. React is frontend!")
+    }
+
+  >
+
+    React
+
+  </Button>
+
+
+</div>
+
+
+</FadeScrollWrapper>
 
       {/* ---------------- Real Interview Questions ---------------- */}
       <FadeScrollWrapper>
-        <div className="mt-6 p-5 bg-white rounded-xl shadow-md">
+        <div className="mt-6 p-5  rounded-xl shadow-md">
           <h3 className="font-semibold text-gray-800 mb-3">
             Real Company MERN Questions
           </h3>
@@ -479,6 +720,14 @@ function HomePage() {
         </div>
       </FadeScrollWrapper>
     </Container>
+
+    </div>
+</>
+
+
+
+
+   
   );
 }
 

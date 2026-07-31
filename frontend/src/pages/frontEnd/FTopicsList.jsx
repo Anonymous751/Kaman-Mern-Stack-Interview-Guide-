@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import PriorityLegend from "../../components/PriorityLegend.jsx";
 import FadeScrollWrapper from "../../components/FadeScrollWrapper.jsx";
 import SearchFilter from "../../components/SearchFilter.jsx";
+import { getFrontendTopics } from "./api/api.jsx";
+
 
 // 🎨 Badge color function
 const getBadgeColor = (priority) => {
@@ -52,35 +54,31 @@ const fallbackTopics = [
 ];
 
 export default function FrontendTopicsPage() {
-  const [topics, setTopics] = useState(() => {
-    const cached = sessionStorage.getItem("frontendTopics");
-    return cached ? JSON.parse(cached) : fallbackTopics;
-  });
-  const [loading, setLoading] = useState(!sessionStorage.getItem("frontendTopics"));
+  const [topics, setTopics] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(20);
   const [searchQuery, setSearchQuery] = useState("");
   const [priorityFilter, setPriorityFilter] = useState("All");
 
   // ⚡ Fetch API once
   useEffect(() => {
-    if (!sessionStorage.getItem("frontendTopics")) {
-      setLoading(true);
-      fetch("/frontend/api/ftopicsList")
-        .then((res) => res.json())
-        .then((data) => {
-          if (Array.isArray(data)) {
-            setTopics(data);
-            sessionStorage.setItem("frontendTopics", JSON.stringify(data));
-          }
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error("Failed to fetch topics:", err);
-          setLoading(false);
-        });
-    }
-  }, []);
+    const loadTopics = async () => {
+      try {
+        setLoading(true);
 
+        const data = await getFrontendTopics();
+
+        setTopics(data);
+        sessionStorage.setItem("frontendTopics", JSON.stringify(data));
+      } catch (error) {
+        console.error("Failed to load frontend topics:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadTopics();
+  }, []);
   // 🔍 Filter topics
   const filteredTopics = useMemo(() => {
     const query = searchQuery.toLowerCase();

@@ -2,7 +2,9 @@ import axiosInstance from "../../../../axiosInstance";
 
 // Fetch all frontend topics
 export const getFrontendTopics = async () => {
+   console.log("🚀 getFrontendTopics called");
   try {
+   
     const response = await axiosInstance.get("/frontend/api/ftopicsList");
     return response.data;
   } catch (error) {

@@ -13,7 +13,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Center / Links */}
 <div className="flex flex-col md:flex-row gap-4 text-center md:text-left">
   <a
     href="#home"
