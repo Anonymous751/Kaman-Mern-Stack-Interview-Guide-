@@ -40,5 +40,5 @@ const wtopicListSchema = new mongoose.Schema(
 export default mongoose.model(
   "wtopic",
   wtopicListSchema,
-  "wtopic" // 👈 EXACT collection name
+  "wtopic" 
 );

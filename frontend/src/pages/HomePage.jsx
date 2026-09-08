@@ -102,10 +102,8 @@ function HomePage() {
     backSpeed: 100,
     backDelay: 1200,   // pause before deleting
     loop: true,        // 🔁 infinite loop
-    showCursor: true,
     cursorChar: "|",
     smartBackspace: true,
-    showCursor: false
   });
 
   return () => {
