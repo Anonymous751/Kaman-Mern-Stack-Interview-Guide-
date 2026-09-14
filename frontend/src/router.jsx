@@ -60,6 +60,7 @@ import BlogHomePage from "./pages/tasks/projects/blogApp/pages/BlogHomePage";
 import FileUpload from "./pages/quickAccess/FileUpload";
 import JwtAuth from "./pages/quickAccess/JwtAuth"
 import RBAC from "./pages/quickAccess/RBAC";
+import CreateBlogPage from "./pages/tasks/projects/blogApp/pages/CreateBlogPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -96,6 +97,9 @@ const router = createBrowserRouter(
 
       {/* ------------------ BlogApp ------------------ */}
       <Route path="/projects/blog-app" element={<BlogHomePage />} />
+     <Route path="/create-blog" element={<CreateBlogPage />} />
+
+
 
       {/* ------------------ SDLC ------------------ */}
       <Route path="sdlc" element={<SDLC />} />

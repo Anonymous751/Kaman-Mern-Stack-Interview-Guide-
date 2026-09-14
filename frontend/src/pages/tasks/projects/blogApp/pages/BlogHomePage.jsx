@@ -1,53 +1,100 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const BlogHomePage = () => {
   const navigate = useNavigate();
 
-  const featuredPosts = [
-    {
-      id: 1,
-      category: "Technology",
-      title: "The Future of Modern Web Development",
-      description:
-        "Explore how modern technologies are changing the way we build fast and scalable web applications.",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-      date: "Sep 08, 2026",
-      readTime: "6 min read",
-    },
+  // ================== STATE ==================
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-    {
-      id: 2,
-      category: "Engineering",
-      title: "From Code to Production",
-      description:
-        "Understanding the journey from writing your first line of code to deploying a production application.",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-      date: "Sep 06, 2026",
-      readTime: "8 min read",
-    },
+  // ================== FETCH BLOGS ==================
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true);
+        setError("");
 
-    {
-      id: 3,
-      category: "Development",
-      title: "Building Better Software Systems",
-      description:
-        "A practical look at architecture, APIs, databases and the principles behind reliable software.",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
-      date: "Sep 04, 2026",
-      readTime: "5 min read",
-    },
-  ];
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/blogs`
+        );
+
+        console.log("✅ Blogs fetched:", response.data);
+
+        // Supports both:
+        // response.data = [...]
+        // response.data = { blogs: [...] }
+        const blogData = Array.isArray(response.data)
+          ? response.data
+          : response.data.blogs || [];
+
+        setBlogs(blogData);
+      } catch (error) {
+        console.error(
+          "❌ Failed to fetch blogs:",
+          error.response?.data || error.message
+        );
+
+        if (error.response) {
+          if (error.response.status === 404) {
+            setError("Blog service could not be found.");
+          } else if (error.response.status >= 500) {
+            setError("Server error. Please try again later.");
+          } else {
+            setError(
+              error.response.data?.message ||
+                "Unable to load blogs. Please try again."
+            );
+          }
+        } else if (error.request) {
+          setError(
+            "Unable to connect to the server. Please check your backend."
+          );
+        } else {
+          setError("Something went wrong while loading blogs.");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  // ================== FORMAT DATE ==================
+  const formatDate = (date) => {
+    if (!date) return "";
+
+    return new Date(date).toLocaleDateString("en-US", {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    });
+  };
+
+  // ================== READ TIME ==================
+  const getReadTime = (content) => {
+    if (!content) return "1 min read";
+
+    const words = content.trim().split(/\s+/).length;
+    const minutes = Math.max(1, Math.ceil(words / 200));
+
+    return `${minutes} min read`;
+  };
+
+  // ================== FEATURED BLOGS ==================
+  const featuredPosts = blogs.slice(0, 3);
+
+  // ================== LATEST BLOGS ==================
+  const latestPosts = blogs.slice(0, 5);
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
 
       {/* ================= TOP RIGHT CREATE BUTTON ================= */}
-
       <div className="max-w-7xl mx-auto px-6 pt-6 flex justify-end">
         <button
           onClick={() => navigate("/create-blog")}
@@ -57,11 +104,8 @@ const BlogHomePage = () => {
         </button>
       </div>
 
-
       {/* ================= HERO ================= */}
-
       <section className="border-b border-gray-200">
-
         <div className="max-w-7xl mx-auto px-6 py-16">
 
           <div className="max-w-3xl">
@@ -83,11 +127,25 @@ const BlogHomePage = () => {
 
             <div className="mt-8 flex flex-wrap gap-4">
 
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("articles")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition"
+              >
                 Explore Articles
               </button>
 
-              <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md font-medium hover:bg-gray-50 transition">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("categories")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md font-medium hover:bg-gray-50 transition"
+              >
                 Browse Categories
               </button>
 
@@ -96,13 +154,13 @@ const BlogHomePage = () => {
           </div>
 
         </div>
-
       </section>
 
-
       {/* ================= FEATURED ARTICLES ================= */}
-
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section
+        id="articles"
+        className="max-w-7xl mx-auto px-6 py-16"
+      >
 
         <div className="mb-8">
 
@@ -116,84 +174,139 @@ const BlogHomePage = () => {
 
         </div>
 
+        {/* ================= LOADING ================= */}
+        {loading && (
+          <div className="py-12 text-center text-gray-500">
+            Loading blogs...
+          </div>
+        )}
+
+        {/* ================= ERROR ================= */}
+        {!loading && error && (
+          <div className="border border-red-200 bg-red-50 text-red-600 rounded-lg p-5">
+            {error}
+          </div>
+        )}
+
+        {/* ================= NO BLOGS ================= */}
+        {!loading && !error && blogs.length === 0 && (
+          <div className="py-12 text-center border border-gray-200 rounded-lg">
+
+            <h3 className="text-xl font-semibold text-gray-700">
+              No blogs available
+            </h3>
+
+            <p className="text-gray-500 mt-2">
+              Create your first blog to see it here.
+            </p>
+
+            <button
+              onClick={() => navigate("/create-blog")}
+              className="mt-5 px-5 py-2.5 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition"
+            >
+              Create Your First Blog
+            </button>
+
+          </div>
+        )}
 
         {/* ================= BLOG CARDS ================= */}
+        {!loading && !error && featuredPosts.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {featuredPosts.map((post) => {
 
-          {featuredPosts.map((post) => (
+              // ================= DEBUG BLOG DATA =================
+              console.log("BLOG:", post);
 
-            <article
-              key={post.id}
-              className="group border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-lg transition duration-300"
-            >
+              console.log(
+                "FEATURED IMAGE:",
+                post.featuredImage
+              );
 
-              {/* IMAGE */}
+              console.log(
+                "IMAGE FILE ID:",
+                post.featuredImage?.fileId
+              );
 
-              <div className="h-52 overflow-hidden bg-gray-100">
+              console.log(
+                "IMAGE URL:",
+                `${import.meta.env.VITE_API_URL}/blogs/image/${post.featuredImage?.fileId}`
+              );
 
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
+              return (
+                <article
+                  key={post._id || post.id}
+                  className="group border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-lg transition duration-300"
+                >
 
-              </div>
+                  {/* ================= IMAGE ================= */}
+                  <div className="h-52 overflow-hidden bg-gray-100">
 
+                    <img
+                      src={`${import.meta.env.VITE_API_URL}/blogs/image/${post.featuredImage?.fileId}`}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
 
-              {/* CONTENT */}
+                  </div>
 
-              <div className="p-6">
+                  {/* ================= CONTENT ================= */}
+                  <div className="p-6">
 
-                <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3">
 
-                  <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">
-                    {post.category}
-                  </span>
+                      <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">
+                        {post.category}
+                      </span>
 
-                  <span className="text-xs text-gray-400">
-                    {post.readTime}
-                  </span>
+                      <span className="text-xs text-gray-400">
+                        {getReadTime(post.content)}
+                      </span>
 
-                </div>
+                    </div>
 
+                    <h3 className="text-xl font-bold leading-snug group-hover:text-blue-600 transition">
+                      {post.title}
+                    </h3>
 
-                <h3 className="text-xl font-bold leading-snug group-hover:text-blue-600 transition">
-                  {post.title}
-                </h3>
+                    <p className="mt-3 text-sm text-gray-500 leading-relaxed">
+                      {post.description}
+                    </p>
 
+                    <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
 
-                <p className="mt-3 text-sm text-gray-500 leading-relaxed">
-                  {post.description}
-                </p>
+                      <span className="text-xs text-gray-400">
+                        {formatDate(post.createdAt || post.date)}
+                      </span>
 
+                      <button
+                        onClick={() =>
+                          navigate(`/blogs/${post.slug}`)
+                        }
+                        className="text-sm font-semibold text-blue-600 hover:text-blue-700"
+                      >
+                        Read Article →
+                      </button>
 
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                    </div>
 
-                  <span className="text-xs text-gray-400">
-                    {post.date}
-                  </span>
+                  </div>
 
-                  <button className="text-sm font-semibold text-blue-600">
-                    Read Article →
-                  </button>
+                </article>
+              );
+            })}
 
-                </div>
-
-              </div>
-
-            </article>
-
-          ))}
-
-        </div>
+          </div>
+        )}
 
       </section>
 
-
       {/* ================= LATEST ARTICLES ================= */}
-
-      <section className="bg-gray-50 border-y border-gray-200">
+      <section
+        id="categories"
+        className="bg-gray-50 border-y border-gray-200"
+      >
 
         <div className="max-w-7xl mx-auto px-6 py-16">
 
@@ -209,40 +322,52 @@ const BlogHomePage = () => {
 
           </div>
 
-
           <div className="max-w-4xl">
 
-            {[1, 2, 3].map((item) => (
+            {!loading &&
+              !error &&
+              latestPosts.map((post) => (
 
-              <article
-                key={item}
-                className="py-6 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
-              >
+                <article
+                  key={post._id || post.id}
+                  className="py-6 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                >
 
-                <div>
+                  <div>
 
-                  <p className="text-xs text-blue-600 font-semibold uppercase mb-2">
-                    Development
-                  </p>
+                    <p className="text-xs text-blue-600 font-semibold uppercase mb-2">
+                      {post.category}
+                    </p>
 
-                  <h3 className="text-xl font-semibold hover:text-blue-600 transition cursor-pointer">
-                    How modern developers build scalable applications
-                  </h3>
+                    <h3
+                      onClick={() =>
+                        navigate(`/blogs/${post.slug}`)
+                      }
+                      className="text-xl font-semibold hover:text-blue-600 transition cursor-pointer"
+                    >
+                      {post.title}
+                    </h3>
 
-                  <p className="text-sm text-gray-500 mt-2">
-                    September 2026 • 7 min read
-                  </p>
+                    <p className="text-sm text-gray-500 mt-2">
+                      {formatDate(post.createdAt || post.date)}
+                      {" • "}
+                      {getReadTime(post.content)}
+                    </p>
 
-                </div>
+                  </div>
 
+                  <button
+                    onClick={() =>
+                      navigate(`/blogs/${post.slug}`)
+                    }
+                    className="text-sm font-semibold text-blue-600 whitespace-nowrap hover:text-blue-700"
+                  >
+                    Read →
+                  </button>
 
-                <button className="text-sm font-semibold text-blue-600 whitespace-nowrap">
-                  Read →
-                </button>
+                </article>
 
-              </article>
-
-            ))}
+              ))}
 
           </div>
 

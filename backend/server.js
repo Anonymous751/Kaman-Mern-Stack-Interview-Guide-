@@ -9,6 +9,8 @@ import connectDB from "./config/database.js";
 import Froutes from "./app/myStaticData/pages/frontendStaticData/routes/Froutes.js"
 import webRoutes from "./app/myStaticData/pages/webStaticData/routes/webTopicRoutes.js"
 import backendRoutes from "./app/myStaticData/pages/backendStaticData/routes/backendTopicRoutes.js"
+import blogRoutes from "./app/blogPostApp/routes/blogRoutes.js"
+
 
 // Database Connection
 connectDB();
@@ -47,6 +49,8 @@ app.use("/frontend/api", Froutes)
 app.use("/backend/api", backendRoutes)
 
 app.use("/web/api", webRoutes)
+
+app.use("/api/blogs", blogRoutes);
 
 // ------------------ START SERVER ------------------
 
